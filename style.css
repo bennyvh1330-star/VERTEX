@@ -1946,3 +1946,57 @@ html[data-vx-font="l"] .vx-article h3 { font-size: clamp(20px, 2.2vw, 25px); }
   color: var(--vx-fg-soft);
 }
 .vx-tags-error strong { color: var(--vx-gold); font-weight: 400; border: 0; }
+
+/* =================================================================
+   CHART / FIGURE ENTRANCE ANIMATIONS (scroll-triggered)
+   ================================================================= */
+/* Generic figure fade-up — applied automatically by vx-features.js */
+figure.vx-fig-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s cubic-bezier(.25,.65,.3,1),
+              transform 0.9s cubic-bezier(.25,.65,.3,1);
+  will-change: opacity, transform;
+}
+figure.vx-fig-reveal.vx-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  figure.vx-fig-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Ladder — staggered slide-in from left */
+.vx-ladder-row.vx-anim-row {
+  opacity: 0;
+  transform: translateX(-22px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.25,.7,.3,1);
+}
+.vx-ladder-row.vx-anim-row.vx-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Diverge — rows fade up + slight slide */
+.vx-diverge-row.vx-anim-diverge {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.25,.7,.3,1);
+}
+.vx-diverge-row.vx-anim-diverge.vx-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* =================================================================
+   CATEGORY HERO — split desc: subtitle centered, archive line left
+   ================================================================= */
+.vx-category-hero .desc .archive {
+  display: block;
+  margin-top: 14px;
+  text-align: left;
+  color: var(--vx-fg-mute);
+  font-size: 14px;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}

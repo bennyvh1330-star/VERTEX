@@ -681,6 +681,42 @@
     return t;
   }
 
+  /* ---------- 12. FIGURE FADE-UP ENTRANCE (scroll-triggered) ---------- */
+  function initFigureReveal() {
+    if (!("IntersectionObserver" in window)) return;
+    const figures = document.querySelectorAll(".vx-article figure");
+    if (!figures.length) return;
+    figures.forEach(f => f.classList.add("vx-fig-reveal"));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("vx-in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    figures.forEach(f => io.observe(f));
+  }
+
+  /* ---------- 13. CATEGORY HERO — split desc into subtitle + archive line ---------- */
+  function initCategoryDescSplit() {
+    const desc = document.querySelector(".vx-category-hero .desc");
+    if (!desc) return;
+    if (desc.querySelector(".archive")) return;
+    const raw = desc.textContent || "";
+    const idx = raw.indexOf("本分類");
+    if (idx <= 0) return;
+    const head = raw.slice(0, idx).trim();
+    const tail = raw.slice(idx).trim();
+    if (!head || !tail) return;
+    desc.textContent = "";
+    desc.appendChild(document.createTextNode(head));
+    const span = document.createElement("span");
+    span.className = "archive";
+    span.textContent = tail;
+    desc.appendChild(span);
+  }
+
   /* ---------- INIT ---------- */
   function init() {
     initProgress();
@@ -693,6 +729,8 @@
     initHighlights();
     initKatex();
     initTTS();
+    initFigureReveal();
+    initCategoryDescSplit();
   }
 
   if (document.readyState === "loading") {

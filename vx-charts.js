@@ -25,6 +25,15 @@
     try { return JSON.parse(v); } catch { return v; }
   }
 
+  /* Run cb once when target scrolls into view (or immediately if no IO support) */
+  function onceInView(target, cb, threshold = 0.18) {
+    if (!("IntersectionObserver" in window)) { cb(); return; }
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { cb(); io.disconnect(); } });
+    }, { threshold });
+    io.observe(target);
+  }
+
   function el(tag, props, children) {
     const ns = "http://www.w3.org/2000/svg";
     const isSvg = ["svg","g","circle","line","path","polygon","polyline","rect","text","defs","linearGradient","stop","radialGradient"].includes(tag);
@@ -218,15 +227,17 @@
       animRaf = requestAnimationFrame(frame);
     }
 
-    /* Initial: animate from center outward for a polished entrance */
+    /* Initial: paint at center, then animate outward when scrolled into view */
     applyPts(currentPts);
-    /* Defer first switch so initial paint happens at center */
-    requestAnimationFrame(() => switchTo(0, true));
 
     wrap.appendChild(tabs);
     wrap.appendChild(stage);
     wrap.appendChild(detailWrap);
     fig.insertBefore(wrap, fig.firstChild);
+
+    onceInView(fig, () => {
+      requestAnimationFrame(() => switchTo(0, true));
+    });
   }
 
   /* ---------------- BAR (horizontal) ---------------- */
@@ -278,21 +289,11 @@
 
     /* Animate-in when figure scrolls into view */
     fills.forEach(f => f.el.style[f.prop] = "0%");
-    const animate = () => {
+    onceInView(fig, () => {
       fills.forEach((f, i) => {
         setTimeout(() => { f.el.style[f.prop] = f.target + "%"; }, i * 70);
       });
-    };
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver((es) => {
-        es.forEach(e => {
-          if (e.isIntersecting) { animate(); io.disconnect(); }
-        });
-      }, { threshold: 0.2 });
-      io.observe(fig);
-    } else {
-      animate();
-    }
+    });
   }
 
   /* ---------------- DONUT ---------------- */
@@ -348,14 +349,7 @@
       }
       raf = requestAnimationFrame(frame);
     }
-    if ("IntersectionObserver" in window) {
-      const io = new IntersectionObserver((es) => {
-        es.forEach(e => { if (e.isIntersecting) { animateDonut(); io.disconnect(); } });
-      }, { threshold: 0.25 });
-      io.observe(fig);
-    } else {
-      animateDonut();
-    }
+    onceInView(fig, animateDonut, 0.25);
     /* Center text */
     svg.appendChild(el("text", {
       x: cx, y: cy - 6, "text-anchor": "middle",
@@ -392,8 +386,9 @@
     const levels = attr(fig, "data-levels", []);
     const wrap = el("div", { class: "vx-ladder-wrap" });
     const N = levels.length;
+    const rows = [];
     levels.forEach((l, i) => {
-      const row = el("div", { class: "vx-ladder-row" });
+      const row = el("div", { class: "vx-ladder-row vx-anim-row" });
       row.style.paddingLeft = `${(i / (N - 1)) * 36}%`;
       const idx = el("span", { class: "vx-ladder-idx", text: String(l.level || i + 1).padStart(2, "0") });
       const card = el("div", { class: "vx-ladder-card" + (l.highlight ? " highlight" : "") });
@@ -405,8 +400,12 @@
       if (desc) card.appendChild(desc);
       row.appendChild(idx); row.appendChild(card);
       wrap.appendChild(row);
+      rows.push(row);
     });
     fig.insertBefore(wrap, fig.firstChild);
+    onceInView(fig, () => {
+      rows.forEach((r, i) => setTimeout(() => r.classList.add("vx-in"), i * 90));
+    });
   }
 
   /* ---------------- DIVERGE (two-sided bar) ---------------- */
@@ -418,16 +417,21 @@
     const head = el("div", { class: "vx-diverge-head" });
     head.innerHTML = `<span class="left">${left}</span><span class="axis">vs.</span><span class="right">${right}</span>`;
     wrap.appendChild(head);
+    const rowEls = [];
     rows.forEach(r => {
-      const row = el("div", { class: "vx-diverge-row" });
+      const row = el("div", { class: "vx-diverge-row vx-anim-diverge" });
       row.innerHTML = `
         <div class="lt">${r.left || ""}</div>
         <div class="dim">${r.dim || ""}</div>
         <div class="rt">${r.right || ""}</div>
       `;
       wrap.appendChild(row);
+      rowEls.push(row);
     });
     fig.insertBefore(wrap, fig.firstChild);
+    onceInView(fig, () => {
+      rowEls.forEach((r, i) => setTimeout(() => r.classList.add("vx-in"), i * 80));
+    });
   }
 
   /* ---------------- DUAL LINE ---------------- */
@@ -439,6 +443,8 @@
 
     const xMax = labels.length - 1;
     const xS = (i) => P + (i / xMax) * (W - 2 * P);
+    const lines = [];
+    const dots = [];
     /* Compute global y normalization per-series */
     series.forEach((s, sIdx) => {
       const max = Math.max(...s.values);
@@ -446,9 +452,30 @@
       const yS = (v) => H - P - ((v - min) / (max - min)) * (H - 2 * P);
       const pts = s.values.map((v, i) => `${xS(i)},${yS(v)}`).join(" ");
       const stroke = sIdx === 0 ? GOLD : "rgba(235,230,217,0.55)";
-      svg.appendChild(el("polyline", { points: pts, fill: "none", stroke, "stroke-width": "1.6" }));
+      const line = el("polyline", { points: pts, fill: "none", stroke, "stroke-width": "1.6" });
+      svg.appendChild(line);
+      lines.push(line);
       s.values.forEach((v, i) => {
-        svg.appendChild(el("circle", { cx: xS(i), cy: yS(v), r: 2.4, fill: stroke }));
+        const c = el("circle", { cx: xS(i), cy: yS(v), r: 2.4, fill: stroke, opacity: "0" });
+        svg.appendChild(c);
+        dots.push(c);
+      });
+    });
+    /* Animate-in: draw lines + fade dots when figure scrolls into view */
+    lines.forEach(line => {
+      const len = line.getTotalLength ? line.getTotalLength() : 1200;
+      line.style.strokeDasharray = len;
+      line.style.strokeDashoffset = len;
+      line.style.transition = "stroke-dashoffset 1.2s cubic-bezier(.4,.7,.3,1)";
+      line.dataset.len = len;
+    });
+    onceInView(fig, () => {
+      lines.forEach(line => { line.style.strokeDashoffset = "0"; });
+      dots.forEach((c, i) => {
+        setTimeout(() => {
+          c.style.transition = "opacity 0.35s ease";
+          c.setAttribute("opacity", "1");
+        }, 600 + i * 30);
       });
     });
     /* X labels */
