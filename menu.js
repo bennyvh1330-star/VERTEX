@@ -7,6 +7,8 @@
 (function () {
   const script = document.currentScript;
   const prefix = (script && script.getAttribute("data-prefix")) || ".";
+  /* expose for vx-features.js */
+  window.VX_PREFIX = prefix;
 
   const categories = [
     { zh: "產業", en: "Industry" },
@@ -26,11 +28,15 @@
     { zh: "悖論", en: "Paradox" },
     { zh: "成功學", en: "Success" },
     { zh: "商業", en: "Business" },
+    { zh: "自我認知與成長", en: "Self · Growth" },
   ];
+  /* expose for vx-features.js */
+  window.VX_CATEGORIES = categories;
 
   /* SVG icons */
   const ICON_GRAPH = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="3" r="1.6"/><circle cx="3" cy="11" r="1.6"/><circle cx="13" cy="11" r="1.6"/><circle cx="8" cy="13" r="1"/><line x1="8" y1="4.6" x2="3.6" y2="10"/><line x1="8" y1="4.6" x2="12.4" y2="10"/><line x1="4" y1="11.6" x2="7.4" y2="12.7"/><line x1="12" y1="11.6" x2="8.6" y2="12.7"/></svg>`;
   const ICON_HOME = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l6-5 6 5v7H2z"/><path d="M6 14V9h4v5"/></svg>`;
+  const ICON_TAGS = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5V3a1 1 0 0 1 1-1h5.5L14 7.5L9 12.5z"/><circle cx="5" cy="5" r="0.8" fill="currentColor"/></svg>`;
   const ICON_SEARCH = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>`;
 
   function buildItems() {
@@ -56,6 +62,7 @@
         <div class="vx-drawer-actions">
           <a class="btn" href="${prefix}/graph.html">${ICON_GRAPH}<span>全圖譜</span></a>
           <a class="btn" href="${prefix}/index.html">${ICON_HOME}<span>HOME</span></a>
+          <a class="btn" href="${prefix}/tags.html">${ICON_TAGS}<span>標籤</span></a>
         </div>
         <div class="vx-search">
           <div class="vx-search-box">
@@ -106,8 +113,14 @@
         a.hasAttribute("download")
       ) return;
       e.preventDefault();
+      /* Modern browsers: use cross-document view transitions if available */
+      if (document.startViewTransition) {
+        document.body.classList.add("vx-leaving");
+        setTimeout(() => { window.location.href = href; }, 240);
+        return;
+      }
       document.body.classList.add("vx-leaving");
-      setTimeout(() => { window.location.href = href; }, 320);
+      setTimeout(() => { window.location.href = href; }, 240);
     });
   }
 
@@ -175,6 +188,74 @@
 
     attachSearch();
     attachPageTransitions();
+    attachSwipeGestures();
+    /* Auto-load UX feature suite (vx-features.js) once chrome is in place */
+    loadFeatures();
+  }
+
+  function loadFeatures() {
+    if (document.querySelector("script[data-vx-features]")) return;
+    const s = document.createElement("script");
+    s.src = prefix + "/vx-features.js";
+    s.setAttribute("data-vx-features", "1");
+    s.defer = true;
+    document.body.appendChild(s);
+  }
+
+  /* Touch swipe gestures (mobile/tablet only):
+       swipe RIGHT  → open menu drawer
+       swipe LEFT   → if drawer is open, close it; else navigate to graph.html
+     Heuristics: only triggers on a quick, mostly-horizontal one-finger gesture
+     that started near the screen edge or moved a clear horizontal distance,
+     so vertical scrolling and pinch-zoom are not affected. */
+  function attachSwipeGestures() {
+    if (!("ontouchstart" in window)) return;
+
+    let startX = 0, startY = 0, startT = 0, tracking = false;
+
+    document.addEventListener("touchstart", (e) => {
+      if (e.touches.length !== 1) { tracking = false; return; }
+      const t = e.touches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      startT = Date.now();
+      tracking = true;
+    }, { passive: true });
+
+    document.addEventListener("touchend", (e) => {
+      if (!tracking) return;
+      tracking = false;
+      const t = (e.changedTouches && e.changedTouches[0]);
+      if (!t) return;
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+      const dt = Date.now() - startT;
+
+      // Must be quick, mostly horizontal, and a clear distance.
+      if (dt > 700) return;
+      if (Math.abs(dx) < 70) return;
+      if (Math.abs(dy) > Math.abs(dx) * 0.6) return;
+
+      const isOpen = document.body.classList.contains("vx-menu-open");
+
+      if (dx > 0) {
+        // Swipe right → open drawer (if not already open)
+        if (!isOpen) setOpen(true);
+      } else {
+        // Swipe left → close drawer if open, else jump to full graph
+        if (isOpen) {
+          setOpen(false);
+        } else {
+          // Don't redirect when already on the graph page
+          const here = window.location.pathname.split("/").pop() || "";
+          if (here.toLowerCase() === "graph.html") return;
+          document.body.classList.add("vx-leaving");
+          setTimeout(() => {
+            window.location.href = prefix + "/graph.html";
+          }, 320);
+        }
+      }
+    }, { passive: true });
   }
 
   if (document.readyState === "loading") {

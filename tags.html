@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>標籤索引 · Tags — V.E.R.T.E.X.</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="wrap">
+<div class="vx-brand-mini">
+<a href="index.html">V·E·R·T·E·X</a>
+<div class="sub">PRIMA · RESEARCH ARCHIVE</div>
+</div>
+
+<header class="vx-category-hero">
+<div class="crumb"><a href="index.html">V.E.R.T.E.X.</a> ／ Tag Index</div>
+<h1>標籤索引</h1>
+<div class="en">— Tags · Concept Map —</div>
+<p class="desc">所有研究文章內出現過的關鍵概念，依出現頻率排序。點擊標籤跳到該標籤對應的文章列表。</p>
+</header>
+
+<section class="vx-list">
+<div class="vx-list-head">
+<h2>— Tag Cloud —</h2>
+<span class="count" id="vx-tag-count">載入中…</span>
+</div>
+
+<div class="vx-tags-loading" id="vx-tags-loading">— 正在掃描全站文章與標籤 —</div>
+<div class="vx-tags-cloud" id="vx-tags-cloud"></div>
+<div id="vx-tag-sections"></div>
+
+<div id="vx-tags-empty" class="vx-tags-error" style="display:none">
+<strong>無法載入標籤索引。</strong><br/>
+此頁需要透過 HTTP 協議存取（GitHub Pages 上會自動正常）；若您直接從本機檔案開啟（<code>file://</code>），瀏覽器會擋下跨檔案 fetch。<br/>
+請<strong>推到 GitHub Pages 後再用網址開啟</strong>，或在本機跑簡易伺服器。
+</div>
+</section>
+</div>
+
+<script src="menu.js" data-prefix="."></script>
+<script>
+(async function () {
+  const cloud = document.getElementById("vx-tags-cloud");
+  const sections = document.getElementById("vx-tag-sections");
+  const empty = document.getElementById("vx-tags-empty");
+  const loading = document.getElementById("vx-tags-loading");
+  const countEl = document.getElementById("vx-tag-count");
+
+  /* Wait for menu.js to populate categories */
+  let waits = 0;
+  while (!window.VX_CATEGORIES && waits < 50) {
+    await new Promise(r => setTimeout(r, 80));
+    waits++;
+  }
+  const cats = window.VX_CATEGORIES || [];
+
+  const tagMap = new Map();
+  let articleCount = 0;
+  let fetchFailures = 0;
+
+  await Promise.all(cats.map(async (c) => {
+    try {
+      const idxR = await fetch(`./${encodeURIComponent(c.zh)}/index.html`, { cache: "no-cache" });
+      if (!idxR.ok) return;
+      const idxT = await idxR.text();
+      const idxDoc = new DOMParser().parseFromString(idxT, "text/html");
+      const items = Array.from(idxDoc.querySelectorAll(".vx-list ul li a"));
+      await Promise.all(items.map(async (a) => {
+        const href = a.getAttribute("href");
+        const title = a.querySelector(".ttl")?.textContent.trim() || a.textContent.trim();
+        try {
+          const r = await fetch(`./${encodeURIComponent(c.zh)}/${href}`, { cache: "no-cache" });
+          if (!r.ok) return;
+          const t = await r.text();
+          const doc = new DOMParser().parseFromString(t, "text/html");
+          const tags = Array.from(doc.querySelectorAll(".vx-article-tags .tag")).map(x => x.textContent.trim());
+          articleCount++;
+          tags.forEach(tag => {
+            if (!tagMap.has(tag)) tagMap.set(tag, []);
+            tagMap.get(tag).push({ cat: c.zh, title, href: `./${encodeURIComponent(c.zh)}/${href}` });
+          });
+        } catch { fetchFailures++; }
+      }));
+    } catch { fetchFailures++; }
+  }));
+
+  loading.style.display = "none";
+
+  if (tagMap.size === 0) {
+    countEl.textContent = "0 篇";
+    if (fetchFailures > 0 && location.protocol === "file:") {
+      empty.style.display = "block";
+    } else {
+      empty.style.display = "block";
+      empty.innerHTML = "<strong>尚無標籤資料。</strong>請新增帶有 <code>.vx-article-tags</code> 標籤的文章。";
+    }
+    return;
+  }
+
+  countEl.textContent = articleCount + " 篇研究 · " + tagMap.size + " 標籤";
+
+  const sorted = Array.from(tagMap.entries()).sort((a, b) => b[1].length - a[1].length);
+
+  cloud.innerHTML = sorted.map(([tag, arts]) => `
+    <a href="#tag-${encodeURIComponent(tag)}">
+      <span>${tag}</span>
+      <span class="count">${arts.length}</span>
+    </a>
+  `).join("");
+
+  sections.innerHTML = sorted.map(([tag, arts]) => `
+    <div class="vx-tag-section" id="tag-${encodeURIComponent(tag)}">
+      <h3>${tag} <span class="tag-en">${arts.length} ARTICLE${arts.length > 1 ? "S" : ""}</span></h3>
+      <ul>
+        ${arts.map(a => `
+          <li><a href="${a.href}">
+            <span class="cat">${a.cat}</span>
+            <span class="ttl">${a.title}</span>
+          </a></li>
+        `).join("")}
+      </ul>
+    </div>
+  `).join("");
+})();
+</script>
+</body>
+</html>
