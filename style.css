@@ -1994,9 +1994,24 @@ figure.vx-fig-reveal.vx-in {
 .vx-category-hero .desc .archive {
   display: block;
   margin-top: 14px;
-  text-align: left;
+  text-align: center;
   color: var(--vx-fg-mute);
   font-size: 14px;
   line-height: 1.85;
   letter-spacing: 0.02em;
+}
+
+/* =================================================================
+   FLOW REVEAL — sequential reveal of SVG groups (figures with arrows)
+   Triggered by data-vx-flow on <figure> in vx-features.js
+   ================================================================= */
+figure[data-vx-flow] svg > .vx-flow-step {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(.4,.7,.3,1);
+}
+figure[data-vx-flow] svg > .vx-flow-step.vx-in {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  figure[data-vx-flow] svg > .vx-flow-step { opacity: 1; transition: none; }
 }

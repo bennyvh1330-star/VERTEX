@@ -382,6 +382,8 @@
   }
 
   /* ---------------- LADDER (stepped levels) ---------------- */
+  /* Visual: level 1 sits at the BOTTOM, level N at the top.
+     Animation also starts from the bottom (level 1) and travels up. */
   function renderLadder(fig) {
     const levels = attr(fig, "data-levels", []);
     const wrap = el("div", { class: "vx-ladder-wrap" });
@@ -389,7 +391,8 @@
     const rows = [];
     levels.forEach((l, i) => {
       const row = el("div", { class: "vx-ladder-row vx-anim-row" });
-      row.style.paddingLeft = `${(i / (N - 1)) * 36}%`;
+      /* index 0 (level 1) → no indent at bottom; index N-1 (top) → max indent */
+      row.style.paddingLeft = `${(i / Math.max(1, N - 1)) * 36}%`;
       const idx = el("span", { class: "vx-ladder-idx", text: String(l.level || i + 1).padStart(2, "0") });
       const card = el("div", { class: "vx-ladder-card" + (l.highlight ? " highlight" : "") });
       const h = el("div", { class: "vx-ladder-name", text: l.name });
@@ -399,12 +402,14 @@
       if (en) card.appendChild(en);
       if (desc) card.appendChild(desc);
       row.appendChild(idx); row.appendChild(card);
-      wrap.appendChild(row);
       rows.push(row);
     });
+    /* Append in reverse so level 1 (rows[0]) sits at the bottom of the DOM */
+    for (let k = rows.length - 1; k >= 0; k--) wrap.appendChild(rows[k]);
     fig.insertBefore(wrap, fig.firstChild);
     onceInView(fig, () => {
-      rows.forEach((r, i) => setTimeout(() => r.classList.add("vx-in"), i * 90));
+      /* Animate level 1 first, then level 2, ... → reveal travels upward */
+      rows.forEach((r, i) => setTimeout(() => r.classList.add("vx-in"), i * 130));
     });
   }
 
@@ -461,23 +466,6 @@
         dots.push(c);
       });
     });
-    /* Animate-in: draw lines + fade dots when figure scrolls into view */
-    lines.forEach(line => {
-      const len = line.getTotalLength ? line.getTotalLength() : 1200;
-      line.style.strokeDasharray = len;
-      line.style.strokeDashoffset = len;
-      line.style.transition = "stroke-dashoffset 1.2s cubic-bezier(.4,.7,.3,1)";
-      line.dataset.len = len;
-    });
-    onceInView(fig, () => {
-      lines.forEach(line => { line.style.strokeDashoffset = "0"; });
-      dots.forEach((c, i) => {
-        setTimeout(() => {
-          c.style.transition = "opacity 0.35s ease";
-          c.setAttribute("opacity", "1");
-        }, 600 + i * 30);
-      });
-    });
     /* X labels */
     labels.forEach((l, i) => {
       svg.appendChild(el("text", {
@@ -500,6 +488,32 @@
     wrap.appendChild(svg);
     wrap.appendChild(lg);
     fig.insertBefore(wrap, fig.firstChild);
+
+    /* Animate-in: draw lines + fade dots — must run AFTER svg is in DOM
+       so getTotalLength returns a non-zero value. If length is 0 for any
+       reason, leave the line solid/visible rather than hiding it. */
+    requestAnimationFrame(() => {
+      const prepared = lines.map(line => {
+        const len = (line.getTotalLength && line.getTotalLength()) || 0;
+        if (len > 0) {
+          line.style.strokeDasharray = len;
+          line.style.strokeDashoffset = len;
+          line.style.transition = "stroke-dashoffset 1.4s cubic-bezier(.4,.7,.3,1)";
+        }
+        return { line, len };
+      });
+      onceInView(fig, () => {
+        prepared.forEach(({ line, len }) => {
+          if (len > 0) line.style.strokeDashoffset = "0";
+        });
+        dots.forEach((c, i) => {
+          setTimeout(() => {
+            c.style.transition = "opacity 0.35s ease";
+            c.setAttribute("opacity", "1");
+          }, 600 + i * 30);
+        });
+      });
+    });
   }
 
   function toRoman(n) {

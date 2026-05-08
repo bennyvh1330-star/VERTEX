@@ -698,6 +698,29 @@
     figures.forEach(f => io.observe(f));
   }
 
+  /* ---------- 12b. FLOW REVEAL — sequentially reveal arrow-flow SVG figures ---------- */
+  function initFlowReveal() {
+    const figs = document.querySelectorAll("figure[data-vx-flow]");
+    if (!figs.length) return;
+    figs.forEach(fig => {
+      const svg = fig.querySelector("svg");
+      if (!svg) return;
+      const steps = Array.from(svg.children);
+      if (!steps.length) return;
+      steps.forEach(s => s.classList.add("vx-flow-step"));
+      const reveal = () => {
+        steps.forEach((s, i) => setTimeout(() => s.classList.add("vx-in"), i * 520));
+      };
+      if (!("IntersectionObserver" in window)) { reveal(); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { reveal(); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.25 });
+      io.observe(fig);
+    });
+  }
+
   /* ---------- 13. CATEGORY HERO — split desc into subtitle + archive line ---------- */
   function initCategoryDescSplit() {
     const desc = document.querySelector(".vx-category-hero .desc");
@@ -730,6 +753,7 @@
     initKatex();
     initTTS();
     initFigureReveal();
+    initFlowReveal();
     initCategoryDescSplit();
   }
 
