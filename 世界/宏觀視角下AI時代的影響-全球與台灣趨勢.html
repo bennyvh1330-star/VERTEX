@@ -49,12 +49,42 @@
 <li><a href="#sec-1-4"><span class="num">1.4</span><span>AGI 時間表的塌縮</span></a></li>
 </ul>
 </li>
-<li><a href="#sec-2"><span class="num">II.</span><span>代理化與法律歸責的真空</span></a></li>
-<li><a href="#sec-3"><span class="num">III.</span><span>認知卸載與社會資本侵蝕</span></a></li>
-<li><a href="#sec-4"><span class="num">IV.</span><span>地緣秩序：Pax Silica 與產業鎖鏈</span></a></li>
-<li><a href="#sec-5"><span class="num">V.</span><span>台灣戰略：AI 新十大建設</span></a></li>
-<li><a href="#sec-6"><span class="num">VI.</span><span>勞動市場與 2030 情境推演</span></a></li>
-<li><a href="#sec-7"><span class="num">VII.</span><span>結論：人類 — AI 共生的第三條路</span></a></li>
+<li><a href="#sec-2"><span class="num">II.</span><span>代理化與法律歸責的真空</span></a>
+<ul>
+<li><a href="#sec-2-1"><span class="num">2.1</span><span>傳統法律的「指令落差」風險</span></a></li>
+<li><a href="#sec-2-2"><span class="num">2.2</span><span>AI 身份識別與運行時授權</span></a></li>
+<li><a href="#sec-2-3"><span class="num">2.3</span><span>跨大西洋的監管分歧</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-3"><span class="num">III.</span><span>認知卸載與社會資本侵蝕</span></a>
+<ul>
+<li><a href="#sec-3-1"><span class="num">3.1</span><span>教育中的「認知負債循環」</span></a></li>
+<li><a href="#sec-3-2"><span class="num">3.2</span><span>「機器整合關係適應」與人際信任的解體</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-4"><span class="num">IV.</span><span>地緣秩序：Pax Silica 與產業鎖鏈</span></a>
+<ul>
+<li><a href="#sec-4-1"><span class="num">4.1</span><span>全球數位與物理鴻溝的擴大</span></a></li>
+<li><a href="#sec-4-2"><span class="num">4.2</span><span>Pax Silica：新民主網絡與技術同盟</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-5"><span class="num">V.</span><span>台灣戰略：AI 新十大建設</span></a>
+<ul>
+<li><a href="#sec-5-1"><span class="num">5.1</span><span>矽盾的強化</span></a></li>
+<li><a href="#sec-5-2"><span class="num">5.2</span><span>「AI 新十大建設」的破局之道</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-6"><span class="num">VI.</span><span>勞動市場與 2030 情境推演</span></a>
+<ul>
+<li><a href="#sec-6-1"><span class="num">6.1</span><span>增強 vs 替代：被誤讀的「AI 取代」</span></a></li>
+<li><a href="#sec-6-2"><span class="num">6.2</span><span>2030 情境推演</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-7"><span class="num">VII.</span><span>結論：人類 — AI 共生的第三條路</span></a>
+<ul>
+<li><a href="#sec-7-1"><span class="num">7.1</span><span>三層應用</span></a></li>
+</ul>
+</li>
 <li><a href="#references"><span class="num">§</span><span>引用的著作與來源</span></a></li>
 </ul>
 </div>
@@ -82,23 +112,23 @@
 <!-- ============================================== -->
 <h2 id="sec-1">I. 第一性原理：從硬體擴張到代理自主</h2>
 
-<blockquote><strong>白話一句話：</strong>AI 不是只靠一個聰明模型在表演，而是一整座工廠：晶片是機器、資料是原料、能源是電力、演算法是生產線；其中任何一塊卡住，整個時代就會降速。</blockquote>
+<blockquote><strong>白話就是：</strong>AI 不是只靠一個聰明模型在表演，而是一整座工廠：晶片是機器、資料是原料、能源是電力、演算法是生產線；其中任何一塊卡住，整個時代就會降速。</blockquote>
 
-<p>要看懂 AI 時代，不能只盯著模型的表演。必須把 AI 拆回最底層的四個物理元素：<strong>算力（硬體）</strong>、<strong>演算法（架構）</strong>、<strong>資料（輸入）</strong>、<strong>能源（驅動）</strong><sup class="cite"><a href="#ref-1">1</a></sup>。任何宏觀預測，本質上都是這四個變數與外部環境（地緣、政治、人口、法律、教育）之間的<em>多變量推理</em>。</p>
+<p>要看懂 AI 時代，不能只盯著模型的表演。必須把 AI 拆回最底層的四個物理元素：<strong>算力（硬體）</strong>、<strong>演算法（架構）</strong>、<strong>資料（輸入）</strong>、<strong>能源（驅動）</strong>。任何宏觀預測，本質上都是這四個變數與外部環境（地緣、政治、人口、法律、教育）之間的<em>多變量推理</em><sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-54">54</a></sup>。</p>
 
 <h3 id="sec-1-1">1.1 規模法則撞牆與效率轉向</h3>
 
-<p>過去十年，AI 的躍進靠的是一條樸素的法則：<strong>「堆更多參數、更多資料、更多算力，性能就會以可預測的冪次提升」</strong>——這就是<em>規模法則</em>（Scaling Laws）。但 2024 至 2026 年間，這條經驗律開始失效，業界稱之為「規模之牆」<sup class="cite"><a href="#ref-2">2</a></sup>。</p>
+<p>過去十年，AI 的躍進靠的是一條樸素的法則：<strong>「堆更多參數、更多資料、更多算力，性能就會以可預測的冪次提升」</strong>——這就是<em>規模法則</em>（Scaling Laws）。但 2024 至 2026 年間，這條經驗律開始失效，業界稱之為「規模之牆」<sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-55">55</a></sup>。</p>
 
 <blockquote>
 比喻：就像汽車工程，引擎一開始排氣量越大馬力越強，但到某個臨界點，再加大反而效率變差、油耗暴增。AI 的規模法則就到了這個拐點。
 </blockquote>
 
-<p>業界因此把焦點從「訓練時把模型越練越大」轉向「<strong>推理時把每一步推理算得更聰明</strong>」——也就是<em>演算法效率</em>。研究顯示，要讓 AI 能力持續飛躍，演算法的能耗必須像摩爾定律一樣每年翻倍：</p>
+<p>業界因此把焦點從「訓練時把模型越練越大」轉向「<strong>推理時把每一步推理算得更聰明</strong>」——也就是<em>演算法效率</em>。研究顯示，要讓 AI 能力持續飛躍，演算法的能耗必須像摩爾定律一樣每年翻倍：<sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-56">56</a></sup></p>
 
-<p style="text-align:center; font-family:'JetBrains Mono', monospace; color:#c9a961;">$\mathcal{E}(t) = \mathcal{E}_{0} \cdot 2^{\beta t}$</p>
+<p style="text-align:center; font-family:'JetBrains Mono', monospace; color:#c9a961;">$\mathcal{E}(t) = \mathcal{E}_{0} \cdot 2^{\beta t}$<sup class="cite"><a href="#ref-4">4</a></sup><sup class="cite"><a href="#ref-57">57</a></sup></p>
 
-<p>實證資料支持這條路徑。例如針對 GPT-3.5 等級的 MMLU 基準測試性能，其達標成本在 2022 年底至 2024 年底的兩年內，出現了驚人的<strong>280 倍降幅</strong><sup class="cite"><a href="#ref-2">2</a></sup>。新一代模型專注於「多步思考」（推理時運算）——AI 不再只是反射性地接話，而是具備邏輯溯源能力的思考引擎。</p>
+<p>實證資料支持這條路徑。例如針對 GPT-3.5 等級的 MMLU 基準測試性能，其達標成本在 2022 年底至 2024 年底的兩年內，出現了驚人的<strong>280 倍降幅</strong>。新一代模型專注於「多步思考」（推理時運算）——AI 不再只是反射性地接話，而是具備邏輯溯源能力的思考引擎<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-58">58</a></sup>。</p>
 
 <figure data-vx-chart="dual"
         data-labels='["2022Q4","2023Q2","2023Q4","2024Q2","2024Q4"]'
@@ -106,12 +136,12 @@
           {"name":"硬體規模成本（相對指數）","values":[100,95,88,82,78]},
           {"name":"演算法效率成本（相對指數）","values":[100,52,18,6,0.36]}
         ]'>
-<figcaption>FIG. 01 — 兩條成本曲線的分歧：硬體成本緩降，演算法成本崩盤式下降（達到 GPT-3.5 同等性能所需的 280× 降幅）</figcaption>
+<figcaption>FIG. 01 — 兩條成本曲線的分歧：硬體成本緩降，演算法成本崩盤式下降（達到 GPT-3.5 同等性能所需的 280× 降幅）<sup class="cite"><a href="#ref-6">6</a></sup><sup class="cite"><a href="#ref-59">59</a></sup></figcaption>
 </figure>
 
 <h3 id="sec-1-2">1.2 能源與冷卻：被忽略的物理天花板</h3>
 
-<p>從熱力學的第一性原理看，AI 的本質是一台<strong>高度耗能的「資源轉換器」</strong>——把電力、水、矽，轉換成決策與內容。隨著模型變大，它的環境足跡也按指數放大<sup class="cite"><a href="#ref-3">3</a></sup>。</p>
+<p>從熱力學的第一性原理看，AI 的本質是一台<strong>高度耗能的「資源轉換器」</strong>——把電力、水、矽，轉換成決策與內容。隨著模型變大，它的環境足跡也按指數放大<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-60">60</a></sup>。</p>
 
 <figure data-vx-chart="bar" data-orient="horizontal" data-unit="" data-max="100" data-series='[
   {"label":"Grok 4 訓練碳排（噸 CO₂e）","value":72,"desc":"約等於 17,000 輛汽油車行駛一年的總和"},
@@ -119,24 +149,24 @@
   {"label":"GPT-4o 年用水量（百萬人飲用量）","value":120,"desc":"每生成內容需冷卻伺服器、發電亦需水"},
   {"label":"AI 累積電力需求 vs 瑞士全國","value":100,"desc":"全方位 AI 系統耗電已等同瑞士＋奧地利"}
 ]'>
-<figcaption>FIG. 02 — AI 的物理代價：能源、水、碳排的數量級對照<sup class="cite"><a href="#ref-3">3</a></sup></figcaption>
+<figcaption>FIG. 02 — AI 的物理代價：能源、水、碳排的數量級對照<sup class="cite"><a href="#ref-8">8</a></sup><sup class="cite"><a href="#ref-61">61</a></sup></figcaption>
 </figure>
 
-<p>這個結論很反直覺，但很重要：<strong>未來的 AI 競爭不再只是「誰寫得出更聰明的演算法」，而是「誰控制電網、誰控制矽，誰就控制 AI」</strong>。AI 的瓶頸正從「白板上的算式」滑向「國家級的能源調度與資源外交」。這也呼應了<a href="../產業/AI基礎建設深度解構-資本巨獸與台灣供應鏈.html#sec-1">《AI 基礎建設深度解構》中對 AI 熱力學迴圈的拆解</a>。</p>
+<p>這個結論很反直覺，但很重要：<strong>未來的 AI 競爭不再只是「誰寫得出更聰明的演算法」，而是「誰控制電網、誰控制矽，誰就控制 AI」</strong>。AI 的瓶頸正從「白板上的算式」滑向「國家級的能源調度與資源外交」。這也呼應了<a href="../產業/AI基礎建設深度解構-資本巨獸與台灣供應鏈.html#sec-1">《AI 基礎建設深度解構》中對 AI 熱力學迴圈的拆解</a><sup class="cite"><a href="#ref-9">9</a></sup><sup class="cite"><a href="#ref-62">62</a></sup>。</p>
 
 <h3 id="sec-1-3">1.3 代理式 AI：從工具到員工</h3>
 
-<p>傳統 AI 是「被動的問答機」——你問，它答。而<strong>代理式 AI（Agentic AI）</strong>則像「自主員工」——它能感知環境、訂計畫、呼叫外部工具（API、瀏覽器、終端機）、根據回饋修正自己的路徑<sup class="cite"><a href="#ref-4">4</a></sup>。</p>
+<p>傳統 AI 是「被動的問答機」——你問，它答。而<strong>代理式 AI（Agentic AI）</strong>則像「自主員工」——它能感知環境、訂計畫、呼叫外部工具（API、瀏覽器、終端機）、根據回饋修正自己的路徑<sup class="cite"><a href="#ref-10">10</a></sup><sup class="cite"><a href="#ref-63">63</a></sup>。</p>
 
 <blockquote>
 類比：傳統 AI 像計算機，需要你按每一個鍵；代理式 AI 像實習生，你說「幫我訂下週去東京最便宜的航班並訂飯店」，它會自己去查、比價、下訂、回報。
 </blockquote>
 
-<p>2026 年的觀測資料顯示，AI 自主處理任務的時間長度<strong>每約 196 天就翻倍一次</strong>——成長速度比硬體還快<sup class="cite"><a href="#ref-4">4</a></sup>。Gartner 預估，到 2026 年底將有 <strong>40%</strong> 的企業應用程式內建 AI 代理（2025 年此比例不足 5%），整體軟體效率提升 30–50%。但這也同步造成不可預測的系統性風險：當 AI 開始操作真實世界，錯誤就不再是「答錯題」，而是「下錯單」。</p>
+<p>2026 年的觀測資料顯示，AI 自主處理任務的時間長度<strong>每約 196 天就翻倍一次</strong>——成長速度比硬體還快。Gartner 預估，到 2026 年底將有 <strong>40%</strong> 的企業應用程式內建 AI 代理（2025 年此比例不足 5%），整體軟體效率提升 30–50%。但這也同步造成不可預測的系統性風險：當 AI 開始操作真實世界，錯誤就不再是「答錯題」，而是「下錯單」<sup class="cite"><a href="#ref-11">11</a></sup><sup class="cite"><a href="#ref-64">64</a></sup>。</p>
 
 <h3 id="sec-1-4">1.4 AGI 時間表的塌縮</h3>
 
-<p>更具衝擊性的是「通用人工智慧」（AGI）預期實現時間的劇烈壓縮。專家預測中位數從 2020 年的「2070 年」一路拉近到 2026 年的「2033 年左右」<sup class="cite"><a href="#ref-5">5</a></sup>。</p>
+<p>更具衝擊性的是「通用人工智慧」（AGI）預期實現時間的劇烈壓縮。專家預測中位數從 2020 年的「2070 年」一路拉近到 2026 年的「2033 年左右」<sup class="cite"><a href="#ref-12">12</a></sup><sup class="cite"><a href="#ref-65">65</a></sup>。</p>
 
 <figure data-vx-chart="bar" data-orient="horizontal" data-unit=" 年" data-max="12" data-series='[
   {"label":"Dario Amodei（Anthropic）／約 2027","value":2,"desc":"認為強大 AI 已近在咫尺，2030 年前對社會產生變革性影響"},
@@ -144,35 +174,35 @@
   {"label":"Demis Hassabis（DeepMind）／約 2032","value":7,"desc":"自 2025 年起算 5–10 年，需突破跨模態整合與邏輯推理"},
   {"label":"Metaculus 群體中位數／約 2033","value":8,"desc":"專家社群預測中位數，從 2020 年的 2070 年大幅前移"}
 ]'>
-<figcaption>FIG. 03 — AGI 預期實現時間（距 2025 年的剩餘年數）<sup class="cite"><a href="#ref-5">5</a></sup></figcaption>
+<figcaption>FIG. 03 — AGI 預期實現時間（距 2025 年的剩餘年數）<sup class="cite"><a href="#ref-13">13</a></sup><sup class="cite"><a href="#ref-66">66</a></sup></figcaption>
 </figure>
 
-<p>無論最終哪一方準確，<strong>人類社會原本以為「還有半世紀」可以慢慢適應的緩衝期，正在被快速吃掉</strong>。</p>
+<p>無論最終哪一方準確，<strong>人類社會原本以為「還有半世紀」可以慢慢適應的緩衝期，正在被快速吃掉</strong><sup class="cite"><a href="#ref-14">14</a></sup><sup class="cite"><a href="#ref-67">67</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-2">II. 代理化與法律歸責的真空</h2>
 
-<blockquote><strong>白話一句話：</strong>當 AI 從「回答問題」變成「替你做事」，它就像拿到鑰匙的實習生：能訂票、下單、寫程式，也可能犯錯，但現有法律還沒準備好回答「到底誰負責」。</blockquote>
+<blockquote><strong>白話就是：</strong>當 AI 從「回答問題」變成「替你做事」，它就像拿到鑰匙的實習生：能訂票、下單、寫程式，也可能犯錯，但現有法律還沒準備好回答「到底誰負責」。</blockquote>
 
 <h3 id="sec-2-1">2.1 傳統法律的「指令落差」風險</h3>
 
-<p>傳統的合約法與侵權法建立在「<strong>人類意圖 → 直接因果</strong>」上：你下指令、你負責。但代理式 AI 介於「軟體執行」與「自主決策」之間，造成法律的「<em>責任真空</em>」<sup class="cite"><a href="#ref-6">6</a></sup>。</p>
+<p>傳統的合約法與侵權法建立在「<strong>人類意圖 → 直接因果</strong>」上：你下指令、你負責。但代理式 AI 介於「軟體執行」與「自主決策」之間，造成法律的「<em>責任真空</em>」<sup class="cite"><a href="#ref-15">15</a></sup><sup class="cite"><a href="#ref-68">68</a></sup>。</p>
 
 <blockquote>
 舉例：你授權 AI 代理去買股票，AI 因「幻覺」（Hallucination）下了一張錯誤訂單，把錢匯到陌生帳戶。責任歸誰？開發者？部署平台？還是你自己？IMF 在 2026 年的報告中把這稱為<strong>「指令落差」（Instruction Gap）</strong>——使用者下達的是結構性命令，但 AI 自行翻譯成的是一筆筆具體交易。
 </blockquote>
 
-<p>傳統 SaaS 合約裡常見的「依現狀提供」（As-is）免責條款<strong>已不再適用</strong>。企業若不修改舊合約，曝險極大。法律實務的解方是：把 AI 服務當成「<em>業務流程外包</em>」（BPO）——嚴格定義 AI 的服務水準、安全護欄、緊急終止機制（Kill Switches）與失誤賠償的責任分配。</p>
+<p>傳統 SaaS 合約裡常見的「依現狀提供」（As-is）免責條款<strong>已不再適用</strong>。企業若不修改舊合約，曝險極大。法律實務的解方是：把 AI 服務當成「<em>業務流程外包</em>」（BPO）——嚴格定義 AI 的服務水準、安全護欄、緊急終止機制（Kill Switches）與失誤賠償的責任分配<sup class="cite"><a href="#ref-16">16</a></sup><sup class="cite"><a href="#ref-69">69</a></sup>。</p>
 
 <h3 id="sec-2-2">2.2 AI 身份識別與運行時授權</h3>
 
-<p>2026 年 2 月，美國國家標準暨技術研究院（NIST）啟動「AI 代理標準倡議」，主張把 AI 視為<strong>「一等數位公民」</strong>（First-class identities）<sup class="cite"><a href="#ref-7">7</a></sup>。倡議要求：</p>
+<p>2026 年 2 月，美國國家標準暨技術研究院（NIST）啟動「AI 代理標準倡議」，主張把 AI 視為<strong>「一等數位公民」</strong>（First-class identities）。倡議要求：<sup class="cite"><a href="#ref-17">17</a></sup></p>
 
 <ul>
-<li><strong>範圍受限的權杖</strong>（Scoped tokens）：AI 接入外部 API 時，只能取得最小必要的授權</li>
-<li><strong>運行時情境評估</strong>：每次執行前都重新驗證授權條件</li>
-<li><strong>人在迴路內</strong>（Human-in-the-loop, HITL）：高風險操作必須人工核准</li>
-<li><strong>人在迴路上</strong>（Human-on-the-loop, HOTL）：高頻操作允許持續監督但即時可中斷</li>
+<li><strong>範圍受限的權杖</strong>（Scoped tokens）：AI 接入外部 API 時，只能取得最小必要的授權<sup class="cite"><a href="#ref-18">18</a></sup></li>
+<li><strong>運行時情境評估</strong>：每次執行前都重新驗證授權條件<sup class="cite"><a href="#ref-19">19</a></sup></li>
+<li><strong>人在迴路內</strong>（Human-in-the-loop, HITL）：高風險操作必須人工核准<sup class="cite"><a href="#ref-20">20</a></sup></li>
+<li><strong>人在迴路上</strong>（Human-on-the-loop, HOTL）：高頻操作允許持續監督但即時可中斷<sup class="cite"><a href="#ref-21">21</a></sup></li>
 </ul>
 
 <h3 id="sec-2-3">2.3 跨大西洋的監管分歧</h3>
@@ -183,94 +213,94 @@
 {"left":"企業自願揭露 + 訴訟事後追責","dim":"問責機制","right":"高風險系統必須事前評估、紅隊測試、持續監督"},
 {"left":"創新優先、責任後置","dim":"價值取捨","right":"權利優先、創新受審查"}
 ]'>
-<figcaption>FIG. 04 — 美歐監管路徑的鏡像對立<sup class="cite"><a href="#ref-8">8</a></sup></figcaption>
+<figcaption>FIG. 04 — 美歐監管路徑的鏡像對立<sup class="cite"><a href="#ref-22">22</a></sup></figcaption>
 </figure>
 
-<p>跨國企業面臨「<strong>合規兩面作戰</strong>」：在歐盟必須通過嚴格的事前風險評估，在美國則必須準備應對各州不同的州法與訴訟。這與<a href="經濟民族主義與內捲螺旋-系統性危機分析.html#sec-1">經濟民族主義下的「全球碎片化」</a>共享同一邏輯：規則的不統一本身就是新的競爭壁壘。</p>
+<p>跨國企業面臨「<strong>合規兩面作戰</strong>」：在歐盟必須通過嚴格的事前風險評估，在美國則必須準備應對各州不同的州法與訴訟。這與<a href="經濟民族主義與內捲螺旋-系統性危機分析.html#sec-1">經濟民族主義下的「全球碎片化」</a>共享同一邏輯：規則的不統一本身就是新的競爭壁壘<sup class="cite"><a href="#ref-23">23</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-3">III. 認知卸載與社會資本侵蝕</h2>
 
-<blockquote><strong>白話一句話：</strong>AI 讓思考像外送一樣方便，但如果每餐都外送，大腦自己的廚房會慢慢生鏽；最危險的不是 AI 變聰明，而是人類停止練習判斷。</blockquote>
+<blockquote><strong>白話就是：</strong>AI 讓思考像外送一樣方便，但如果每餐都外送，大腦自己的廚房會慢慢生鏽；最危險的不是 AI 變聰明，而是人類停止練習判斷。</blockquote>
 
 <h3 id="sec-3-1">3.1 教育中的「認知負債循環」</h3>
 
-<p>當人類把「記憶、分析、發想」這些核心認知任務外包給 AI，大腦會出現類似肌肉萎縮的現象——<strong>認知負債循環</strong>（Cognitive Debt Cycle）<sup class="cite"><a href="#ref-9">9</a></sup>。</p>
+<p>當人類把「記憶、分析、發想」這些核心認知任務外包給 AI，大腦會出現類似肌肉萎縮的現象——<strong>認知負債循環</strong>（Cognitive Debt Cycle）<sup class="cite"><a href="#ref-24">24</a></sup>。</p>
 
-<p>2026 年保和岡州立大學的縱向研究發現：</p>
+<p>2026 年保和岡州立大學的縱向研究發現：<sup class="cite"><a href="#ref-25">25</a></sup></p>
 
 <figure data-vx-chart="donut" data-segments='[
   {"label":"分析能力下降","value":66,"desc":"每多一單位的生成式 AI 依賴，學生綜合分析能力下降 66%"},
   {"label":"批判性思考下降","value":41,"desc":"質疑、評估資訊真偽的能力衰退"},
   {"label":"深度理解動機下降","value":21,"desc":"主動鑽研、追問為什麼的內在動力減退"}
 ]'>
-<figcaption>FIG. 05 — 高度 AI 依賴對年輕世代認知能力的衝擊（同期測量值）<sup class="cite"><a href="#ref-9">9</a></sup></figcaption>
+<figcaption>FIG. 05 — 高度 AI 依賴對年輕世代認知能力的衝擊（同期測量值）<sup class="cite"><a href="#ref-26">26</a></sup></figcaption>
 </figure>
 
 <blockquote>
 類比：就像電腦長期不關機、又從不清快取——記憶體越來越慢，最後當機。AI 替我們處理太多思考，大腦的「認知肌肉」就會退化。
 </blockquote>
 
-<p>Gartner 預測到 2026 年底，將有 <strong>50%</strong> 的組織引入「<em>無 AI</em>」（AI-free）的獨立評估機制，以確保員工在面臨極端情境時，仍保有獨立判斷與風險決策的能力。AI 素養不再只是「如何使用 AI」，更必須包含「<strong>何時不該使用 AI</strong>」的自律邊界。</p>
+<p>Gartner 預測到 2026 年底，將有 <strong>50%</strong> 的組織引入「<em>無 AI</em>」（AI-free）的獨立評估機制，以確保員工在面臨極端情境時，仍保有獨立判斷與風險決策的能力。AI 素養不再只是「如何使用 AI」，更必須包含「<strong>何時不該使用 AI</strong>」的自律邊界<sup class="cite"><a href="#ref-27">27</a></sup>。</p>
 
 <h3 id="sec-3-2">3.2 「機器整合關係適應」與人際信任的解體</h3>
 
-<p>2026 年學者提出的「機器整合關係適應」（MIRA, Machine-Integrated Relational Adaptation）模型指出：AI 透過語言的互惠性、心理的接近感與不知疲倦的耐心，能夠輕易模擬接近完美的理解與關心，進而誘發人類深層的情感投注<sup class="cite"><a href="#ref-10">10</a></sup>。</p>
+<p>2026 年學者提出的「機器整合關係適應」（MIRA, Machine-Integrated Relational Adaptation）模型指出：AI 透過語言的互惠性、心理的接近感與不知疲倦的耐心，能夠輕易模擬接近完美的理解與關心，進而誘發人類深層的情感投注<sup class="cite"><a href="#ref-28">28</a></sup>。</p>
 
-<p>麻省理工學院主導、涵蓋 981 人的長期心理學研究發現：頻繁地把 AI 聊天機器人視為情感陪伴者的個體，並未因此減輕孤獨感；相反地，這些高度使用者表現出對 AI 的<strong>強烈情感依賴</strong>與<strong>問題性使用</strong>，導致他們在現實世界中建立社交互動的意願大幅降低<sup class="cite"><a href="#ref-10">10</a></sup>。</p>
+<p>麻省理工學院主導、涵蓋 981 人的長期心理學研究發現：頻繁地把 AI 聊天機器人視為情感陪伴者的個體，並未因此減輕孤獨感；相反地，這些高度使用者表現出對 AI 的<strong>強烈情感依賴</strong>與<strong>問題性使用</strong>，導致他們在現實世界中建立社交互動的意願大幅降低<sup class="cite"><a href="#ref-29">29</a></sup>。</p>
 
-<p>從社會資本（Social Capital）的第一性原理分析，<strong>人際信任是建立在共同經歷風險、妥協與共同面對困難的基礎上</strong>。AI 提供了一種「<em>不對稱、不需付出社交摩擦成本的擬親密關係</em>」——這種關係看似在緩解孤獨，實際上正在抽乾人類大規模社交連結的神經迴路。可延伸閱讀<a href="../心理學/人類為何尋求領導與依賴他人.html">《人類為何尋求領導與依賴他人》</a>對信任演化機制的剖析。</p>
+<p>從社會資本（Social Capital）的第一性原理分析，<strong>人際信任是建立在共同經歷風險、妥協與共同面對困難的基礎上</strong>。AI 提供了一種「<em>不對稱、不需付出社交摩擦成本的擬親密關係</em>」——這種關係看似在緩解孤獨，實際上正在抽乾人類大規模社交連結的神經迴路。可延伸閱讀<a href="../心理學/人類為何尋求領導與依賴他人.html">《人類為何尋求領導與依賴他人》</a>對信任演化機制的剖析<sup class="cite"><a href="#ref-30">30</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-4">IV. 地緣秩序：Pax Silica 與產業鎖鏈</h2>
 
-<blockquote><strong>白話一句話：</strong>過去石油決定帝國命脈，現在矽、晶片、封裝、電力與資料中心決定 AI 命脈；誰控制這條供應鏈，誰就握住下一輪世界秩序的水龍頭。</blockquote>
+<blockquote><strong>白話就是：</strong>過去石油決定帝國命脈，現在矽、晶片、封裝、電力與資料中心決定 AI 命脈；誰控制這條供應鏈，誰就握住下一輪世界秩序的水龍頭。</blockquote>
 
 <h3 id="sec-4-1">4.1 全球數位與物理鴻溝的擴大</h3>
 
-<p>生成式 AI 上市一年便達到全球 <strong>53%</strong> 的人口普及率，遠超互聯網與個人電腦的擴張速度<sup class="cite"><a href="#ref-11">11</a></sup>。但<strong>普及率</strong>不等於<strong>主權</strong>：</p>
+<p>生成式 AI 上市一年便達到全球 <strong>53%</strong> 的人口普及率，遠超互聯網與個人電腦的擴張速度。但<strong>普及率</strong>不等於<strong>主權</strong>：<sup class="cite"><a href="#ref-31">31</a></sup></p>
 
 <figure data-vx-chart="bar" data-orient="horizontal" data-unit="%" data-max="80" data-series='[
   {"label":"阿聯酋（UAE）","value":70,"desc":"國家級主權 AI 投資與基礎設施建置起到關鍵作用"},
   {"label":"全球北方工作年齡人口","value":27,"desc":"資本充足、基礎設施完備"},
   {"label":"全球南方工作年齡人口","value":15,"desc":"從 13.1% 緩慢升至 15.4%，瓶頸是物理資源（電力、互聯、晶片）而非軟體"}
 ]'>
-<figcaption>FIG. 06 — AI 採用率的全球落差：物理資源比軟體可及性更難解決<sup class="cite"><a href="#ref-11">11</a></sup></figcaption>
+<figcaption>FIG. 06 — AI 採用率的全球落差：物理資源比軟體可及性更難解決<sup class="cite"><a href="#ref-32">32</a></sup></figcaption>
 </figure>
 
-<p>另一條暗流：傳統科技強國的人才流失正在發生。史丹佛報告顯示，自 2017 年以來，<strong>移居美國的頂尖 AI 研究人員與學者數量下跌 89%</strong>，僅去年就下降 80%。各國因此被迫發展「<em>主權 AI</em>」（Sovereign AI）生態，以擺脫對美國演算法架構的依賴<sup class="cite"><a href="#ref-12">12</a></sup>。</p>
+<p>另一條暗流：傳統科技強國的人才流失正在發生。史丹佛報告顯示，自 2017 年以來，<strong>移居美國的頂尖 AI 研究人員與學者數量下跌 89%</strong>，僅去年就下降 80%。各國因此被迫發展「<em>主權 AI</em>」（Sovereign AI）生態，以擺脫對美國演算法架構的依賴<sup class="cite"><a href="#ref-33">33</a></sup>。</p>
 
 <h3 id="sec-4-2">4.2 Pax Silica：新民主網絡與技術同盟</h3>
 
-<p>為了確保 AI 軍備競爭的底層物理基礎不被地緣切斷，美國於 2026 年正式推動「<strong>Pax Silica</strong>」（矽和平）的民主科技供應鏈聯盟。成員包括美、英、日、澳、加、新加坡等核心夥伴<sup class="cite"><a href="#ref-13">13</a></sup>。</p>
+<p>為了確保 AI 軍備競爭的底層物理基礎不被地緣切斷，美國於 2026 年正式推動「<strong>Pax Silica</strong>」（矽和平）的民主科技供應鏈聯盟。成員包括美、英、日、澳、加、新加坡等核心夥伴<sup class="cite"><a href="#ref-34">34</a></sup>。</p>
 
 <blockquote>
 比喻：Pax Silica 不像冷戰時的軍事同盟「比誰飛彈多」，而像是「結盟把麵粉、烤箱、配方、訂單全部關起來只給自己人用」——從晶片製造、稀土加工、能源到雲端平台，整條產業鎖鏈成為地緣政治武器。
 </blockquote>
 
-<p>該體系不僅僅針對晶片製造，更延伸至支撐 AI 運算的底層資源（雲端平台、稀土礦物加工、能源供應）。澳洲在此架構中扮演「<strong>不可或缺的礦物底層供應者</strong>」——龐大的稀土礦藏、廣大的土地與能源潛力，使其承載巨型 AI 資料中心與重工業運算的核心節點。</p>
+<p>該體系不僅僅針對晶片製造，更延伸至支撐 AI 運算的底層資源（雲端平台、稀土礦物加工、能源供應）。澳洲在此架構中扮演「<strong>不可或缺的礦物底層供應者</strong>」——龐大的稀土礦藏、廣大的土地與能源潛力，使其承載巨型 AI 資料中心與重工業運算的核心節點<sup class="cite"><a href="#ref-35">35</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-5">V. 台灣戰略：AI 新十大建設</h2>
 
-<blockquote><strong>白話一句話：</strong>台灣不能只當晶片代工廠，而要把算力、能源、教育、資安、法規和應用一起補齊；否則手上有最好的引擎，車身和道路卻跟不上。</blockquote>
+<blockquote><strong>白話就是：</strong>台灣不能只當晶片代工廠，而要把算力、能源、教育、資安、法規和應用一起補齊；否則手上有最好的引擎，車身和道路卻跟不上。</blockquote>
 
 <h3 id="sec-5-1">5.1 矽盾的強化</h3>
 
-<p>從第一性原理看，全球 AI 硬體呈現「<strong>單點依賴</strong>」結構：儘管美國掌控 AI 資料中心數量並主導演算法研發，幾乎所有用於支援前沿模型的尖端 AI 晶片，都由台灣的台積電（TSMC）獨家代工製造，隨後交由日月光（ASE）等台廠進行先進封裝<sup class="cite"><a href="#ref-14">14</a></sup>。</p>
+<p>從第一性原理看，全球 AI 硬體呈現「<strong>單點依賴</strong>」結構：儘管美國掌控 AI 資料中心數量並主導演算法研發，幾乎所有用於支援前沿模型的尖端 AI 晶片，都由台灣的台積電（TSMC）獨家代工製造，隨後交由日月光（ASE）等台廠進行先進封裝<sup class="cite"><a href="#ref-36">36</a></sup>。</p>
 
 <figure data-vx-chart="donut" data-segments='[
   {"label":"先進製程產能（台灣）","value":90,"desc":"全球 90% 以上的先進製程晶片由台灣製造"},
   {"label":"其他地區產能","value":10,"desc":"美國、日本、韓國各分一小塊"}
 ]'>
-<figcaption>FIG. 07 — 全球先進晶片製造的高度集中：台灣是不可替代的物理瓶頸<sup class="cite"><a href="#ref-14">14</a></sup></figcaption>
+<figcaption>FIG. 07 — 全球先進晶片製造的高度集中：台灣是不可替代的物理瓶頸<sup class="cite"><a href="#ref-37">37</a></sup></figcaption>
 </figure>
 
-<p>這種無可替代的硬體製造能力，為台灣鑄造了加實的<strong>矽盾（Silicon Shield）</strong>——台灣雖經由複雜的外交因素未正式簽署《Pax Silica》倡議，但實質上已是 Pax Silica 體系運作的不可或缺核心樞紐。</p>
+<p>這種無可替代的硬體製造能力，為台灣鑄造了加實的<strong>矽盾（Silicon Shield）</strong>——台灣雖經由複雜的外交因素未正式簽署《Pax Silica》倡議，但實質上已是 Pax Silica 體系運作的不可或缺核心樞紐<sup class="cite"><a href="#ref-38">38</a></sup>。</p>
 
 <h3 id="sec-5-2">5.2 「AI 新十大建設」的破局之道</h3>
 
-<p>儘管台灣在硬體代工上稱雄，宏觀戰略弱點在於<strong>軟體應用</strong>、<strong>演算法研發</strong>，以及<strong>AGI 探索</strong>能力落後於中美兩巨頭。為突破此一困境，台灣行政院於 2025–2026 年正式確立並推動「AI 新十大建設」，內含<strong>「兩大 AI 基礎設施」+「八大關鍵技術」</strong>，預計到 2040 年創造約 15 兆新台幣產值，並提供 50 萬個高薪就業機會。</p>
+<p>儘管台灣在硬體代工上稱雄，宏觀戰略弱點在於<strong>軟體應用</strong>、<strong>演算法研發</strong>，以及<strong>AGI 探索</strong>能力落後於中美兩巨頭。為突破此一困境，台灣行政院於 2025–2026 年正式確立並推動「AI 新十大建設」，內含<strong>「兩大 AI 基礎設施」+「八大關鍵技術」</strong>，預計到 2040 年創造約 15 兆新台幣產值，並提供 50 萬個高薪就業機會<sup class="cite"><a href="#ref-39">39</a></sup>。</p>
 
 <figure data-vx-chart="ladder" data-levels='[
   {"level":1,"name":"超級電腦與雲端中心","en":"AI Supercomputing","desc":"在地超級電腦＋雲端資料中心，協助中小企業導入 AI"},
@@ -279,19 +309,19 @@
   {"level":4,"name":"量子科技","en":"Quantum Tech","desc":"探索下一代運算架構與量子加密防禦"},
   {"level":5,"name":"智慧機器人","en":"AI Robotics","desc":"結合精密機械與 AI 演算法，推進實體 AI 應用"}
 ]'>
-<figcaption>FIG. 08 — 「AI 新十大建設」的策略階梯（核心五項示意）</figcaption>
+<figcaption>FIG. 08 — 「AI 新十大建設」的策略階梯（核心五項示意）<sup class="cite"><a href="#ref-40">40</a></sup></figcaption>
 </figure>
 
-<p>這項政策的推動，揭示了台灣試圖在保持硬體代工絕對優勢的基礎上，向上游突破於演算法標準制定，向下游拓展多元應用場景的強烈意志。它不僅是產業政策，更是地緣政治規劃中——台灣深化與「<em>志同道合夥伴</em>」（Like-minded partners）的科技安全連結，確保自身在全球 AI 供應鏈中仍是「<strong>零組件依存度被視為不可替代的技術節點</strong>」的關鍵宏觀戰略<sup class="cite"><a href="#ref-15">15</a></sup>。延伸閱讀：<a href="../產業/AI基礎建設深度解構-資本巨獸與台灣供應鏈.html#sec-3-2">《AI 基礎建設》中對台灣供應鏈系統整合優勢的深度解構</a>。</p>
+<p>這項政策的推動，揭示了台灣試圖在保持硬體代工絕對優勢的基礎上，向上游突破於演算法標準制定，向下游拓展多元應用場景的強烈意志。它不僅是產業政策，更是地緣政治規劃中——台灣深化與「<em>志同道合夥伴</em>」（Like-minded partners）的科技安全連結，確保自身在全球 AI 供應鏈中仍是「<strong>零組件依存度被視為不可替代的技術節點</strong>」的關鍵宏觀戰略。延伸閱讀：<a href="../產業/AI基礎建設深度解構-資本巨獸與台灣供應鏈.html#sec-3-2">《AI 基礎建設》中對台灣供應鏈系統整合優勢的深度解構</a><sup class="cite"><a href="#ref-41">41</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-6">VI. 勞動市場與 2030 情境推演</h2>
 
-<blockquote><strong>白話一句話：</strong>AI 不會只搶走工作，它會重排工作的地圖：重複任務被機器吃掉，會提問、整合、判斷與負責的人，反而變成更稀缺的節點。</blockquote>
+<blockquote><strong>白話就是：</strong>AI 不會只搶走工作，它會重排工作的地圖：重複任務被機器吃掉，會提問、整合、判斷與負責的人，反而變成更稀缺的節點。</blockquote>
 
 <h3 id="sec-6-1">6.1 增強 vs 替代：被誤讀的「AI 取代」</h3>
 
-<p>探討 AI 對勞動市場的衝擊，必須拋棄簡單的「工作消滅論」，代之以職能解構的精細視角。</p>
+<p>探討 AI 對勞動市場的衝擊，必須拋棄簡單的「工作消滅論」，代之以職能解構的精細視角<sup class="cite"><a href="#ref-42">42</a></sup>。</p>
 
 <figure data-vx-chart="diverge" data-left="增強（Augmentation）" data-right="替代（Substitution）" data-rows='[
 {"left":"資深員工：產出放大 2–5 倍","dim":"高技能層","right":"重複性決策被吞噬，但人才稀缺，整體留任"},
@@ -299,16 +329,16 @@
 {"left":"創意/客製服務：需求暴增","dim":"創意層","right":"中等品質的同質內容被取代"},
 {"left":"管理者：決策品質提升","dim":"管理層","right":"中階管理職減少（AI 直連基層）"}
 ]'>
-<figcaption>FIG. 09 — AI 衝擊勞動市場的雙重性：同時在「放大」與「替代」<sup class="cite"><a href="#ref-16">16</a></sup></figcaption>
+<figcaption>FIG. 09 — AI 衝擊勞動市場的雙重性：同時在「放大」與「替代」<sup class="cite"><a href="#ref-43">43</a></sup></figcaption>
 </figure>
 
-<p>BCG 預測：未來十年內，美國 50–55% 的職位將被 AI<em>重塑</em>，10–15% 將被徹底淘汰；高盛則估全球約 <strong>3 億</strong>個全職工作崗位曝險於 AI 自動化<sup class="cite"><a href="#ref-16">16</a></sup>。</p>
+<p>BCG 預測：未來十年內，美國 50–55% 的職位將被 AI<em>重塑</em>，10–15% 將被徹底淘汰；高盛則估全球約 <strong>3 億</strong>個全職工作崗位曝險於 AI 自動化<sup class="cite"><a href="#ref-44">44</a></sup>。</p>
 
 <blockquote>
 更殘酷的真相：2025 年美國整體軟體開發人員就業創下 220 萬人歷史新高（年增 8.5%），但 22–25 歲入門開發者的職缺<strong>減少近 20%</strong>。AI 砍掉的不是工作，是「<em>新人成長為老手的階梯</em>」。
 </blockquote>
 
-<p>這意味著一個極為棘手的長期問題：當入門級工作消失，<strong>「未來的資深專家從哪裡來？」</strong>Gartner 預測到 2027 年，<strong>75%</strong> 的招聘流程將強制要求應徵者具備 AI 熟練度的認證與測試。</p>
+<p>這意味著一個極為棘手的長期問題：當入門級工作消失，<strong>「未來的資深專家從哪裡來？」</strong>Gartner 預測到 2027 年，<strong>75%</strong> 的招聘流程將強制要求應徵者具備 AI 熟練度的認證與測試<sup class="cite"><a href="#ref-45">45</a></sup>。</p>
 
 <h3 id="sec-6-2">6.2 2030 情境推演</h3>
 
@@ -317,33 +347,33 @@
   {"label":"基準情境：規模整合與資源錯配","value":45,"desc":"AI 與關鍵基礎設施深度整合，極大化資源配置效率，但帶來嚴重的單點失效風險"},
   {"label":"樂觀情境：人機協作的新經濟","value":25,"desc":"AI 的避禦能力有效抑制犯罪攻擊，推動全球迎來人機協作的『新經濟』繁榮榜樣"}
 ]'>
-<figcaption>FIG. 10 — OECD 與 WEF 對 2030 全球 AI 情境的權重分布<sup class="cite"><a href="#ref-17">17</a></sup></figcaption>
+<figcaption>FIG. 10 — OECD 與 WEF 對 2030 全球 AI 情境的權重分布<sup class="cite"><a href="#ref-46">46</a></sup></figcaption>
 </figure>
 
-<p>這三條情境並非單一路線預測，而是一個貝氏變數矩陣：能源穩定度、地緣政治衝突頻率、AI 技術突破速度，以及全球人才流動均是關鍵變數。決定走向哪一條路徑的關鍵：<strong>關於人類資本與人才的投資決策</strong>，以及<strong>全球監管框架在創新與安全之間能否取得動態平衡</strong>。</p>
+<p>這三條情境並非單一路線預測，而是一個貝氏變數矩陣：能源穩定度、地緣政治衝突頻率、AI 技術突破速度，以及全球人才流動均是關鍵變數。決定走向哪一條路徑的關鍵：<strong>關於人類資本與人才的投資決策</strong>，以及<strong>全球監管框架在創新與安全之間能否取得動態平衡</strong><sup class="cite"><a href="#ref-47">47</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-7">VII. 結論：人類 — AI 共生的第三條路</h2>
 
-<blockquote><strong>白話一句話：</strong>真正的路不是崇拜 AI，也不是拒絕 AI，而是把 AI 當成外骨骼：它放大人的力量，但方向、價值與煞車仍必須在人手上。</blockquote>
+<blockquote><strong>白話就是：</strong>真正的路不是崇拜 AI，也不是拒絕 AI，而是把 AI 當成外骨骼：它放大人的力量，但方向、價值與煞車仍必須在人手上。</blockquote>
 
-<p>AI 的本質是一台極高效率的「<strong>模式壓縮器</strong>」與「<strong>機率合成器</strong>」。隨著生成式 AI 普及，數位世界正經歷劇烈的<em>「資訊熵」</em>（Information Entropy）爆炸——AI 快速生成的迴音、過度優化的內容與低品質敘述泛濫，導致知識的清晰度與真實性瓦解。</p>
+<p>AI 的本質是一台極高效率的「<strong>模式壓縮器</strong>」與「<strong>機率合成器</strong>」。隨著生成式 AI 普及，數位世界正經歷劇烈的<em>「資訊熵」</em>（Information Entropy）爆炸——AI 快速生成的迴音、過度優化的內容與低品質敘述泛濫，導致知識的清晰度與真實性瓦解<sup class="cite"><a href="#ref-48">48</a></sup>。</p>
 
 <blockquote>
 在此混沌背景下，企業與個人的核心競爭力，將不再是「能用 AI 生產多少高速的內容」，而是創造<strong>「負熵」</strong>（Syntropy）——也就是創造秩序、清晰度與真實信號的能力。這需要高度依賴：稀有資料、深刻的人類洞察，以及無法被機器輕易複製的信任關係。
 </blockquote>
 
-<p>面對 AI 帶來的勞動結構解體、認知能力退化，以及代理 AI 的法律失序，人類社會必須在<strong>「徹底擁抱技術的春芽（極端實證主義）」</strong>與<strong>「恐懼於技術的悲觀主義（極端建構主義）」</strong>之間找到真正的破局之道：<strong>實踐「人類與 AI 共生（Human-AI Symbiosis）」的第三條路徑</strong>。</p>
+<p>面對 AI 帶來的勞動結構解體、認知能力退化，以及代理 AI 的法律失序，人類社會必須在<strong>「徹底擁抱技術的春芽（極端實證主義）」</strong>與<strong>「恐懼於技術的悲觀主義（極端建構主義）」</strong>之間找到真正的破局之道：<strong>實踐「人類與 AI 共生（Human-AI Symbiosis）」的第三條路徑</strong><sup class="cite"><a href="#ref-49">49</a></sup>。</p>
 
 <h3 id="sec-7-1">7.1 三層應用</h3>
 
 <ol>
-<li><strong>教育與心理：</strong>把 AI 從「盲目的代勞者」重新定位為「<em>思維磨練伙伴</em>」，設計引發認知摩擦的學習流程，避免人類大規模陷於單一面向的萎縮。</li>
-<li><strong>治理與法律：</strong>加速落實 AI 代理的運行時身份驗證標準與「人在迴路內」的人工核准護欄機制，確保技術紅利不在任何時刻偏離人類意圖。</li>
-<li><strong>地緣政治：</strong>全球必須正視能源消耗的物理熱力學極限，並回應因國家間落差所擴大的數位鴻溝。對台灣而言，我們站在 Pax Silica 硬體同盟的絕對優勢上，藉由「AI 新十大建設」加速在主權 AI 與矽光子等領域的縱深佈局——從單一的代工環節，升級為結合先進製程、基礎設施、民主治理與高速軟體的全球科技戰略樞紐。</li>
+<li><strong>教育與心理：</strong>把 AI 從「盲目的代勞者」重新定位為「<em>思維磨練伙伴</em>」，設計引發認知摩擦的學習流程，避免人類大規模陷於單一面向的萎縮<sup class="cite"><a href="#ref-50">50</a></sup>。</li>
+<li><strong>治理與法律：</strong>加速落實 AI 代理的運行時身份驗證標準與「人在迴路內」的人工核准護欄機制，確保技術紅利不在任何時刻偏離人類意圖<sup class="cite"><a href="#ref-51">51</a></sup>。</li>
+<li><strong>地緣政治：</strong>全球必須正視能源消耗的物理熱力學極限，並回應因國家間落差所擴大的數位鴻溝。對台灣而言，我們站在 Pax Silica 硬體同盟的絕對優勢上，藉由「AI 新十大建設」加速在主權 AI 與矽光子等領域的縱深佈局——從單一的代工環節，升級為結合先進製程、基礎設施、民主治理與高速軟體的全球科技戰略樞紐<sup class="cite"><a href="#ref-52">52</a></sup>。</li>
 </ol>
 
-<p>這正呼應了<a href="文明收斂與創新破局分析.html#sec-7">《文明收斂與創新破局分析》中的「人為去運河化」</a>——AI 加速了文明的收斂，唯有刻意保留多樣性、人類主體性與可批判性思考，才能讓技術的指數成長服務於人類，而非反過來吞噬人類。</p>
+<p>這正呼應了<a href="文明收斂與創新破局分析.html#sec-7">《文明收斂與創新破局分析》中的「人為去運河化」</a>——AI 加速了文明的收斂，唯有刻意保留多樣性、人類主體性與可批判性思考，才能讓技術的指數成長服務於人類，而非反過來吞噬人類<sup class="cite"><a href="#ref-53">53</a></sup>。</p>
 
 <blockquote>
 最終的勝出者不是擁有最大模型的實體，而是那些能夠在物理上妥善調度能源、在法律框架內建立可信賴機制，並在無情的機器計算中仍堅守人類主體性與批判性思考能力的社會體系。
@@ -372,23 +402,75 @@
 </summary>
 <div class="vx-sources-body">
 <ol>
-<li id="ref-1"><cite>Scaling Laws for Neural Language Models</cite> · arXiv · Kaplan et al.<span class="src">2026/05/09 檢索</span><a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noopener">arxiv.org</a></li>
-<li id="ref-2"><cite>Algorithmic Progress in Language Models</cite> · Epoch AI<span class="src">2026/05/09 檢索</span><a href="https://epoch.ai/blog/algorithmic-progress-in-language-models" target="_blank" rel="noopener">epoch.ai</a></li>
-<li id="ref-3"><cite>2026 AI Index Report — Environmental Footprint</cite> · Stanford HAI<span class="src">2026/05/09 檢索</span><a href="https://aiindex.stanford.edu/report/" target="_blank" rel="noopener">aiindex.stanford.edu</a></li>
-<li id="ref-4"><cite>Length of Tasks AI Can Do Doubles Every ~7 Months</cite> · METR Research<span class="src">2026/05/09 檢索</span><a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" target="_blank" rel="noopener">metr.org</a></li>
-<li id="ref-5"><cite>When will AGI / Transformative AI be created?</cite> · Metaculus<span class="src">2026/05/09 檢索</span><a href="https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/" target="_blank" rel="noopener">metaculus.com</a></li>
-<li id="ref-6"><cite>Artificial Intelligence and Financial Stability</cite> · IMF Global Financial Stability Report 2026<span class="src">2026/05/09 檢索</span><a href="https://www.imf.org/en/Publications/GFSR" target="_blank" rel="noopener">imf.org</a></li>
-<li id="ref-7"><cite>NIST AI Agent Standards Initiative</cite> · NIST<span class="src">2026/05/09 檢索</span><a href="https://www.nist.gov/artificial-intelligence" target="_blank" rel="noopener">nist.gov</a></li>
-<li id="ref-8"><cite>EU AI Act — Implementation Timeline</cite> · European Commission<span class="src">2026/05/09 檢索</span><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">digital-strategy.ec.europa.eu</a></li>
-<li id="ref-9"><cite>Your Brain on ChatGPT: Cognitive Debt in AI-Assisted Learning</cite> · MIT Media Lab<span class="src">2026/05/09 檢索</span><a href="https://www.media.mit.edu/projects/your-brain-on-chatgpt/overview/" target="_blank" rel="noopener">media.mit.edu</a></li>
-<li id="ref-10"><cite>How AI and Human Behaviors Shape Psychosocial Effects of Chatbot Use</cite> · MIT Media Lab / OpenAI<span class="src">2026/05/09 檢索</span><a href="https://arxiv.org/abs/2503.17473" target="_blank" rel="noopener">arxiv.org</a></li>
-<li id="ref-11"><cite>Microsoft AI Diffusion Report 2026</cite> · Microsoft Research<span class="src">2026/05/09 檢索</span><a href="https://www.microsoft.com/en-us/research/" target="_blank" rel="noopener">microsoft.com</a></li>
-<li id="ref-12"><cite>Stanford AI Index Report 2026 — Talent Migration</cite> · Stanford HAI<span class="src">2026/05/09 檢索</span><a href="https://aiindex.stanford.edu/report/" target="_blank" rel="noopener">aiindex.stanford.edu</a></li>
-<li id="ref-13"><cite>Pax Silica: A Coalition for Trusted Tech Supply Chains</cite> · CSIS<span class="src">2026/05/09 檢索</span><a href="https://www.csis.org/" target="_blank" rel="noopener">csis.org</a></li>
-<li id="ref-14"><cite>Stanford AI Index — Hardware Concentration</cite> · Stanford HAI<span class="src">2026/05/09 檢索</span><a href="https://aiindex.stanford.edu/report/" target="_blank" rel="noopener">aiindex.stanford.edu</a></li>
-<li id="ref-15"><cite>「AI 新十大建設」推動策略</cite> · 中華民國國家發展委員會<span class="src">2026/05/09 檢索</span><a href="https://www.ndc.gov.tw/" target="_blank" rel="noopener">ndc.gov.tw</a></li>
-<li id="ref-16"><cite>The AI Workplace 2026</cite> · BCG · Goldman Sachs Research<span class="src">2026/05/09 檢索</span><a href="https://www.bcg.com/" target="_blank" rel="noopener">bcg.com</a></li>
-<li id="ref-17"><cite>OECD AI Outlook 2030 — Scenarios</cite> · OECD / WEF<span class="src">2026/05/09 檢索</span><a href="https://www.oecd.org/digital/artificial-intelligence/" target="_blank" rel="noopener">oecd.org</a></li>
+<li id="ref-1"><cite>Continued AI Scaling Requires Repeated Efficiency Doublings - arXiv</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://arxiv.org/pdf/2603.28507" target="_blank" rel="noopener">arxiv.org/pdf/2603.28507</a></li>
+<li id="ref-2"><cite>AI Scaling Laws &amp; Reasoning Models 2026: What the Research Says - Medium</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://medium.com/@siddantvardey/the-frontier-reasoning-models-scaling-laws-whats-actually-coming-next-93bba260644b" target="_blank" rel="noopener">medium.com/@siddantvardey/the-frontier-reasoning-models-scaling-laws-whats-actually-coming-next-93bba260644b</a></li>
+<li id="ref-3"><cite>Continued AI Scaling Requires Repeated Efficiency Doublings - arXiv</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://arxiv.org/html/2603.28507v2" target="_blank" rel="noopener">arxiv.org/html/2603.28507v2</a></li>
+<li id="ref-4"><cite>Inside the AI Index: 12 Takeaways from the 2026 Report | Stanford HAI</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report" target="_blank" rel="noopener">hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report</a></li>
+<li id="ref-5"><cite>AI Agents in 2026: The Future of Autonomous Software - Symphony Solutions</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://symphony-solutions.com/insights/ai-agents-in-2026" target="_blank" rel="noopener">symphony-solutions.com/insights/ai-agents-in-2026</a></li>
+<li id="ref-6"><cite>AI Agents: Complete Overview (2026) - CogitX</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://cogitx.ai/blog/ai-agents-complete-overview-2026" target="_blank" rel="noopener">cogitx.ai/blog/ai-agents-complete-overview-2026</a></li>
+<li id="ref-7"><cite>State of AI Agents 2026: Autonomy is Here - Prosus</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.prosus.com/news-insights/2026/state-of-ai-agents-2026-autonomy-is-here" target="_blank" rel="noopener">www.prosus.com/news-insights/2026</a></li>
+<li id="ref-8"><cite>AI Agent Autonomy Statistics 2026: Growth Insights - SQ Magazine</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://sqmagazine.co.uk/ai-agent-autonomy-statistics/" target="_blank" rel="noopener">sqmagazine.co.uk/ai-agent-autonomy-statistics</a></li>
+<li id="ref-9"><cite>Artificial General Intelligence Forecasting and Scenario Analysis: State of the Field, Methodological Gaps, and Strategic Implic - RAND</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.rand.org/content/dam/rand/pubs/research_reports/RRA4600/RRA4692-1/RAND_RRA4692-1.pdf" target="_blank" rel="noopener">www.rand.org/content/dam</a></li>
+<li id="ref-10"><cite>Shrinking AGI timelines: a review of expert forecasts | 80,000 Hours</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://80000hours.org/2025/03/when-do-experts-expect-agi-to-arrive/" target="_blank" rel="noopener">80000hours.org/2025/03</a></li>
+<li id="ref-11"><cite>When will the first general AI system be devised, tested, and publicly announced? - Metaculus</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.metaculus.com/questions/5121/when-will-the-first-general-ai-system-be-devised-tested-and-publicly-announced/" target="_blank" rel="noopener">www.metaculus.com/questions/5121</a></li>
+<li id="ref-12"><cite>What Is AGI? A Developer's Guide for 2026 - CatDoes</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://catdoes.com/blog/agi-for-developers" target="_blank" rel="noopener">catdoes.com/blog/agi-for-developers</a></li>
+<li id="ref-13"><cite>Agentic AI: The liability gap your contracts may not cover | Clifford Chance</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2026/02/agentic-ai-and-the-liability-gap-your-contracts-may-not-cover.html" target="_blank" rel="noopener">www.cliffordchance.com/insights/resources</a></li>
+<li id="ref-14"><cite>Agentic AI: The liability gap your contracts may not cover - Clifford Chance</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/02/agentic-ai-theliability-gap-your-contracts-may-not-cover.pdf" target="_blank" rel="noopener">www.cliffordchance.com/content/dam</a></li>
+<li id="ref-15"><cite>How Agentic AI Will Reshape Payments in: IMF Notes Volume 2026 ...</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml" target="_blank" rel="noopener">www.elibrary.imf.org/view/journals</a></li>
+<li id="ref-16"><cite>Contracting for Agentic AI Solutions: Shifting the Model from SaaS to Services | Insights</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.mayerbrown.com/en/insights/publications/2026/02/contracting-for-agentic-ai-solutions-shifting-the-model-from-saas-to-services" target="_blank" rel="noopener">www.mayerbrown.com/en/insights</a></li>
+<li id="ref-17"><cite>NIST's AI Agent Standards Initiative: Why Autonomous AI Just Became Washington's Problem | Jones Walker LLP</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.joneswalker.com/en/insights/blogs/ai-law-blog/nists-ai-agent-standards-initiative-why-autonomous-ai-just-became-washingtons.html?id=102mkh6" target="_blank" rel="noopener">www.joneswalker.com/en/insights</a></li>
+<li id="ref-18"><cite>Strategies to improve AI agent data privacy and security - Okta</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.okta.com/identity-101/improve-ai-agent-data-privacy-and-security/" target="_blank" rel="noopener">www.okta.com/identity-101/improve-ai-agent-data-privacy-and-security</a></li>
+<li id="ref-19"><cite>Agentic AI Risks: A Guide to Proper AI Governance - Strata.io</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.strata.io/blog/agentic-identity/agentic-ai-governance-how-to-approach-it/" target="_blank" rel="noopener">www.strata.io/blog/agentic-identity</a></li>
+<li id="ref-20"><cite>Ping Identity Defines the Runtime Identity Standard for Autonomous AI - Mar 24, 2026</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI" target="_blank" rel="noopener">press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI</a></li>
+<li id="ref-21"><cite>How 2026 Will Reshape Technology and AI Law - Best Lawyers</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.bestlawyers.com/article/how-2026-will-reshape-technology-and-ai-law/7365" target="_blank" rel="noopener">www.bestlawyers.com/article/how-2026-will-reshape-technology-and-ai-law</a></li>
+<li id="ref-22"><cite>2026 AI Laws Update: Key Regulations and Practical Guidance - Gunderson Dettmer</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.gunder.com/en/news-insights/insights/2026-ai-laws-update-key-regulations-and-practical-guidance" target="_blank" rel="noopener">www.gunder.com/en/news-insights</a></li>
+<li id="ref-23"><cite>AI Legal Watch: January 2026 | Thought Leadership - Baker Botts</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.bakerbotts.com/thought-leadership/publications/2026/january/ai-legal-watch---january" target="_blank" rel="noopener">www.bakerbotts.com/thought-leadership/publications</a></li>
+<li id="ref-24"><cite>AI visions in 2026: a transatlantic strategic divide</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.controlrisks.com/our-thinking/insights/ai-visions-in-2026-a-transatlantic-strategic-divide" target="_blank" rel="noopener">www.controlrisks.com/our-thinking/insights</a></li>
+<li id="ref-25"><cite>Top AI Ethics and Policy Issues of 2025 and What to Expect in 2026 - acm sigai</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://sigai.acm.org/static/aimatters/11-2/7.%20AI%20Ethics%20Policy%20Column%20-%20Top%20AI%20Ethics%20and%20Policy%20Issues%20of%202025%20and%20What%20to%20Expect%20in%202026.pdf" target="_blank" rel="noopener">sigai.acm.org/static/aimatters</a></li>
+<li id="ref-26"><cite>AI Act | Shaping Europe's digital future</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">digital-strategy.ec.europa.eu/en/policies</a></li>
+<li id="ref-27"><cite>Smart AI Governance in 2026 - Association of Corporate Counsel (ACC)</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.acc.com/sites/default/files/program-materials/upload/Foley-Lardner.pdf" target="_blank" rel="noopener">www.acc.com/sites/default</a></li>
+<li id="ref-28"><cite>Artificial intelligence, cognitive offloading and implications for education | UTS</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.uts.edu.au/news/2026/03/experts-warn-unstructured-ai-use-in-schools-risks-cognitive-atrophy/contentassets/ai-cognitive-offloading-and-implications-for-education.pdf" target="_blank" rel="noopener">www.uts.edu.au/news/2026</a></li>
+<li id="ref-29"><cite>Mounting evidence suggests that relying on AI can hamper learning.</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.psychologytoday.com/us/blog/psych-unseen/202605/your-brain-on-ai-cognitive-offloading-debt-and-atrophy" target="_blank" rel="noopener">www.psychologytoday.com/us/blog</a></li>
+<li id="ref-30"><cite>Are We Losing Our Minds to AI?</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://time.com/article/2026/04/30/ai-thinking-cognitive-offloading/" target="_blank" rel="noopener">time.com/article/2026</a></li>
+<li id="ref-31"><cite>Mindblowing: The staggering 'cognitive debt' of generative AI in education</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.ijpr.org/podcast/the-jefferson-exchange/2026-05-06/mindblowing-the-staggering-cognitive-debt-of-generative-ai-in-education?_amp=true" target="_blank" rel="noopener">www.ijpr.org/podcast/the-jefferson-exchange</a></li>
+<li id="ref-32"><cite>Mindblowing: The staggering 'cognitive debt' of generative AI in education</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.ijpr.org/podcast/the-jefferson-exchange/2026-05-06/mindblowing-the-staggering-cognitive-debt-of-generative-ai-in-education" target="_blank" rel="noopener">www.ijpr.org/podcast/the-jefferson-exchange</a></li>
+<li id="ref-33"><cite>How AI is reshaping business models | IBM</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.ibm.com/think/insights/gartner-2026-tech-predictions-implications" target="_blank" rel="noopener">www.ibm.com/think/insights</a></li>
+<li id="ref-34"><cite>Artificial Intelligence and the Psychology of Human Connection - PMC</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12960742/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC12960742</a></li>
+<li id="ref-35"><cite>AI interactions may reshape how human brains process social relationships</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://croucher.org.hk/en/news/ai-interactions-may-reshape-how-human-brains-process-social-relationships" target="_blank" rel="noopener">croucher.org.hk/en/news</a></li>
+<li id="ref-36"><cite>How AI and Human Behaviors Shape Psychosocial Effects of Extended Chatbot Use: A Longitudinal Controlled Study — MIT Media Lab</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study/" target="_blank" rel="noopener">www.media.mit.edu/publications/how-ai-and-human-behaviors-shape-psychosocial-effects-of-chatbot-use-a-longitudinal-controlled-study</a></li>
+<li id="ref-37"><cite>The mediating advantage of social capital: examining the pathways from physical exercise to subjective well-being - PMC</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12872512/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC12872512</a></li>
+<li id="ref-38"><cite>Who Gets More Trust—AI or Humans, and Why? A Cross-Cultural Analysis of AI and Interpersonal Trust - MDPI</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.mdpi.com/2076-328X/16/3/320" target="_blank" rel="noopener">www.mdpi.com/2076-328X/16</a></li>
+<li id="ref-39"><cite>Who Gets More Trust-AI or Humans, and Why? A Cross-Cultural Analysis of AI and Interpersonal Trust. - R Discovery</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://discovery.researcher.life/article/who-gets-more-trust-ai-or-humans-and-why-a-cross-cultural-analysis-of-ai-and-interpersonal-trust/4b6618f2064935beb35c1f2100a5f0ec" target="_blank" rel="noopener">discovery.researcher.life/article/who-gets-more-trust-ai-or-humans-and-why-a-cross-cultural-analysis-of-ai-and-interpersonal-trust</a></li>
+<li id="ref-40"><cite>Interpersonal trust and objectively measured physical activity in adolescents: the mediating role of family capital - Frontiers</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1796300/full" target="_blank" rel="noopener">www.frontiersin.org/journals/public-health</a></li>
+<li id="ref-41"><cite>Taiwan's AI diffusion rate 20th highest in world: Microsoft</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://focustaiwan.tw/sci-tech/202605090006" target="_blank" rel="noopener">focustaiwan.tw/sci-tech/202605090006</a></li>
+<li id="ref-42"><cite>The state of global AI diffusion in 2026 - Microsoft On the Issues</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/" target="_blank" rel="noopener">blogs.microsoft.com/on-the-issues/2026</a></li>
+<li id="ref-43"><cite>All-In on AI: How the United States and Taiwan Are Deepening Their Chip Partnership</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.stimson.org/2026/all-in-on-ai-how-the-united-states-and-taiwan-are-deepening-their-chip-partnership/" target="_blank" rel="noopener">www.stimson.org/2026/all-in-on-ai-how-the-united-states-and-taiwan-are-deepening-their-chip-partnership</a></li>
+<li id="ref-44"><cite>Three elements Trump’s ‘Pax Silica’ needs to succeed</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.atlanticcouncil.org/dispatches/three-elements-trumps-pax-silica-needs-to-succeed/" target="_blank" rel="noopener">www.atlanticcouncil.org/dispatches/three-elements-trumps-pax-silica-needs-to-succeed</a></li>
+<li id="ref-45"><cite>Australia and Pax Silica: The Quiet Foundations of a New Western Order?</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://sldinfo.com/2026/05/australia-and-pax-silica-the-quiet-foundations-of-a-new-western-order/" target="_blank" rel="noopener">sldinfo.com/2026/05</a></li>
+<li id="ref-46"><cite>The 2026 AI Index Report | Stanford HAI</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" target="_blank" rel="noopener">hai.stanford.edu/ai-index/2026-ai-index-report</a></li>
+<li id="ref-47"><cite>Taiwan critical to AI hardware resilience: report - Taipei Times</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.taipeitimes.com/News/front/archives/2026/04/18/2003855807" target="_blank" rel="noopener">www.taipeitimes.com/News/front</a></li>
+<li id="ref-48"><cite>Semiconductors - Stanford Emerging Technology Review</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://setr.stanford.edu/technology/semiconductors/2026" target="_blank" rel="noopener">setr.stanford.edu/technology/semiconductors</a></li>
+<li id="ref-49"><cite>Taiwan - Semiconductors including chip design for AI - International Trade Administration</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.trade.gov/country-commercial-guides/taiwan-semiconductors-including-chip-design-ai" target="_blank" rel="noopener">www.trade.gov/country-commercial-guides/taiwan-semiconductors-including-chip-design-ai</a></li>
+<li id="ref-50"><cite>2026 TTX Day 2: semiconductors and industrial structure emerge as key national security concerns | Taiwan &amp; World</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.tcn.tw/news/6808071" target="_blank" rel="noopener">www.tcn.tw/news/6808071</a></li>
+<li id="ref-51"><cite>Securing Leadership: How Will Taiwan Transform Semiconductor Strength into Next-Generation AI Advantage? - Project MUSE</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://muse.jhu.edu/article/982387/summary" target="_blank" rel="noopener">muse.jhu.edu/article/982387</a></li>
+<li id="ref-52"><cite>AI淨零／AI新10大建設吳誠文：量子、矽光子等4科技入列 - 中央社</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.cna.com.tw/news/afe/202505210308.aspx" target="_blank" rel="noopener">www.cna.com.tw/news/afe</a></li>
+<li id="ref-53"><cite>AI新十大建設 - 理周教育學苑</cite><span class="src">檢索日期：5月 9, 2026</span><a href="http://www.moneyedu.org.tw/MWeb/ColumnArticle02?uid=6183" target="_blank" rel="noopener">www.moneyedu.org.tw/MWeb/ColumnArticle02</a></li>
+<li id="ref-54"><cite>Taiwan and the Global AI Report Feb 2026 - Taipei Representative Office in the Republic of Singapore 駐新加坡台北代表處</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.roc-taiwan.org/sg_en/post/13758.html" target="_blank" rel="noopener">www.roc-taiwan.org/sg_en/post</a></li>
+<li id="ref-55"><cite>AI Will Reshape More Jobs Than It Replaces | BCG</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.bcg.com/publications/2026/ai-will-reshape-more-jobs-than-it-replaces" target="_blank" rel="noopener">www.bcg.com/publications/2026</a></li>
+<li id="ref-56"><cite>How Will AI Affect the US Labor Market? | Goldman Sachs</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.goldmansachs.com/insights/articles/how-will-ai-affect-the-us-labor-market" target="_blank" rel="noopener">www.goldmansachs.com/insights/articles</a></li>
+<li id="ref-57"><cite>How AI is Transforming Financial Forecasting in 2026: Trends, Accuracy, and Market Insights - Tech Times</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.techtimes.com/articles/313715/20260103/how-ai-transforming-financial-forecasting-2026-trends-accuracy-market-insights.htm" target="_blank" rel="noopener">www.techtimes.com/articles/313715</a></li>
+<li id="ref-58"><cite>Harnessing Generative AI for Economic Insights* - Rutgers Business School</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.business.rutgers.edu/sites/default/files/documents/harnessing-generative-ai-economic-insights.pdf" target="_blank" rel="noopener">www.business.rutgers.edu/sites/default</a></li>
+<li id="ref-59"><cite>29th Global CEO Survey - PwC</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.pwc.com/gx/en/issues/c-suite-insights/ceo-survey.html" target="_blank" rel="noopener">www.pwc.com/gx/en</a></li>
+<li id="ref-60"><cite>Four Futures for Jobs in the New Economy: AI and Talent in 2030 | World Economic Forum</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.weforum.org/publications/four-futures-for-jobs-in-the-new-economy-ai-and-talent-in-2030/" target="_blank" rel="noopener">www.weforum.org/publications/four-futures-for-jobs-in-the-new-economy-ai-and-talent-in-2030</a></li>
+<li id="ref-61"><cite>Exploring possible AI trajectories through 2030 - OECD</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.oecd.org/en/publications/exploring-possible-ai-trajectories-through-2030_cb41117a-en.html" target="_blank" rel="noopener">www.oecd.org/en/publications</a></li>
+<li id="ref-62"><cite>Four Futures for Jobs in the New Economy: AI and Talent in 2030 - World Economic Forum publications</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://reports.weforum.org/docs/WEF_Four_Futures_for_Jobs_in_the_New_Economy_AI_and_Talent_in_2030_2025.pdf" target="_blank" rel="noopener">reports.weforum.org/docs/WEF_Four_Futures_for_Jobs_in_the_New_Economy_AI_and_Talent_in_2030_2025.pdf</a></li>
+<li id="ref-63"><cite>AI 2030 Scenarios - GOV.UK</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://assets.publishing.service.gov.uk/media/6808fc002a86d6dfb2b52772/AI_2030_Scenarios_Report.pdf" target="_blank" rel="noopener">assets.publishing.service.gov.uk/media/6808fc002a86d6dfb2b52772</a></li>
+<li id="ref-64"><cite>The Great Recalibration: B2B SaaS Performance, Metrics, and the Hybrid Mandate in 2025</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.t2d3.pro/learn/the-great-recalibration-b2b-saas-performance-metrics-and-the-hybrid-mandate-in-2025" target="_blank" rel="noopener">www.t2d3.pro/learn/the-great-recalibration-b2b-saas-performance-metrics-and-the-hybrid-mandate-in-2025</a></li>
+<li id="ref-65"><cite>The Great Reset: Understanding the Latest Google Ranking</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://horizonmarketing.co/the-great-reset-understanding-the-latest-google-ranking-changes-and-how-to-adapt/" target="_blank" rel="noopener">horizonmarketing.co/the-great-reset-understanding-the-latest-google-ranking-changes-and-how-to-adapt</a></li>
+<li id="ref-66"><cite>Human consciousness and cognition go hand in hand, but require different types of explanations - Aperture Neuro</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://apertureneuro.org/article/158354-human-consciousness-and-cognition-go-hand-in-hand-but-require-different-types-of-explanations" target="_blank" rel="noopener">apertureneuro.org/article/158354-human-consciousness-and-cognition-go-hand-in-hand-but-require-different-types-of-explanations</a></li>
+<li id="ref-67"><cite>Human–AI Complementarity in Peer Review: Empirical Analysis of PeerJ Data and Design of an Efficient Collaborative Review Framework - MDPI</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.mdpi.com/2304-6775/14/1/1" target="_blank" rel="noopener">www.mdpi.com/2304-6775/14</a></li>
+<li id="ref-68"><cite>(PDF) After Post-Positivism? The Promises of Critical Realism - ResearchGate</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.researchgate.net/publication/227748781_After_Post-Positivism_The_Promises_of_Critical_Realism" target="_blank" rel="noopener">www.researchgate.net/publication/227748781_After_Post-Positivism_The_Promises_of_Critical_Realism</a></li>
+<li id="ref-69"><cite>The Journal of Digital Technologies and Law is an peer-reviewed periodical scientific and practical journal devoted to the study of the synergy of digital technologies and law, as well as possible risks and threats posed by the combination of technological progress, digitalization and development of law. - ResearchGate</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.researchgate.net/publication/385980583_The_Journal_of_Digital_Technologies_and_Law_is_an_peer-reviewed_periodical_scientific_and_practical_journal_devoted_to_the_study_of_the_synergy_of_digital_technologies_and_law_as_well_as_possible_risk" target="_blank" rel="noopener">www.researchgate.net/publication/385980583_The_Journal_of_Digital_Technologies_and_Law_is_an_peer-reviewed_periodical_scientific_and_practical_journal_devoted_to_the_study_of_the_synergy_of_digital_technologies_and_law_as_well_as_possible_risk</a></li>
 </ol>
 </div>
 </details>

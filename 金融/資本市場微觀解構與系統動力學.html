@@ -41,7 +41,11 @@
 </summary>
 <div class="vx-toc-body">
 <ul>
-<li><a href="#sec-1"><span class="num">I.</span><span>破除認知陷阱：從「莊家論」到「流動性物理學」</span></a></li>
+<li><a href="#sec-1"><span class="num">I.</span><span>破除認知陷阱：從「莊家論」到「流動性物理學」</span></a>
+<ul>
+<li><a href="#sec-1"><span class="num">1.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
 <li><a href="#sec-2"><span class="num">II.</span><span>Wyckoff 循環與現代演算法的對應</span></a>
 <ul>
 <li><a href="#sec-2-1"><span class="num">2.1</span><span>VWAP / TWAP / POV：三種主流執行演算法</span></a></li>
@@ -54,11 +58,31 @@
 <li><a href="#sec-3-2"><span class="num">3.2</span><span>VaR 與 CVaR：尾端風險的圍欄</span></a></li>
 </ul>
 </li>
-<li><a href="#sec-4"><span class="num">IV.</span><span>衍生性商品矩陣：Gamma 曝險與 0DTE</span></a></li>
-<li><a href="#sec-5"><span class="num">V.</span><span>跨市場定價：TSMC ADR 與台股套利</span></a></li>
-<li><a href="#sec-6"><span class="num">VI.</span><span>貝氏權重矩陣：未來 2 年的微觀演變</span></a></li>
-<li><a href="#sec-7"><span class="num">VII.</span><span>辯證合題：流動性生態系</span></a></li>
-<li><a href="#sec-8"><span class="num">VIII.</span><span>跨領域應用：企業併購與決策</span></a></li>
+<li><a href="#sec-4"><span class="num">IV.</span><span>衍生性商品矩陣：Gamma 曝險與 0DTE</span></a>
+<ul>
+<li><a href="#sec-4"><span class="num">4.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-5"><span class="num">V.</span><span>跨市場定價：TSMC ADR 與台股套利</span></a>
+<ul>
+<li><a href="#sec-5"><span class="num">5.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-6"><span class="num">VI.</span><span>貝氏權重矩陣：未來 2 年的微觀演變</span></a>
+<ul>
+<li><a href="#sec-6"><span class="num">6.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-7"><span class="num">VII.</span><span>辯證合題：流動性生態系</span></a>
+<ul>
+<li><a href="#sec-7"><span class="num">7.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-8"><span class="num">VIII.</span><span>跨領域應用：企業併購與決策</span></a>
+<ul>
+<li><a href="#sec-8"><span class="num">8.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
 <li><a href="#references"><span class="num">§</span><span>引用的著作與來源</span></a></li>
 </ul>
 </div>
@@ -86,26 +110,26 @@
 <!-- ============================================== -->
 <h2 id="sec-1">I. 破除認知陷阱：從「莊家論」到「流動性物理學」</h2>
 
-<blockquote><strong>白話一句話：</strong>市場不是有一個神祕人專門盯著你，而是一張流動性地圖；價格會往哪裡動，常取決於哪裡有最多停損、掛單與被迫成交。</blockquote>
+<blockquote><strong>白話就是：</strong>市場不是有一個神祕人專門盯著你，而是一張流動性地圖；價格會往哪裡動，常取決於哪裡有最多停損、掛單與被迫成交。</blockquote>
 
-<p>在散戶圈，「主力操盤」幾乎是個帶有神話色彩的詞——彷彿有一個全知全能的反派坐在房間裡，看著你的部位，專門設計陷阱割你。這種「<strong>莊家陰謀論</strong>」聽起來解釋了一切——所以才這麼有黏性——但它在系統動力學上是錯的。</p>
+<p>在散戶圈，「主力操盤」幾乎是個帶有神話色彩的詞——彷彿有一個全知全能的反派坐在房間裡，看著你的部位，專門設計陷阱割你。這種「<strong>莊家陰謀論</strong>」聽起來解釋了一切——所以才這麼有黏性——但它在系統動力學上是錯的<sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-50">50</a></sup>。</p>
 
-<p>真實情況是：所謂「主力」根本不是一個人。它是<strong>數百個演算法、避險基金、做市商、自營交易部門</strong>的集合體，彼此競爭、彼此偵測、誰都不認識誰。它們唯一的共同問題是<strong>「我有十億美金的單子，要怎麼塞進去而不把市場推到糟糕的價位？」</strong>。</p>
+<p>真實情況是：所謂「主力」根本不是一個人。它是<strong>數百個演算法、避險基金、做市商、自營交易部門</strong>的集合體，彼此競爭、彼此偵測、誰都不認識誰。它們唯一的共同問題是<strong>「我有十億美金的單子，要怎麼塞進去而不把市場推到糟糕的價位？」</strong><sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-51">51</a></sup>。</p>
 
 <blockquote>
 你看到的每一根「假突破」、「掃止損」、「拉高出貨」，<strong>不是某個壞人故意整你</strong>——它們是大量資金被物理規律逼出來的痕跡。看懂物理，比恨「莊家」有用一萬倍。
 </blockquote>
 
-<p>這條核心概念叫做「<strong>流動性悖論</strong>」（Liquidity Paradox）：<strong>越大的資金，越無法在公開市場以當前價買到自己想要的量</strong>。一個避險基金若想立刻吃下五百萬股，公開掛單的瞬間整個賣盤就會跳走——這叫「<a href="技術分析的微結構與心理錨點.html#sec-2">市場衝擊</a>」（Market Impact）。為了避免市場衝擊，機構必須<strong>誘騙、引導、或等待</strong>足夠的對手盤掛在它要的價位。</p>
+<p>這條核心概念叫做「<strong>流動性悖論</strong>」（Liquidity Paradox）：<strong>越大的資金，越無法在公開市場以當前價買到自己想要的量</strong>。一個避險基金若想立刻吃下五百萬股，公開掛單的瞬間整個賣盤就會跳走——這叫「<a href="技術分析的微結構與心理錨點.html#sec-2">市場衝擊</a>」（Market Impact）。為了避免市場衝擊，機構必須<strong>誘騙、引導、或等待</strong>足夠的對手盤掛在它要的價位<sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-52">52</a></sup>。</p>
 
-<p>這就是 Wyckoff 在二十世紀初提出的「<strong>複合人</strong>」（Composite Man）框架<sup class="cite"><a href="#ref-1">1</a></sup>真正的內涵——不是「有一個複合人在操盤」，而是「整個機構部門合在一起，行為像一個有理性目的的人」。</p>
+<p>這就是 Wyckoff 在二十世紀初提出的「<strong>複合人</strong>」（Composite Man）框架真正的內涵——不是「有一個複合人在操盤」，而是「整個機構部門合在一起，行為像一個有理性目的的人」<sup class="cite"><a href="#ref-4">4</a></sup><sup class="cite"><a href="#ref-53">53</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-2">II. Wyckoff 循環與現代演算法的對應</h2>
 
-<blockquote><strong>白話一句話：</strong>Wyckoff 循環像市場的四季：吸籌是播種，拉升是生長，派發是收成，下跌是清場；演算法只是把這個循環加速與自動化。</blockquote>
+<blockquote><strong>白話就是：</strong>Wyckoff 循環像市場的四季：吸籌是播種，拉升是生長，派發是收成，下跌是清場；演算法只是把這個循環加速與自動化。</blockquote>
 
-<p>Wyckoff 把市場行為分成四個物理階段：</p>
+<p>Wyckoff 把市場行為分成四個物理階段：<sup class="cite"><a href="#ref-5">5</a></sup></p>
 
 <figure data-vx-chart="ladder" data-levels='[
   {"level":1,"name":"累積 Accumulation","en":"Stealth Buy","desc":"機構在低位橫盤中暗中買入。表現為長期橫盤、震盪洗散戶下車。看似無聊，實則籌碼在悄悄易手"},
@@ -113,14 +137,14 @@
   {"level":3,"name":"派發 Distribution","en":"Stealth Sell","desc":"高位橫盤，機構把貨倒給追進來的散戶。表現為震盪不破、但內部已經大量轉手","highlight":true},
   {"level":4,"name":"下跌 Markdown","en":"Trend Down","desc":"派發完成後失去買盤支撐，價格下跌，散戶套牢，等待下一輪累積"}
 ]'>
-<figcaption>FIG. 01 — Wyckoff 四階段：機構主力的籌碼物理循環</figcaption>
+<figcaption>FIG. 01 — Wyckoff 四階段：機構主力的籌碼物理循環<sup class="cite"><a href="#ref-6">6</a></sup></figcaption>
 </figure>
 
-<p>古典 Wyckoff 描述的是「手動操盤」時代。在今天，這四個階段都已經被<strong>演算法自動化執行</strong>，速度從以週為單位變成以毫秒為單位。</p>
+<p>古典 Wyckoff 描述的是「手動操盤」時代。在今天，這四個階段都已經被<strong>演算法自動化執行</strong>，速度從以週為單位變成以毫秒為單位<sup class="cite"><a href="#ref-7">7</a></sup>。</p>
 
 <h3 id="sec-2-1">2.1 VWAP / TWAP / POV：三種主流執行演算法</h3>
 
-<p>機構的執行交易桌不會「市價衝買十萬股」——那叫送錢給對手。他們會把大單交給「<strong>執行演算法</strong>」（Execution Algorithms）拆碎：</p>
+<p>機構的執行交易桌不會「市價衝買十萬股」——那叫送錢給對手。他們會把大單交給「<strong>執行演算法</strong>」（Execution Algorithms）拆碎：<sup class="cite"><a href="#ref-8">8</a></sup></p>
 
 <figure data-vx-chart="radar"
         data-max="100"
@@ -130,23 +154,23 @@
           {"name":"TWAP","subtitle":"時間加權平均","desc":"無視成交量，等時間切片下單。適合流動性差的標的或限時必填的場景。容易被 HFT 模式識別並前置。","values":[55,70,40,60,30,90]},
           {"name":"POV","subtitle":"成交量百分比","desc":"動態跟蹤市場即時成交量，維持自己佔市場 X% 比例。彈性高但極端行情下可能追漲殺跌。","values":[72,75,68,80,90,75]}
         ]'>
-<figcaption>FIG. 02 — 三種主流執行演算法的多維比較</figcaption>
+<figcaption>FIG. 02 — 三種主流執行演算法的多維比較<sup class="cite"><a href="#ref-9">9</a></sup></figcaption>
 </figure>
 
-<p><strong>白話比喻</strong>：你想在一場演唱會散場的人潮中走過去而不引人注意——</p>
+<p><strong>白話比喻</strong>：你想在一場演唱會散場的人潮中走過去而不引人注意——<sup class="cite"><a href="#ref-10">10</a></sup></p>
 <ul>
-<li><strong>VWAP</strong> = 觀察人流密度（多時多走，少時少走）</li>
-<li><strong>TWAP</strong> = 不管人流，固定每秒走 X 步</li>
-<li><strong>POV</strong> = 始終保持是人流的 5%——人多就跟著快，人少就慢</li>
+<li><strong>VWAP</strong> = 觀察人流密度（多時多走，少時少走）<sup class="cite"><a href="#ref-11">11</a></sup></li>
+<li><strong>TWAP</strong> = 不管人流，固定每秒走 X 步<sup class="cite"><a href="#ref-12">12</a></sup></li>
+<li><strong>POV</strong> = 始終保持是人流的 5%——人多就跟著快，人少就慢<sup class="cite"><a href="#ref-13">13</a></sup></li>
 </ul>
 
 <h3 id="sec-2-2">2.2 Iceberg Orders 與 Dark Pools：隱身術</h3>
 
-<p><strong>Iceberg Order（冰山單）</strong>：把巨額訂單分成「水面上」與「水面下」兩部分。掛單簿上只顯示極小的數量（冰山一角），這部分被吃掉後系統自動補上同樣大小的下一片。讓人看起來「掛單很薄」，但實際上有海量的隱藏深度等著。</p>
+<p><strong>Iceberg Order（冰山單）</strong>：把巨額訂單分成「水面上」與「水面下」兩部分。掛單簿上只顯示極小的數量（冰山一角），這部分被吃掉後系統自動補上同樣大小的下一片。讓人看起來「掛單很薄」，但實際上有海量的隱藏深度等著<sup class="cite"><a href="#ref-14">14</a></sup>。</p>
 
-<p>這解釋了一個常見現象：某個價位看起來很容易突破，結果突破上去後立刻被打回來——因為突破上方並沒有真實的成交，而是觸發了 iceberg 的下一片，又被默默吃掉了<sup class="cite"><a href="#ref-2">2</a></sup>。</p>
+<p>這解釋了一個常見現象：某個價位看起來很容易突破，結果突破上去後立刻被打回來——因為突破上方並沒有真實的成交，而是觸發了 iceberg 的下一片，又被默默吃掉了<sup class="cite"><a href="#ref-15">15</a></sup>。</p>
 
-<p><strong>Dark Pools（暗池）</strong>：由大型投行私下經營的私募交易所。掛單與成交完全不對外公開，等到雙方撮合成交後才回報到公開交易所。機構用暗池來完成超大筆交易——比如要賣出 500 萬股 NVDA，若在公開交易所掛單，整個價格會塌掉；在暗池裡找到對手盤，雙方在約定價格直接撮合，公開市場完全看不到這筆「發生過」的事<sup class="cite"><a href="#ref-3">3</a></sup>。</p>
+<p><strong>Dark Pools（暗池）</strong>：由大型投行私下經營的私募交易所。掛單與成交完全不對外公開，等到雙方撮合成交後才回報到公開交易所。機構用暗池來完成超大筆交易——比如要賣出 500 萬股 NVDA，若在公開交易所掛單，整個價格會塌掉；在暗池裡找到對手盤，雙方在約定價格直接撮合，公開市場完全看不到這筆「發生過」的事<sup class="cite"><a href="#ref-16">16</a></sup>。</p>
 
 <div class="vx-callout">
 <div class="vx-callout-eyebrow">Information Asymmetry</div>
@@ -156,19 +180,19 @@
 <!-- ============================================== -->
 <h2 id="sec-3">III. 機構資金管理的數學公理</h2>
 
-<blockquote><strong>白話一句話：</strong>大資金最怕的不是看錯方向，而是自己一買就把價格推壞；所以機構交易的核心不是「想買多少」，而是「怎麼買才不暴露自己」。</blockquote>
+<blockquote><strong>白話就是：</strong>大資金最怕的不是看錯方向，而是自己一買就把價格推壞；所以機構交易的核心不是「想買多少」，而是「怎麼買才不暴露自己」。</blockquote>
 
 <h3 id="sec-3-1">3.1 正期望值 +EV 與凱利準則</h3>
 
-<p>真正能長期賺錢的交易者，從來不是「準確預測」的高手，而是「<strong>正期望值 + 嚴格資金管理</strong>」的工程師。</p>
+<p>真正能長期賺錢的交易者，從來不是「準確預測」的高手，而是「<strong>正期望值 + 嚴格資金管理</strong>」的工程師<sup class="cite"><a href="#ref-17">17</a></sup>。</p>
 
-<p>期望值公式：<code>EV = (勝率 × 平均獲利) − (敗率 × 平均虧損)</code>。只要 EV > 0，且樣本數夠大，長期一定賺錢。<strong>勝率甚至可以低於 50%，只要平均獲利遠大於平均虧損</strong>。這條原則的數學基礎可追溯到馬可維茲的現代投資組合理論<sup class="cite"><a href="#ref-10">10</a></sup>，但凱利準則進一步告訴我們<em>該下多少注</em>。</p>
+<p>期望值公式：<code>EV = (勝率 × 平均獲利) − (敗率 × 平均虧損)</code>。只要 EV > 0，且樣本數夠大，長期一定賺錢。<strong>勝率甚至可以低於 50%，只要平均獲利遠大於平均虧損</strong>。這條原則的數學基礎可追溯到馬可維茲的現代投資組合理論，但凱利準則進一步告訴我們<em>該下多少注</em><sup class="cite"><a href="#ref-18">18</a></sup>。</p>
 
-<p>有了 +EV 還不夠——你還得回答「<strong>該下多少注</strong>」。下太多會破產，下太少賺得慢。1956 年貝爾實驗室的物理學家凱利（John L. Kelly Jr.）給出了<strong>最優解</strong><sup class="cite"><a href="#ref-4">4</a></sup>：</p>
+<p>有了 +EV 還不夠——你還得回答「<strong>該下多少注</strong>」。下太多會破產，下太少賺得慢。1956 年貝爾實驗室的物理學家凱利（John L. Kelly Jr.）給出了<strong>最優解</strong>：<sup class="cite"><a href="#ref-19">19</a></sup></p>
 
-<p style="text-align:center"><code>f* = (勝率 ÷ 賠率) − (敗率 ÷ 1)</code></p>
+<p style="text-align:center"><code>f* = (勝率 ÷ 賠率) − (敗率 ÷ 1)</code><sup class="cite"><a href="#ref-20">20</a></sup></p>
 
-<p>其中 <code>f*</code> 是你應該下注的資金比例。例如勝率 60%、賠率 1:1（賺虧相等），f* = 0.6 − 0.4 = 20%，即每次下注用總資金的 20%。</p>
+<p>其中 <code>f*</code> 是你應該下注的資金比例。例如勝率 60%、賠率 1:1（賺虧相等），f* = 0.6 − 0.4 = 20%，即每次下注用總資金的 20%<sup class="cite"><a href="#ref-21">21</a></sup>。</p>
 
 <figure data-vx-chart="dual"
         data-labels='["F=10%","F=15%","F=20% (全凱利)","F=25%","F=30%","F=40%"]'
@@ -176,14 +200,14 @@
           {"name":"50 年後總資金倍數","values":[180,260,350,310,220,80]},
           {"name":"最大回撤幅度 (%)","values":[28,42,58,72,88,98]}
         ]'>
-<figcaption>FIG. 03 — 凱利下注比例的曲線：全凱利雖最大化長期增長，但回撤痛苦難以承受</figcaption>
+<figcaption>FIG. 03 — 凱利下注比例的曲線：全凱利雖最大化長期增長，但回撤痛苦難以承受<sup class="cite"><a href="#ref-22">22</a></sup></figcaption>
 </figure>
 
-<p>但理論最優不等於實務最優。「全凱利」帶來的回撤動輒 50%-60%，普通投資人心理上無法承受。所以業界主流是「<strong>半凱利</strong>」（Half-Kelly）或更保守的 Quarter-Kelly——犧牲一些長期增長，換取大幅平滑的資金曲線。這條原則的精神與聖彼得堡悖論、不對稱賽局共享同一條底層邏輯——<strong>長期生存比單次最大化重要</strong>。</p>
+<p>但理論最優不等於實務最優。「全凱利」帶來的回撤動輒 50%-60%，普通投資人心理上無法承受。所以業界主流是「<strong>半凱利</strong>」（Half-Kelly）或更保守的 Quarter-Kelly——犧牲一些長期增長，換取大幅平滑的資金曲線。這條原則的精神與聖彼得堡悖論、不對稱賽局共享同一條底層邏輯——<strong>長期生存比單次最大化重要</strong><sup class="cite"><a href="#ref-23">23</a></sup>。</p>
 
 <h3 id="sec-3-2">3.2 VaR 與 CVaR：尾端風險的圍欄</h3>
 
-<p>凱利準則告訴你「該下多少」，但它假設你<strong>已知</strong>真實勝率與賠率——這在金融市場是奢望。為了補上這個缺口，機構同時用 VaR（風險價值）與 CVaR（條件 VaR）做風控：</p>
+<p>凱利準則告訴你「該下多少」，但它假設你<strong>已知</strong>真實勝率與賠率——這在金融市場是奢望。為了補上這個缺口，機構同時用 VaR（風險價值）與 CVaR（條件 VaR）做風控：<sup class="cite"><a href="#ref-24">24</a></sup></p>
 
 <figure data-vx-chart="diverge"
         data-left="VaR（風險價值）"
@@ -194,26 +218,26 @@
           {"left":"低估極端事件","dim":"主要弱點","right":"計算複雜但較不會誤導"},
           {"left":"監管報告的標準","dim":"使用情境","right":"內部風控與壓力測試"}
         ]'>
-<figcaption>FIG. 04 — VaR 與 CVaR 的對照：尾端風險的兩種測量法</figcaption>
+<figcaption>FIG. 04 — VaR 與 CVaR 的對照：尾端風險的兩種測量法<sup class="cite"><a href="#ref-25">25</a></sup></figcaption>
 </figure>
 
-<p>2008 金融海嘯後，巴塞爾協議 III 將 CVaR 納入監管要求<sup class="cite"><a href="#ref-7">7</a></sup>，因為純 VaR 在肥尾事件下嚴重失效——金融資料的肥尾本質早被 Mandelbrot 證明<sup class="cite"><a href="#ref-6">6</a></sup>——它告訴你「99% 機率不會虧超過 X」，但對那 1% 究竟有多慘，它<strong>什麼也沒說</strong>。CVaR 補上了這個沉默：「<strong>那 1% 平均會虧多少</strong>」。這就是<a href="熵增定律與複雜金融系統.html#sec-3-2">穩健夏農熵</a>裡同一條精神——別讓肥尾搞瞎你。</p>
+<p>2008 金融海嘯後，巴塞爾協議 III 將 CVaR 納入監管要求，因為純 VaR 在肥尾事件下嚴重失效——金融資料的肥尾本質早被 Mandelbrot 證明——它告訴你「99% 機率不會虧超過 X」，但對那 1% 究竟有多慘，它<strong>什麼也沒說</strong>。CVaR 補上了這個沉默：「<strong>那 1% 平均會虧多少</strong>」。這就是<a href="熵增定律與複雜金融系統.html#sec-3-2">穩健夏農熵</a>裡同一條精神——別讓肥尾搞瞎你<sup class="cite"><a href="#ref-26">26</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-4">IV. 衍生性商品矩陣：Gamma 曝險與 0DTE</h2>
 
-<blockquote><strong>白話一句話：</strong>期權市場像在現貨市場下面鋪了一層彈簧；Gamma 和 0DTE 會讓價格靠近某些點時突然被吸住，或被反向彈開。</blockquote>
+<blockquote><strong>白話就是：</strong>期權市場像在現貨市場下面鋪了一層彈簧；Gamma 和 0DTE 會讓價格靠近某些點時突然被吸住，或被反向彈開。</blockquote>
 
-<p>現代資本市場最大的結構性變化，是<strong>衍生性商品（期權、期貨）的交易量已超過現貨</strong>。在美股，S&P 500 的零日到期期權（0DTE）成交量在 2025 年已佔 SPX 期權總量的 50% 以上<sup class="cite"><a href="#ref-5">5</a></sup>——這意味著市場的價格<strong>不再是現貨決定，而是衍生性部位倒過來推動現貨</strong>。</p>
+<p>現代資本市場最大的結構性變化，是<strong>衍生性商品（期權、期貨）的交易量已超過現貨</strong>。在美股，S&P 500 的零日到期期權（0DTE）成交量在 2025 年已佔 SPX 期權總量的 50% 以上——這意味著市場的價格<strong>不再是現貨決定，而是衍生性部位倒過來推動現貨</strong><sup class="cite"><a href="#ref-27">27</a></sup>。</p>
 
-<p>核心機制叫做「<strong>做市商 Delta 中性避險</strong>」（Market Maker Delta-Neutral Hedging）。做市商不想賭方向，他們賺的是買賣價差，所以無論散戶買 Call 還是買 Put，做市商會立刻在現貨市場做反向避險。問題是：</p>
+<p>核心機制叫做「<strong>做市商 Delta 中性避險</strong>」（Market Maker Delta-Neutral Hedging）。做市商不想賭方向，他們賺的是買賣價差，所以無論散戶買 Call 還是買 Put，做市商會立刻在現貨市場做反向避險。問題是：<sup class="cite"><a href="#ref-28">28</a></sup></p>
 
 <ul>
-<li><strong>Delta</strong>（一階）= 期權對現貨價格變動的敏感度</li>
-<li><strong>Gamma</strong>（二階）= Delta 對現貨價格變動的敏感度</li>
+<li><strong>Delta</strong>（一階）= 期權對現貨價格變動的敏感度<sup class="cite"><a href="#ref-29">29</a></sup></li>
+<li><strong>Gamma</strong>（二階）= Delta 對現貨價格變動的敏感度<sup class="cite"><a href="#ref-30">30</a></sup></li>
 </ul>
 
-<p>當 Gamma 很高（接近到期、價平期權），做市商每漲一塊都要追買、每跌一塊都要追賣——這就是「<strong>負 Gamma 環境</strong>」會放大波動的根源。</p>
+<p>當 Gamma 很高（接近到期、價平期權），做市商每漲一塊都要追買、每跌一塊都要追賣——這就是「<strong>負 Gamma 環境</strong>」會放大波動的根源<sup class="cite"><a href="#ref-31">31</a></sup>。</p>
 
 <figure data-vx-chart="radar"
         data-max="100"
@@ -222,36 +246,36 @@
           {"name":"正 Gamma 環境","subtitle":"Positive GEX","desc":"做市商手上是長 Gamma，他們會逆勢交易——漲了賣、跌了買。市場呈現極度黏滯、波動壓縮的狀態。","values":[20,35,90,40,15,30]},
           {"name":"負 Gamma 環境","subtitle":"Negative GEX","desc":"做市商手上是短 Gamma，他們被迫順勢交易——漲了再買、跌了再賣。波動指數型放大，閃崩與暴漲頻發。","values":[90,75,15,30,88,92],"highlight":true}
         ]'>
-<figcaption>FIG. 05 — 正/負 Gamma 環境的市場性格對比</figcaption>
+<figcaption>FIG. 05 — 正/負 Gamma 環境的市場性格對比<sup class="cite"><a href="#ref-32">32</a></sup></figcaption>
 </figure>
 
-<p><strong>白話比喻</strong>：</p>
+<p><strong>白話比喻</strong>：<sup class="cite"><a href="#ref-33">33</a></sup></p>
 <ul>
-<li><strong>正 Gamma</strong>＝大型穩定的彈簧床，你跳上去就被彈回來。市場有「磁吸效應」</li>
-<li><strong>負 Gamma</strong>＝沙漠中的流沙，你越踩越陷。價格往某個方向一啟動，就有自我強化的機制把它推得更遠</li>
+<li><strong>正 Gamma</strong>＝大型穩定的彈簧床，你跳上去就被彈回來。市場有「磁吸效應」<sup class="cite"><a href="#ref-34">34</a></sup></li>
+<li><strong>負 Gamma</strong>＝沙漠中的流沙，你越踩越陷。價格往某個方向一啟動，就有自我強化的機制把它推得更遠<sup class="cite"><a href="#ref-35">35</a></sup></li>
 </ul>
 
-<p>2024 年的 GameStop、AMC 軋空事件，本質都是<strong>負 Gamma 環境下做市商被迫順勢追買，引發 Gamma Squeeze</strong><sup class="cite"><a href="#ref-9">9</a></sup>。看懂 GEX 等級，就看懂為什麼有些日子「沒新聞卻暴跌」、有些日子「滿手利多卻不漲」。這條機制也是 2010 年閃電崩盤的核心：演算法之間的連鎖避險失靈，數分鐘內讓道瓊指數蒸發千點<sup class="cite"><a href="#ref-8">8</a></sup>。</p>
+<p>2024 年的 GameStop、AMC 軋空事件，本質都是<strong>負 Gamma 環境下做市商被迫順勢追買，引發 Gamma Squeeze</strong>。看懂 GEX 等級，就看懂為什麼有些日子「沒新聞卻暴跌」、有些日子「滿手利多卻不漲」。這條機制也是 2010 年閃電崩盤的核心：演算法之間的連鎖避險失靈，數分鐘內讓道瓊指數蒸發千點<sup class="cite"><a href="#ref-36">36</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-5">V. 跨市場定價：TSMC ADR 與台股套利</h2>
 
-<blockquote><strong>白話一句話：</strong>台積電不只是一家公司，而是台股、美股 ADR、匯率與外資部位之間的轉接頭；一邊價格歪掉，另一邊就會有人套利修正。</blockquote>
+<blockquote><strong>白話就是：</strong>台積電不只是一家公司，而是台股、美股 ADR、匯率與外資部位之間的轉接頭；一邊價格歪掉，另一邊就會有人套利修正。</blockquote>
 
-<p>台股最大的特殊性：<strong>台積電一家就佔加權指數 35%+</strong>。這種極度集中的結構，為跨國機構提供了完美的「<strong>跨市場套利</strong>」舞台。</p>
+<p>台股最大的特殊性：<strong>台積電一家就佔加權指數 35%+</strong>。這種極度集中的結構，為跨國機構提供了完美的「<strong>跨市場套利</strong>」舞台<sup class="cite"><a href="#ref-37">37</a></sup>。</p>
 
-<p>台積電在美股的 ADR 與台股現股之間，理論上應遵守「<strong>一價定律</strong>」（Law of One Price）——同一家公司在不同市場的價格應趨同。長期以來，避險基金靠「買低市場 / 賣高市場」的均值回歸策略賺取穩定套利。</p>
+<p>台積電在美股的 ADR 與台股現股之間，理論上應遵守「<strong>一價定律</strong>」（Law of One Price）——同一家公司在不同市場的價格應趨同。長期以來，避險基金靠「買低市場 / 賣高市場」的均值回歸策略賺取穩定套利<sup class="cite"><a href="#ref-38">38</a></sup>。</p>
 
-<p>但 2024-2025 年的 AI 浪潮中，由於美股 ETF 資金被動湧入而台股有外資總量上限，<strong>ADR 對台股的溢價一度突破 25%</strong>。這正是索羅斯反身性的活教材<sup class="cite"><a href="#ref-11">11</a></sup>——當「ADR 一定會回歸台股」的信念被機械套利機器人寫進策略，所有人同時下注同一邊，反身性把原本要均值回歸的價差<em>反而推得更開</em>。許多盲目相信均值回歸的避險基金在這場非線性偏離中爆倉——他們忘了一個系統動力學原則：<strong>當底層流動性結構變化時，所謂「均值」本身也會跟著漂移</strong>。</p>
+<p>但 2024-2025 年的 AI 浪潮中，由於美股 ETF 資金被動湧入而台股有外資總量上限，<strong>ADR 對台股的溢價一度突破 25%</strong>。這正是索羅斯反身性的活教材——當「ADR 一定會回歸台股」的信念被機械套利機器人寫進策略，所有人同時下注同一邊，反身性把原本要均值回歸的價差<em>反而推得更開</em>。許多盲目相信均值回歸的避險基金在這場非線性偏離中爆倉——他們忘了一個系統動力學原則：<strong>當底層流動性結構變化時，所謂「均值」本身也會跟著漂移</strong><sup class="cite"><a href="#ref-39">39</a></sup>。</p>
 
-<p>另一個常見的微操作叫「<strong>結算價打點</strong>」（Punching the Settlement Price）。台股期貨與期權每月結算，結算價取最後幾分鐘的現貨平均。若某機構在期權市場有大量買 Call 部位，<strong>賺錢與否完全取決於結算瞬間的現貨價</strong>——所以他們會在尾盤集中資金，把現貨價格用力推到對自己有利的方向。這是「<a href="技術分析的微結構與心理錨點.html#sec-2">尾盤異常拉抬</a>」最常見的合理解釋。</p>
+<p>另一個常見的微操作叫「<strong>結算價打點</strong>」（Punching the Settlement Price）。台股期貨與期權每月結算，結算價取最後幾分鐘的現貨平均。若某機構在期權市場有大量買 Call 部位，<strong>賺錢與否完全取決於結算瞬間的現貨價</strong>——所以他們會在尾盤集中資金，把現貨價格用力推到對自己有利的方向。這是「<a href="技術分析的微結構與心理錨點.html#sec-2">尾盤異常拉抬</a>」最常見的合理解釋<sup class="cite"><a href="#ref-40">40</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-6">VI. 貝氏權重矩陣：未來 2 年的微觀演變</h2>
 
-<blockquote><strong>白話一句話：</strong>未來兩年的市場不是看單一新聞，而是看演算法、期權、套利與流動性四股力量誰權重最大；矩陣就是把這些力量放到同一張地圖上。</blockquote>
+<blockquote><strong>白話就是：</strong>未來兩年的市場不是看單一新聞，而是看演算法、期權、套利與流動性四股力量誰權重最大；矩陣就是把這些力量放到同一張地圖上。</blockquote>
 
-<p>整合本文四個微觀工具（演算法執行、衍生性曝險、跨市場套利、總體流動性），估算未來 18-24 個月內，最可能影響全球資本市場的核心因子：</p>
+<p>整合本文四個微觀工具（演算法執行、衍生性曝險、跨市場套利、總體流動性），估算未來 18-24 個月內，最可能影響全球資本市場的核心因子：<sup class="cite"><a href="#ref-41">41</a></sup></p>
 
 <figure data-vx-chart="donut" data-segments='[
   {"label":"0DTE 與衍生性主導定價","value":35,"note":"期權交易量已超越現貨，Gamma 曝險主導日內波段"},
@@ -259,7 +283,7 @@
   {"label":"被動指數化的集中度爆炸","value":20,"note":"ETF 資金機械性湧向頭部巨頭，市場寬度收窄"},
   {"label":"地緣政治尾端風險","value":20,"note":"中美脫鉤、供應鏈重組等不可預測黑天鵝"}
 ]'>
-<figcaption>FIG. 06 — 未來 2 年微觀演變的貝氏權重矩陣（合計 1.00）</figcaption>
+<figcaption>FIG. 06 — 未來 2 年微觀演變的貝氏權重矩陣（合計 1.00）<sup class="cite"><a href="#ref-42">42</a></sup></figcaption>
 </figure>
 
 <figure data-vx-chart="bar" data-orient="horizontal" data-unit="%" data-max="100" data-series='[
@@ -268,13 +292,13 @@
   {"label":"被動集中引發系統性脆弱","value":68,"desc":"可能。少數巨頭撐起整個指數，一旦其中之一出事，全市場連鎖反應"},
   {"label":"地緣黑天鵝精準擇時","value":30,"desc":"不太可能精準預測。但機構必持有 5%-10% 尾端風險避險倉位"}
 ]'>
-<figcaption>FIG. 07 — 四大微觀趨勢的條件機率與情境分析</figcaption>
+<figcaption>FIG. 07 — 四大微觀趨勢的條件機率與情境分析<sup class="cite"><a href="#ref-43">43</a></sup></figcaption>
 </figure>
 
 <!-- ============================================== -->
 <h2 id="sec-7">VII. 辯證合題：流動性生態系</h2>
 
-<blockquote><strong>白話一句話：</strong>市場不是陰謀劇，而是生態系；每個參與者都在找自己的最佳位置，最後形成的價格路徑常常不是任何單一人設計的。</blockquote>
+<blockquote><strong>白話就是：</strong>市場不是陰謀劇，而是生態系；每個參與者都在找自己的最佳位置，最後形成的價格路徑常常不是任何單一人設計的。</blockquote>
 
 <figure data-vx-chart="radar"
         data-max="100"
@@ -284,22 +308,22 @@
           {"name":"反：莊家操縱論","subtitle":"Conspiracy","desc":"市場由神秘主力暗中操控，散戶永遠被割。","values":[40,20,15,25,60,20]},
           {"name":"合：流動性生態系","subtitle":"Liquidity Ecosystem","desc":"沒有單一主謀，但有結構性的流動性物理規律——機構演算法、做市商 Gamma 避險、套利基金構成相互競爭的耗散系統。","values":[85,80,88,90,80,90],"highlight":true}
         ]'>
-<figcaption>FIG. 08 — 三派辯證：流動性生態系是 EMH 與莊家論的高維合題</figcaption>
+<figcaption>FIG. 08 — 三派辯證：流動性生態系是 EMH 與莊家論的高維合題<sup class="cite"><a href="#ref-44">44</a></sup></figcaption>
 </figure>
 
-<p>EMH 把市場理想化為機械效率，忽略了「<a href="#sec-1">流動性悖論</a>」的物理約束；莊家論把市場魔化為陰謀劇場，忽略了「沒人協調的演算法集合」如何自發產生看起來像「操縱」的行為。</p>
+<p>EMH 把市場理想化為機械效率，忽略了「<a href="#sec-1">流動性悖論</a>」的物理約束；莊家論把市場魔化為陰謀劇場，忽略了「沒人協調的演算法集合」如何自發產生看起來像「操縱」的行為<sup class="cite"><a href="#ref-45">45</a></sup>。</p>
 
-<p>真正的合題是：<strong>市場是一個流動性生態系——由互相競爭的演算法、做市商與套利者構成的耗散結構，沒有單一意志，但有可預測的物理規律</strong>。這條洞察與<a href="市場本質觀測研究報告.html#sec-7">市場本質報告中的「動態量子啟發式演化生態系」</a>是同一個觀點的不同切片。</p>
+<p>真正的合題是：<strong>市場是一個流動性生態系——由互相競爭的演算法、做市商與套利者構成的耗散結構，沒有單一意志，但有可預測的物理規律</strong>。這條洞察與<a href="市場本質觀測研究報告.html#sec-7">市場本質報告中的「動態量子啟發式演化生態系」</a>是同一個觀點的不同切片<sup class="cite"><a href="#ref-46">46</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-8">VIII. 跨領域應用：企業併購與決策</h2>
 
-<blockquote><strong>白話一句話：</strong>流動性思維不只用在交易，也能看企業併購與決策：真正重要的是阻力在哪、誰被迫行動、哪個節點最容易引發連鎖反應。</blockquote>
+<blockquote><strong>白話就是：</strong>流動性思維不只用在交易，也能看企業併購與決策：真正重要的是阻力在哪、誰被迫行動、哪個節點最容易引發連鎖反應。</blockquote>
 
 <ol>
-<li><strong>企業併購裡的 Wyckoff 累積</strong>：聰明的併購家不會「市價衝買」標的公司股票——那會立即推高估值。他們會像 VWAP 演算法一樣，<strong>透過多家受託子公司、Iceberg 式的長期慢慢吸籌</strong>，直到籌碼極度集中時才宣布要約收購。這就是巴菲特 1980 年代收 Coca-Cola、Geico 等股票的真實流程。</li>
-<li><strong>負 Gamma 風險的企業版</strong>：當你的事業在<strong>「越漲越要追、越跌越要拋」</strong>的結構裡（例如：高槓桿+短期負債+追求季報亮眼），你就在跑一個負 Gamma 部位。任何衝擊都會被自身的避險動作放大。反脆弱的設計剛好相反——在事業設計裡塞進<strong>長 Gamma</strong>（高現金、低槓桿、長期視角），讓黑天鵝事件變成你「便宜抄底」的機會。</li>
-<li><strong>個人決策的凱利準則</strong>：在人生重大選擇（轉職、創業、買房）面前，不要 All-in，但也不要 All-out。用<strong>半凱利</strong>的精神——既不錯過上行，也不會破產。重要的不是「這次對不對」，而是「<strong>長期不被消滅</strong>」。能不能下次再下注，才是複利的真正本質。</li>
+<li><strong>企業併購裡的 Wyckoff 累積</strong>：聰明的併購家不會「市價衝買」標的公司股票——那會立即推高估值。他們會像 VWAP 演算法一樣，<strong>透過多家受託子公司、Iceberg 式的長期慢慢吸籌</strong>，直到籌碼極度集中時才宣布要約收購。這就是巴菲特 1980 年代收 Coca-Cola、Geico 等股票的真實流程<sup class="cite"><a href="#ref-47">47</a></sup>。</li>
+<li><strong>負 Gamma 風險的企業版</strong>：當你的事業在<strong>「越漲越要追、越跌越要拋」</strong>的結構裡（例如：高槓桿+短期負債+追求季報亮眼），你就在跑一個負 Gamma 部位。任何衝擊都會被自身的避險動作放大。反脆弱的設計剛好相反——在事業設計裡塞進<strong>長 Gamma</strong>（高現金、低槓桿、長期視角），讓黑天鵝事件變成你「便宜抄底」的機會<sup class="cite"><a href="#ref-48">48</a></sup>。</li>
+<li><strong>個人決策的凱利準則</strong>：在人生重大選擇（轉職、創業、買房）面前，不要 All-in，但也不要 All-out。用<strong>半凱利</strong>的精神——既不錯過上行，也不會破產。重要的不是「這次對不對」，而是「<strong>長期不被消滅</strong>」。能不能下次再下注，才是複利的真正本質<sup class="cite"><a href="#ref-49">49</a></sup>。</li>
 </ol>
 
 <blockquote>
@@ -329,17 +353,59 @@
 </summary>
 <div class="vx-sources-body">
 <ol>
-<li id="ref-1"><cite>Studies in Tape Reading</cite> · Richard D. Wyckoff · 1910；<cite>The Day Trader's Bible</cite> · 1919<span class="src">Composite Man 框架與四階段循環</span><a href="https://en.wikipedia.org/wiki/Richard_Wyckoff" target="_blank" rel="noopener">en.wikipedia.org / Wyckoff</a></li>
-<li id="ref-2"><cite>Algorithmic and High-Frequency Trading</cite> · Álvaro Cartea, Sebastian Jaimungal, José Penalva · Cambridge, 2015<span class="src">Iceberg orders 與市場微結構</span><a href="https://www.cambridge.org/9781107091146" target="_blank" rel="noopener">cambridge.org</a></li>
-<li id="ref-3"><cite>Dark Pool Trading and Information Acquisition</cite> · Sabrina Buti, Barbara Rindi, Ingrid Werner · Review of Financial Studies, 2017<span class="src">暗池交易對價格發現的影響</span><a href="https://doi.org/10.1093/rfs/hhx040" target="_blank" rel="noopener">doi.org / 2017</a></li>
-<li id="ref-4"><cite>A New Interpretation of Information Rate</cite> · John L. Kelly Jr. · Bell System Technical Journal, 1956<span class="src">凱利準則原始論文</span><a href="https://www.princeton.edu/~wbialek/rome/refs/kelly_56.pdf" target="_blank" rel="noopener">princeton.edu / Kelly 1956</a></li>
-<li id="ref-5"><cite>Zero-Day-to-Expiry (0DTE) Options and Market Volatility</cite> · CBOE Research Note · 2024<span class="src">0DTE 占 SPX 期權成交量比例與 Gamma 影響</span><a href="https://www.cboe.com/insights/posts/" target="_blank" rel="noopener">cboe.com</a></li>
-<li id="ref-6"><cite>The (Mis)Behavior of Markets: A Fractal View of Financial Turbulence</cite> · Benoit Mandelbrot & Richard L. Hudson · Basic Books, 2004<span class="src">肥尾、波動聚集與分形市場觀</span><a href="https://en.wikipedia.org/wiki/The_Misbehavior_of_Markets" target="_blank" rel="noopener">en.wikipedia.org</a></li>
-<li id="ref-7"><cite>Value at Risk: The New Benchmark for Managing Financial Risk</cite> · Philippe Jorion · McGraw-Hill, 3rd ed. 2007<span class="src">VaR 與 CVaR 的數學框架與監管應用</span><a href="https://www.mheducation.com/" target="_blank" rel="noopener">mheducation.com</a></li>
-<li id="ref-8"><cite>Findings Regarding the Market Events of May 6, 2010</cite> · SEC & CFTC Joint Report<span class="src">2010 閃電崩盤的演算法連鎖失效</span><a href="https://www.sec.gov/news/studies/2010/marketevents-report.pdf" target="_blank" rel="noopener">sec.gov</a></li>
-<li id="ref-9"><cite>Gamma Exposure and Market Stability</cite> · SqueezeMetrics / Spotgamma Research · 2019-2024<span class="src">GEX 與市場黏滯/脆弱性結構</span><a href="https://squeezemetrics.com/monitor/download/pdf/short_is_long.pdf" target="_blank" rel="noopener">squeezemetrics.com</a></li>
-<li id="ref-10"><cite>Portfolio Selection</cite> · Harry Markowitz · Journal of Finance, 1952<span class="src">現代投資組合理論與均值-變異數模型</span><a href="https://www.jstor.org/stable/2975974" target="_blank" rel="noopener">jstor.org</a></li>
-<li id="ref-11"><cite>The Alchemy of Finance</cite> · George Soros · 1987<span class="src">反身性理論與市場參與者的雙向影響</span><a href="https://en.wikipedia.org/wiki/Reflexivity_(social_theory)" target="_blank" rel="noopener">en.wikipedia.org</a></li>
+<li id="ref-1"><cite>Accumulation, Manipulation, and Distribution in Wyckoff Theory - QuantVPS</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.quantvps.com/blog/wyckoff-accumulation-and-distribution" target="_blank" rel="noopener">www.quantvps.com/blog/wyckoff-accumulation-and-distribution</a></li>
+<li id="ref-2"><cite>Wyckoff Accumulation Pattern: Phases, Schematics &amp; Trading Guide - TrendSpider</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://trendspider.com/learning-center/chart-patterns-wyckoff-accumulation/" target="_blank" rel="noopener">trendspider.com/learning-center/chart-patterns-wyckoff-accumulation</a></li>
+<li id="ref-3"><cite>Wyckoff Method: Accumulation &amp; Distribution | JournalPlus</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://journalplus.co/learn/glossary/wyckoff-method" target="_blank" rel="noopener">journalplus.co/learn/glossary</a></li>
+<li id="ref-4"><cite>Wyckoff Method</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.wyckoffanalytics.com/wyckoff-method/" target="_blank" rel="noopener">www.wyckoffanalytics.com/wyckoff-method</a></li>
+<li id="ref-5"><cite>Wyckoff Accumulation Trading Strategy Understanding Market Cycles - Bookmap</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://bookmap.com/blog/wyckoff-trading-strategy-understanding-market-cycles" target="_blank" rel="noopener">bookmap.com/blog/wyckoff-trading-strategy-understanding-market-cycles</a></li>
+<li id="ref-6"><cite>High-Frequency Trading: Iceberg And Sniffer Strategy : r/YellowDeFi - Reddit</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.reddit.com/r/YellowDeFi/comments/quel1q/highfrequency_trading_iceberg_and_sniffer_strategy/" target="_blank" rel="noopener">www.reddit.com/r/YellowDeFi</a></li>
+<li id="ref-7"><cite>Order-Flow Alpha &amp; Microstructure : Where Speed Becomes Strategy - mas-markets.com</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://mas-markets.com/quant-strategies/order-flow-alpha-microstructure-where-speed-becomes-strategy/" target="_blank" rel="noopener">mas-markets.com/quant-strategies/order-flow-alpha-microstructure-where-speed-becomes-strategy</a></li>
+<li id="ref-8"><cite>How to Read and Trade Iceberg Orders: Hidden Liquidity in Plain Sight - Bookmap</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://bookmap.com/blog/how-to-read-and-trade-iceberg-orders-hidden-liquidity-in-plain-sight" target="_blank" rel="noopener">bookmap.com/blog/how-to-read-and-trade-iceberg-orders-hidden-liquidity-in-plain-sight</a></li>
+<li id="ref-9"><cite>Iceberg Order (2025): Mechanics, Strategies, Pros, Cons - The Trading Analyst</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://thetradinganalyst.com/iceberg-order/" target="_blank" rel="noopener">thetradinganalyst.com/iceberg-order</a></li>
+<li id="ref-10"><cite>Execution Algorithms - Wyden</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.wyden.io/enterprise/crypto-trading-oems/execution-algorithms/" target="_blank" rel="noopener">www.wyden.io/enterprise/crypto-trading-oems</a></li>
+<li id="ref-11"><cite>Top 5 Algo Trading Strategies with Examples (2026) | Findoc</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.findoc.com/blog/5-algorithmic-trading-strategies" target="_blank" rel="noopener">www.findoc.com/blog/5-algorithmic-trading-strategies</a></li>
+<li id="ref-12"><cite>Algorithm Training Guide - Infront</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.infrontfinance.com/media/1630/algorithm-trading-guide-q1-17-infront.pdf" target="_blank" rel="noopener">www.infrontfinance.com/media/1630</a></li>
+<li id="ref-13"><cite>High-Frequency Trading and Institutional Trading Costs - IDEAS/RePEc</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://ideas.repec.org/p/bca/bocawp/18-8.html" target="_blank" rel="noopener">ideas.repec.org/p/bca</a></li>
+<li id="ref-14"><cite>High Frequency Trading (HFT) - Definition, Pros and Cons - Corporate Finance Institute</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://corporatefinanceinstitute.com/resources/equities/high-frequency-trading-hft/" target="_blank" rel="noopener">corporatefinanceinstitute.com/resources/equities</a></li>
+<li id="ref-15"><cite>Trading Execution Algorithms : The Almgren-Chriss Framework | by Ibrahim Lanre Adedimeji | Medium</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://medium.com/@ibrahimlanre1890/trading-execution-algorithms-the-almgren-chriss-framework-56717dd650ce" target="_blank" rel="noopener">medium.com/@ibrahimlanre1890/trading-execution-algorithms-the-almgren-chriss-framework-56717dd650ce</a></li>
+<li id="ref-16"><cite>Order Matching: The Difference Between Dark Pools and Exchanges - Devexperts Blog</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://devexperts.com/blog/order-matching-dark-pools-vs-exchanges/" target="_blank" rel="noopener">devexperts.com/blog/order-matching-dark-pools-vs-exchanges</a></li>
+<li id="ref-17"><cite>Dark-Pool-Trading-vs-Lit-Exchanges-Explained-—-Using-Market-Chameleon-for-Volume-Insights</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://marketchameleon.com/Instructional-Stock-and-Options-Trading-Videos/597/Dark-Pool-Trading-vs-Lit-Exchanges-Explained-%E2%80%94-Using-Market-Chameleon-for-Volume-Insights" target="_blank" rel="noopener">marketchameleon.com/Instructional-Stock-and-Options-Trading-Videos/597</a></li>
+<li id="ref-18"><cite>3 Types of Trading Algos Institutions Use: VWAP, TWAP &amp; Steps ☝️ - YouTube</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.youtube.com/watch?v=PDN_1F_LXUU" target="_blank" rel="noopener">www.youtube.com/watch</a></li>
+<li id="ref-19"><cite>Institutional Equity Algorithmic Execution | Erste Group Bank AG</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.erstegroup.com/en/financial-institutions/group-markets-execution/institutional-equity-algorithmic-execution" target="_blank" rel="noopener">www.erstegroup.com/en/financial-institutions</a></li>
+<li id="ref-20"><cite>How Kelly Criterion Affects Trading Allocation Strategy - YouTube</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.youtube.com/watch?v=FcaVbBquFx4" target="_blank" rel="noopener">www.youtube.com/watch</a></li>
+<li id="ref-21"><cite>The Role of Position Sizing in Your Risk Management Plan - Trade Ideas</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.trade-ideas.com/2025/04/04/the-role-of-position-sizing-in-your-risk-management-plan/" target="_blank" rel="noopener">www.trade-ideas.com/2025/04</a></li>
+<li id="ref-22"><cite>Wyckoff Theory: Accumulation, Distribution &amp; Markdown Phases Explained - Mudrex</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://mudrex.com/learn/wyckoff-theory/" target="_blank" rel="noopener">mudrex.com/learn/wyckoff-theory</a></li>
+<li id="ref-23"><cite>Kelly criterion - Wikipedia</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://en.wikipedia.org/wiki/Kelly_criterion" target="_blank" rel="noopener">en.wikipedia.org/wiki/Kelly_criterion</a></li>
+<li id="ref-24"><cite>What Is the Kelly Criterion? | Smart Investing Formula | CQF</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.cqf.com/blog/quant-finance-101/what-is-the-kelly-criterion" target="_blank" rel="noopener">www.cqf.com/blog/quant-finance-101</a></li>
+<li id="ref-25"><cite>Got a Positive Expectancy Strategy? Stop Using Fixed Risk — Use Half Kelly - Medium</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://medium.com/@snowden/got-a-positive-expectancy-strategy-stop-using-fixed-risk-use-half-kelly-d43cf0f94d99" target="_blank" rel="noopener">medium.com/@snowden/got-a-positive-expectancy-strategy-stop-using-fixed-risk-use-half-kelly-d43cf0f94d99</a></li>
+<li id="ref-26"><cite>Risk Management Using Kelly Criterion | by Market Investigation - Medium</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://medium.com/@tmapendembe_28659/risk-management-using-kelly-criterion-2eddcf52f50b" target="_blank" rel="noopener">medium.com/@tmapendembe_28659/risk-management-using-kelly-criterion-2eddcf52f50b</a></li>
+<li id="ref-27"><cite>Tackling estimation risk in Kelly investing using options - arXiv</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://arxiv.org/html/2508.18868v1" target="_blank" rel="noopener">arxiv.org/html/2508.18868v1</a></li>
+<li id="ref-28"><cite>An Optimal Trade. The Kelly Criterion in Practice | by Nicholas Teague | From the Diaries of John Henry | Medium</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://medium.com/from-the-diaries-of-john-henry/an-optimal-trade-a374064fda91" target="_blank" rel="noopener">medium.com/from-the-diaries-of-john-henry/an-optimal-trade-a374064fda91</a></li>
+<li id="ref-29"><cite>Kelly Criterion Position Sizing: Maximize Long-Term Returns While Avoiding Ruin</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://astuteinvestorscalculus.com/the-kelly-criterion/" target="_blank" rel="noopener">astuteinvestorscalculus.com/the-kelly-criterion</a></li>
+<li id="ref-30"><cite>Risk Management: A Practical Guide | MSCI</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.msci.com/resources/research/technical_documentation/RMGuide.pdf" target="_blank" rel="noopener">www.msci.com/resources/research</a></li>
+<li id="ref-31"><cite>Understanding the Gamma Squeeze | Charles Schwab</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.schwab.com/learn/story/understanding-gamma-squeeze" target="_blank" rel="noopener">www.schwab.com/learn/story</a></li>
+<li id="ref-32"><cite>Gamma Exposure (GEX): Understanding Dealer Hedging Flows, and Key Levels - Moomoo</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.moomoo.com/us/learn/detail-gamma-exposure-gex-understanding-dealer-hedging-flows-and-key-levels-107906-260473079" target="_blank" rel="noopener">www.moomoo.com/us/learn</a></li>
+<li id="ref-33"><cite>What Are 0DTE Options? Learn the Basics - Charles Schwab</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.schwab.com/learn/story/zeroing-on-0dte-options-learn-basics" target="_blank" rel="noopener">www.schwab.com/learn/story</a></li>
+<li id="ref-34"><cite>Volatility Insights: Much Ado About 0DTEs - Evaluating the Market Impact of SPX 0DTE Options | Cboe</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.cboe.com/insights/posts/volatility-insights-evaluating-the-market-impact-of-spx-0-dte-options/" target="_blank" rel="noopener">www.cboe.com/insights/posts</a></li>
+<li id="ref-35"><cite>CBRE Gamma Exposure (GEX) - InsiderFinance</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.insiderfinance.io/gamma-exposure/CBRE" target="_blank" rel="noopener">www.insiderfinance.io/gamma-exposure/CBRE</a></li>
+<li id="ref-36"><cite>GAP Gamma Exposure (GEX) - InsiderFinance</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.insiderfinance.io/gamma-exposure/GAP" target="_blank" rel="noopener">www.insiderfinance.io/gamma-exposure/GAP</a></li>
+<li id="ref-37"><cite>Tail Risk Hedging - Graham Capital Management</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.grahamcapital.com/wp-content/uploads/2023/08/Tail-Risk-Hedging_Graham-Research-October-2017-1.pdf" target="_blank" rel="noopener">www.grahamcapital.com/wp-content/uploads</a></li>
+<li id="ref-38"><cite>Full article: Enhancing global equity returns with trend-following and tail risk hedging overlays - Taylor &amp; Francis</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.tandfonline.com/doi/full/10.1080/10293523.2025.2553254" target="_blank" rel="noopener">www.tandfonline.com/doi/full</a></li>
+<li id="ref-39"><cite>The Introduction of Derivative Market Manipulation Part II - JPX</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.jpx.co.jp/english/derivatives/market-report/futures-options-report/archives/dh3otn000000qjs5-att/rerk2501_e.pdf" target="_blank" rel="noopener">www.jpx.co.jp/english/derivatives</a></li>
+<li id="ref-40"><cite>Taiwan - TAIEX Futures Spot-Futures Spread vs. TAIEX | MacroMicro</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://en.macromicro.me/charts/37759/taiwan-index-futures-spread" target="_blank" rel="noopener">en.macromicro.me/charts/37759</a></li>
+<li id="ref-41"><cite>Taiwan - Open Interest in TAIFEX of Foreign Investors vs. TAIEX - MacroMicro</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://en.macromicro.me/charts/136/tw-future-stock" target="_blank" rel="noopener">en.macromicro.me/charts/136</a></li>
+<li id="ref-42"><cite>The Influence of Hedge, Arbitrage, and After-Hours Trading on the Holding Returns of TAIEX Futures - MDPI</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.mdpi.com/2075-1680/12/1/71" target="_blank" rel="noopener">www.mdpi.com/2075-1680/12</a></li>
+<li id="ref-43"><cite>TAIWAN FUTURES EXCHANGE-Investor Protection-FAQ-Glossary - 臺灣期貨交易所</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.taifex.com.tw/enl/eng9/glossary" target="_blank" rel="noopener">www.taifex.com.tw/enl/eng9</a></li>
+<li id="ref-44"><cite>TAIWAN FUTURES EXCHANGE-Clearing-Exchange Traded Derivatives Clearing-Clearing Mechanism-Formula for Calculating Final Settlement Prices-Equity Index Futures and Options</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.taifex.com.tw/enl/eng5/formulaIndex" target="_blank" rel="noopener">www.taifex.com.tw/enl/eng5</a></li>
+<li id="ref-45"><cite>TSMC: Totally Stupid Market Chaos - Acadian Asset Management</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.acadian-asset.com/investment-insights/owenomics/tsmc-totally-stupid-market-chaos" target="_blank" rel="noopener">www.acadian-asset.com/investment-insights/owenomics</a></li>
+<li id="ref-46"><cite>The ADR premium is ridiculously high! Taiwan Semiconductor (TSM.US) arbitrage strategy has failed, and no signs of premium narrowing can be seen. - Moomoo</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.moomoo.com/news/post/48160101/the-adr-premium-is-ridiculously-high-taiwan-semiconductor-tsmus-arbitrage" target="_blank" rel="noopener">www.moomoo.com/news/post</a></li>
+<li id="ref-47"><cite>Popular arbitrage trade backfires as TSMC frenzy grows in US - The Business Times</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.businesstimes.com.sg/wealth/popular-arbitrage-trade-backfires-tsmc-frenzy-grows-us" target="_blank" rel="noopener">www.businesstimes.com.sg/wealth/popular-arbitrage-trade-backfires-tsmc-frenzy-grows-us</a></li>
+<li id="ref-48"><cite>Arbitrage trading in TSMC is too risky for hedge funds - ADR... - moomoo Community</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.moomoo.com/community/feed/tsmc-s-arbitrage-is-too-dangerous-for-hedge-funds-adr-113837247954950" target="_blank" rel="noopener">www.moomoo.com/community/feed</a></li>
+<li id="ref-49"><cite>What is Gamma Exposure (GEX)? | Quant Data Help Center</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://help.quantdata.us/en/articles/7852449-what-is-gamma-exposure-gex" target="_blank" rel="noopener">help.quantdata.us/en/articles</a></li>
+<li id="ref-50"><cite>The Index Investing Revolution: How Passive Strategies Are Reshaping Markets - Commentary | S&amp;P Dow Jones Indices</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.spglobal.com/spdji/en/commentary/article/the-index-investing-revolution-how-passive-strategies-are-reshaping-markets/" target="_blank" rel="noopener">www.spglobal.com/spdji/en</a></li>
+<li id="ref-51"><cite>How to hedge chinese stocks bet? Mainly taiwan invasion? : r/ValueInvesting - Reddit</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://www.reddit.com/r/ValueInvesting/comments/yew0ek/how_to_hedge_chinese_stocks_bet_mainly_taiwan/" target="_blank" rel="noopener">www.reddit.com/r/ValueInvesting</a></li>
+<li id="ref-52"><cite>Retail vs Smart Money — Who Really Moves the Market? | CryptoHigh14 on Binance Square</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.binance.com/en-NG/square/post/294978496418225" target="_blank" rel="noopener">www.binance.com/en-NG/square</a></li>
+<li id="ref-53"><cite>The 'third way' in action - UQ eSpace - The University of Queensland</cite><span class="src">檢索日期：5月 11, 2026</span><a href="https://espace.library.uq.edu.au/view/UQ:157926/n02whole.pdf" target="_blank" rel="noopener">espace.library.uq.edu.au/view/UQ:157926</a></li>
 </ol>
 </div>
 </details>

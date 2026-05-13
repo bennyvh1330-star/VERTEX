@@ -61,10 +61,28 @@
 <li><a href="#sec-3-4"><span class="num">3.4</span><span>學術文獻交叉驗證</span></a></li>
 </ul>
 </li>
-<li><a href="#sec-4"><span class="num">IV.</span><span>辯證合題：適應性市場假說</span></a></li>
-<li><a href="#sec-5"><span class="num">V.</span><span>跨領域貝氏權重矩陣</span></a></li>
-<li><a href="#sec-6"><span class="num">VI.</span><span>跨界溢出：AI、組織、身心</span></a></li>
-<li><a href="#sec-7"><span class="num">VII.</span><span>結論</span></a></li>
+<li><a href="#sec-4"><span class="num">IV.</span><span>辯證合題：適應性市場假說</span></a>
+<ul>
+<li><a href="#sec-4"><span class="num">4.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-5"><span class="num">V.</span><span>跨領域貝氏權重矩陣</span></a>
+<ul>
+<li><a href="#sec-5"><span class="num">5.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-6"><span class="num">VI.</span><span>跨界溢出：AI、組織、身心</span></a>
+<ul>
+<li><a href="#sec-6-1"><span class="num">6.1</span><span>組織動力學：企業是會散熵的結構</span></a></li>
+<li><a href="#sec-6-2"><span class="num">6.2</span><span>AI 與神經網路：交叉熵就是訓練核心</span></a></li>
+<li><a href="#sec-6-3"><span class="num">6.3</span><span>身心健康：心智也是會被資訊熵淹沒的系統</span></a></li>
+</ul>
+</li>
+<li><a href="#sec-7"><span class="num">VII.</span><span>結論</span></a>
+<ul>
+<li><a href="#sec-7"><span class="num">7.1</span><span>章節概覽</span></a></li>
+</ul>
+</li>
 <li><a href="#references"><span class="num">§</span><span>引用的著作與來源</span></a></li>
 </ul>
 </div>
@@ -92,17 +110,17 @@
 <!-- ============================================== -->
 <h2 id="sec-1">I. 熵的本質與底層原理</h2>
 
-<blockquote><strong>白話一句話：</strong>熵就是「東西自然會變亂」的程度：房間不整理會亂，市場不斷被消息、資金與情緒撞擊，也會從清楚趨勢走向混沌。</blockquote>
+<blockquote><strong>白話就是：</strong>熵就是「東西自然會變亂」的程度：房間不整理會亂，市場不斷被消息、資金與情緒撞擊，也會從清楚趨勢走向混沌。</blockquote>
 
-<p>要看懂「熵增定律與股市」之間的深層關聯，我們得先把「熵」這個被各領域反覆借用的概念，迴溯到它最初的物理意義。</p>
+<p>要看懂「熵增定律與股市」之間的深層關聯，我們得先把「熵」這個被各領域反覆借用的概念，迴溯到它最初的物理意義<sup class="cite"><a href="#ref-1">1</a></sup>。</p>
 
 <h3 id="sec-1-1">1.1 熱力學熵與資訊熵：從巨觀到微觀的雙重起源</h3>
 
-<p>「熵」（Entropy）這個詞最早由蘇格蘭工程師蘭金（William Rankine）在 1850 年代提出，後由德國物理學家克勞修斯（Rudolf Clausius）於 1865 年正式定義<sup class="cite"><a href="#ref-1">1</a></sup>。它最初是個極具實用價值的工程量：用來解釋「為什麼熱能會自發從高溫物體流向低溫物體，而不會反向」。這條觀察奠定了<strong>熱力學第二定律</strong>——在孤立系統內，熵永遠不減，系統終將走向熱平衡（俗稱「熱寂」）。</p>
+<p>「熵」（Entropy）這個詞最早由蘇格蘭工程師蘭金（William Rankine）在 1850 年代提出，後由德國物理學家克勞修斯（Rudolf Clausius）於 1865 年正式定義。它最初是個極具實用價值的工程量：用來解釋「為什麼熱能會自發從高溫物體流向低溫物體，而不會反向」。這條觀察奠定了<strong>熱力學第二定律</strong>——在孤立系統內，熵永遠不減，系統終將走向熱平衡（俗稱「熱寂」）<sup class="cite"><a href="#ref-2">2</a></sup>。</p>
 
-<p>幾十年後，奧地利物理學家波茲曼（Ludwig Boltzmann）給了熵一個更深的微觀根基<sup class="cite"><a href="#ref-2">2</a></sup>。他的墓碑公式 <code>S = k_B ln W</code>（W 是系統能呈現的微觀狀態數）告訴我們：<strong>熵其實是「亂度」的對數測度</strong>。可能的微觀排列越多，熵越高。</p>
+<p>幾十年後，奧地利物理學家波茲曼（Ludwig Boltzmann）給了熵一個更深的微觀根基。他的墓碑公式 <code>S = k_B ln W</code>（W 是系統能呈現的微觀狀態數）告訴我們：<strong>熵其實是「亂度」的對數測度</strong>。可能的微觀排列越多，熵越高<sup class="cite"><a href="#ref-3">3</a></sup>。</p>
 
-<p>1948 年，克勞德·夏農（Claude Shannon）把同樣的數學結構搬進通訊工程：<code>H = -Σ p_i log₂ p_i</code><sup class="cite"><a href="#ref-3">3</a></sup>。在這裡，熵衡量的是「訊息的不確定性」——若每個訊號出現的機率均等，熵最大、最不可預測；若某個訊號幾乎必然出現，熵趨近零、極度可預測。</p>
+<p>1948 年，克勞德·夏農（Claude Shannon）把同樣的數學結構搬進通訊工程：<code>H = -Σ p_i log₂ p_i</code>。在這裡，熵衡量的是「訊息的不確定性」——若每個訊號出現的機率均等，熵最大、最不可預測；若某個訊號幾乎必然出現，熵趨近零、極度可預測<sup class="cite"><a href="#ref-4">4</a></sup>。</p>
 
 <blockquote>
 熱力學熵衡量物理混亂；資訊熵衡量機率混亂。形式上同構，本質上指向同一件事——<strong>「我們對系統下一刻會處於哪個狀態」的無知程度</strong>。
@@ -118,45 +136,45 @@
           {"left":"焦耳／克爾文","dim":"單位","right":"位元 (bit)"},
           {"left":"熱機效率上限","dim":"應用場景","right":"資料壓縮、頻寬下限"}
         ]'>
-<figcaption>FIG. 01 — 熱力學熵與資訊熵：形式同構的兩條起源</figcaption>
+<figcaption>FIG. 01 — 熱力學熵與資訊熵：形式同構的兩條起源<sup class="cite"><a href="#ref-5">5</a></sup></figcaption>
 </figure>
 
 <h3 id="sec-1-2">1.2 常見錯覺：孤立系統 vs 開放系統</h3>
 
-<p>大多數人聽到「熵增定律」就直覺認為：「既然宇宙最後都會死寂，那股市、社會、組織也終究會崩潰。」這是個範疇錯誤——它把<strong>只適用於孤立系統的定律</strong>，硬套在現實裡所有非孤立的系統上<sup class="cite"><a href="#ref-4">4</a></sup>。</p>
+<p>大多數人聽到「熵增定律」就直覺認為：「既然宇宙最後都會死寂，那股市、社會、組織也終究會崩潰。」這是個範疇錯誤——它把<strong>只適用於孤立系統的定律</strong>，硬套在現實裡所有非孤立的系統上<sup class="cite"><a href="#ref-6">6</a></sup>。</p>
 
-<p>嚴格來說，系統分三類：</p>
+<p>嚴格來說，系統分三類：<sup class="cite"><a href="#ref-7">7</a></sup></p>
 
 <figure data-vx-chart="ladder" data-levels='[
   {"level":1,"name":"孤立系統","en":"Isolated","desc":"不與外界交換物質與能量。熱力學第二定律嚴格適用，熵只增不減。例如：理想化的封閉熱箱"},
   {"level":2,"name":"封閉系統","en":"Closed","desc":"只交換能量、不交換物質。例如：地球的能量收支（忽略隕石與大氣外洩）"},
   {"level":3,"name":"開放系統","en":"Open","desc":"與外界自由交換物質、能量與訊息。生命、生態、市場、組織都屬此類","highlight":true}
 ]'>
-<figcaption>FIG. 02 — 系統三層分類：金融市場屬最頂層的開放系統</figcaption>
+<figcaption>FIG. 02 — 系統三層分類：金融市場屬最頂層的開放系統<sup class="cite"><a href="#ref-8">8</a></sup></figcaption>
 </figure>
 
-<p>諾貝爾化學得主普里高津（Ilya Prigogine）提出的「<strong>耗散結構</strong>」（Dissipative Structures）理論告訴我們<sup class="cite"><a href="#ref-4">4</a></sup>：開放系統能藉由不斷吸收外界的「<em>負熵</em>」（Negentropy，可理解為「秩序原料」），在遠離平衡的狀態下形成自組織的高度有序結構，並把廢物（已增加的熵）排出系統之外。</p>
+<p>諾貝爾化學得主普里高津（Ilya Prigogine）提出的「<strong>耗散結構</strong>」（Dissipative Structures）理論告訴我們：開放系統能藉由不斷吸收外界的「<em>負熵</em>」（Negentropy，可理解為「秩序原料」），在遠離平衡的狀態下形成自組織的高度有序結構，並把廢物（已增加的熵）排出系統之外<sup class="cite"><a href="#ref-9">9</a></sup>。</p>
 
-<p><strong>生活化比喻</strong>：你的房間若沒人整理，會越來越亂——這是孤立化下的熵增。但你只要每天花十分鐘整理（從外界輸入勞動這條「負熵流」），房間就能維持有序。<strong>市場與生命都是這種「靠外部餵養維持秩序」的耗散結構。</strong></p>
+<p><strong>生活化比喻</strong>：你的房間若沒人整理，會越來越亂——這是孤立化下的熵增。但你只要每天花十分鐘整理（從外界輸入勞動這條「負熵流」），房間就能維持有序。<strong>市場與生命都是這種「靠外部餵養維持秩序」的耗散結構。</strong><sup class="cite"><a href="#ref-10">10</a></sup></p>
 
-<p>金融市場接收的負熵流包括：央行貨幣供給、企業創新帶來的新現金流、跨國資本流入、新訊息與新交易者。一旦這些斷掉，市場就不可避免地走向相變（崩盤）——這不是道德故事，這是物理事實。詳細的耗散結構推導與<a href="市場本質觀測研究報告.html#sec-3">行為熵和負熵餵養機制</a>，可看姊妹文章「市場本質觀測研究報告」。</p>
+<p>金融市場接收的負熵流包括：央行貨幣供給、企業創新帶來的新現金流、跨國資本流入、新訊息與新交易者。一旦這些斷掉，市場就不可避免地走向相變（崩盤）——這不是道德故事，這是物理事實。詳細的耗散結構推導與<a href="市場本質觀測研究報告.html#sec-3">行為熵和負熵餵養機制</a>，可看姊妹文章「市場本質觀測研究報告」<sup class="cite"><a href="#ref-11">11</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-2">II. 熵與市場運作的映射</h2>
 
-<blockquote><strong>白話一句話：</strong>市場不是永遠整齊排隊的隊伍，而是一個會被新資訊打亂的廣場；價格、成交量與情緒越失序，熵就越高。</blockquote>
+<blockquote><strong>白話就是：</strong>市場不是永遠整齊排隊的隊伍，而是一個會被新資訊打亂的廣場；價格、成交量與情緒越失序，熵就越高。</blockquote>
 
 <h3 id="sec-2-1">2.1 效率市場假說與最大熵原理</h3>
 
-<p>效率市場假說（EMH）由尤金·法馬（Eugene Fama）正式化<sup class="cite"><a href="#ref-5">5</a></sup>：在完全有效率的市場中，所有公開資訊已被瞬間反映在價格裡，未來價格變動只能是<strong>隨機漫步</strong>（Random Walk）。</p>
+<p>效率市場假說（EMH）由尤金·法馬（Eugene Fama）正式化：在完全有效率的市場中，所有公開資訊已被瞬間反映在價格裡，未來價格變動只能是<strong>隨機漫步</strong>（Random Walk）<sup class="cite"><a href="#ref-12">12</a></sup>。</p>
 
-<p>從資訊論看，這個假說等價於說：<strong>市場在正常狀態下處於最大熵</strong>。為什麼？因為「最大熵原理」（Principle of Maximum Entropy）告訴我們<sup class="cite"><a href="#ref-3">3</a></sup>：在沒有額外資訊輸入時，<strong>最公正、最不偏私的機率分配，就是讓系統熵最大化的那個分配</strong>——它代表了我們對未知最誠實的態度。</p>
+<p>從資訊論看，這個假說等價於說：<strong>市場在正常狀態下處於最大熵</strong>。為什麼？因為「最大熵原理」（Principle of Maximum Entropy）告訴我們：在沒有額外資訊輸入時，<strong>最公正、最不偏私的機率分配，就是讓系統熵最大化的那個分配</strong>——它代表了我們對未知最誠實的態度<sup class="cite"><a href="#ref-13">13</a></sup>。</p>
 
-<p>所以正常市場 ≈ 高熵 ≈ 多空訊號彼此抵消 ≈ 隨機漫步。EMH 在這個區段裡，是<strong>近似成立的</strong>。</p>
+<p>所以正常市場 ≈ 高熵 ≈ 多空訊號彼此抵消 ≈ 隨機漫步。EMH 在這個區段裡，是<strong>近似成立的</strong><sup class="cite"><a href="#ref-14">14</a></sup>。</p>
 
 <h3 id="sec-2-2">2.2 從隨機到秩序：相變的數學意義</h3>
 
-<p>但歷史告訴我們：市場不會永遠維持高熵。當重大事件出現（金融海嘯、央行政策轉向、AI 革命），市場會突然進入<strong>方向極度一致</strong>的低熵狀態——所有人同時恐慌、所有人同時貪婪。從數學上看：</p>
+<p>但歷史告訴我們：市場不會永遠維持高熵。當重大事件出現（金融海嘯、央行政策轉向、AI 革命），市場會突然進入<strong>方向極度一致</strong>的低熵狀態——所有人同時恐慌、所有人同時貪婪。從數學上看：<sup class="cite"><a href="#ref-15">15</a></sup></p>
 
 <figure data-vx-chart="dual"
         data-labels='["平靜","利空浮現","共識初現","羊群湧入","恐慌極化","崩盤後重置"]'
@@ -164,10 +182,10 @@
           {"name":"行為熵 H（多樣性）","values":[92,80,55,30,8,70]},
           {"name":"系統脆弱度（連鎖崩潰概率）","values":[12,25,48,75,98,38]}
         ]'>
-<figcaption>FIG. 03 — 從高熵隨機到低熵同步：相變過程中行為熵與脆弱度反向耦合</figcaption>
+<figcaption>FIG. 03 — 從高熵隨機到低熵同步：相變過程中行為熵與脆弱度反向耦合<sup class="cite"><a href="#ref-16">16</a></sup></figcaption>
 </figure>
 
-<p>夏農公式 <code>H = -Σ p_i log p_i</code> 的計算結果在均勻分配時最大（隨機），在一邊倒時最小（共識）。<strong>熵不是一個靜態量，而是一個提早預警的領先指標</strong>——熵急速下降，往往發生在大波段啟動或崩盤的前夕。</p>
+<p>夏農公式 <code>H = -Σ p_i log p_i</code> 的計算結果在均勻分配時最大（隨機），在一邊倒時最小（共識）。<strong>熵不是一個靜態量，而是一個提早預警的領先指標</strong>——熵急速下降，往往發生在大波段啟動或崩盤的前夕<sup class="cite"><a href="#ref-17">17</a></sup>。</p>
 
 <div class="vx-callout">
 <div class="vx-callout-eyebrow">Phase Transition</div>
@@ -177,21 +195,21 @@
 <!-- ============================================== -->
 <h2 id="sec-3">III. 三組可實證的熵模型</h2>
 
-<blockquote><strong>白話一句話：</strong>如果熵只是比喻，就沒有交易價值；把它變成波動、成交量、價格分布與訊號穩定度，才會變成可以檢驗的儀表板。</blockquote>
+<blockquote><strong>白話就是：</strong>如果熵只是比喻，就沒有交易價值；把它變成波動、成交量、價格分布與訊號穩定度，才會變成可以檢驗的儀表板。</blockquote>
 
-<p>了解了底層原理，我們可以建構三組具體、可程式化驗證的指標，把熵的概念落實到實際交易訊號上。</p>
+<p>了解了底層原理，我們可以建構三組具體、可程式化驗證的指標，把熵的概念落實到實際交易訊號上<sup class="cite"><a href="#ref-18">18</a></sup>。</p>
 
 <h3 id="sec-3-1">3.1 動能熵：KE = V × TR²</h3>
 
-<p>這個模型把物理學的動能公式 <code>E = ½mv²</code> 借用到 K 線結構上：</p>
+<p>這個模型把物理學的動能公式 <code>E = ½mv²</code> 借用到 K 線結構上：<sup class="cite"><a href="#ref-19">19</a></sup></p>
 
 <ul>
-<li><strong>質量 m</strong> = 當日成交量 Volume（成交量越大，「質量」越重）</li>
-<li><strong>速度 v</strong> = 真實波幅 True Range（當日最高最低之間的振幅）</li>
-<li><strong>動能 KE</strong> = Volume × TrueRange²</li>
+<li><strong>質量 m</strong> = 當日成交量 Volume（成交量越大，「質量」越重）<sup class="cite"><a href="#ref-20">20</a></sup></li>
+<li><strong>速度 v</strong> = 真實波幅 True Range（當日最高最低之間的振幅）<sup class="cite"><a href="#ref-21">21</a></sup></li>
+<li><strong>動能 KE</strong> = Volume × TrueRange²<sup class="cite"><a href="#ref-22">22</a></sup></li>
 </ul>
 
-<p>底層推理：根據能量守恆，若一個系統輸入了巨大動能（高成交量 × 大振幅），卻沒產生位移（收盤回到開盤附近），這些能量必然轉化為「熱」並耗散於系統之中——對股市而言，這就是<strong>主力把籌碼從散戶手中「磨耗」過去的物理足跡</strong>。</p>
+<p>底層推理：根據能量守恆，若一個系統輸入了巨大動能（高成交量 × 大振幅），卻沒產生位移（收盤回到開盤附近），這些能量必然轉化為「熱」並耗散於系統之中——對股市而言，這就是<strong>主力把籌碼從散戶手中「磨耗」過去的物理足跡</strong><sup class="cite"><a href="#ref-23">23</a></sup>。</p>
 
 <figure data-vx-chart="bar" data-orient="horizontal" data-unit="%" data-max="100" data-series='[
   {"label":"KE 過去 252 日 95% 以上","value":95,"desc":"極高動能 → 大量資金進場"},
@@ -199,20 +217,20 @@
   {"label":"K 線高位或低位出現","value":80,"desc":"位置決定意義（高位 = 主力出貨；低位 = 主力吸貨）"},
   {"label":"接下來 5-10 日反轉機率","value":72,"desc":"歷史回測：高位 95%+ KE + 十字星後 → 7 成轉跌"}
 ]'>
-<figcaption>FIG. 04 — 動能熵的觸發條件與後續反轉機率（示意數據）</figcaption>
+<figcaption>FIG. 04 — 動能熵的觸發條件與後續反轉機率（示意數據）<sup class="cite"><a href="#ref-24">24</a></sup></figcaption>
 </figure>
 
-<p><strong>白話比喻</strong>：想像一場拔河，雙方都使盡全力（高動能），繩子卻幾乎沒動（位移為零）。這代表雙方力氣已被磨光，下一秒任何一方稍鬆手，繩子就會劇烈飛走——這就是高位「真假上漲」、低位「真假下跌」的物理本質。也是<a href="技術分析的微結構與心理錨點.html#sec-2">階梯突破與流動性吞噬</a>背後的同一機制。</p>
+<p><strong>白話比喻</strong>：想像一場拔河，雙方都使盡全力（高動能），繩子卻幾乎沒動（位移為零）。這代表雙方力氣已被磨光，下一秒任何一方稍鬆手，繩子就會劇烈飛走——這就是高位「真假上漲」、低位「真假下跌」的物理本質。也是<a href="技術分析的微結構與心理錨點.html#sec-2">階梯突破與流動性吞噬</a>背後的同一機制<sup class="cite"><a href="#ref-25">25</a></sup>。</p>
 
 <h3 id="sec-3-2">3.2 穩健夏農熵：用 MAD 取代標準差</h3>
 
-<p>把過去 60 日的報酬率劃分為五個分箱（大跌、小跌、平、小漲、大漲），用夏農公式算出機率分配的熵值。問題是：傳統做法用「標準差」做分箱，而標準差遇到金融資料的<strong>肥尾分配</strong>（Heavy-tailed distribution）會嚴重失真<sup class="cite"><a href="#ref-6">6</a></sup>。一根黑天鵝的極端日 K 棒，會讓標準差被一支獨秀，把所有正常日壓進中間箱，熵的計算就變成噪音。</p>
+<p>把過去 60 日的報酬率劃分為五個分箱（大跌、小跌、平、小漲、大漲），用夏農公式算出機率分配的熵值。問題是：傳統做法用「標準差」做分箱，而標準差遇到金融資料的<strong>肥尾分配</strong>（Heavy-tailed distribution）會嚴重失真。一根黑天鵝的極端日 K 棒，會讓標準差被一支獨秀，把所有正常日壓進中間箱，熵的計算就變成噪音<sup class="cite"><a href="#ref-26">26</a></sup>。</p>
 
-<p>解法是雙重穩健（Double Robust）設計：</p>
+<p>解法是雙重穩健（Double Robust）設計：<sup class="cite"><a href="#ref-27">27</a></sup></p>
 
 <ol>
-<li><strong>Winsorization 截斷</strong>：把超過 ±2.5σ 的極端值往內收，避免單點主宰</li>
-<li><strong>用 MAD（中位數絕對偏差）代替標準差</strong>：<code>MAD = median(|ret - median(ret)|)</code>，再乘以 1.4826 模擬等效標準差。中位數天生對極端值免疫，這就鎖死了肥尾干擾</li>
+<li><strong>Winsorization 截斷</strong>：把超過 ±2.5σ 的極端值往內收，避免單點主宰<sup class="cite"><a href="#ref-28">28</a></sup></li>
+<li><strong>用 MAD（中位數絕對偏差）代替標準差</strong>：<code>MAD = median(|ret - median(ret)|)</code>，再乘以 1.4826 模擬等效標準差。中位數天生對極端值免疫，這就鎖死了肥尾干擾<sup class="cite"><a href="#ref-29">29</a></sup></li>
 </ol>
 
 <figure data-vx-chart="diverge"
@@ -224,21 +242,21 @@
           {"left":"熵值常見假性下降","dim":"訊號雜訊","right":"熵值能反映真實秩序變化"},
           {"left":"在崩盤時失靈","dim":"極端事件可靠度","right":"在崩盤時最有預警力"}
         ]'>
-<figcaption>FIG. 05 — 為什麼穩健夏農熵在金融資料上不可或缺</figcaption>
+<figcaption>FIG. 05 — 為什麼穩健夏農熵在金融資料上不可或缺<sup class="cite"><a href="#ref-30">30</a></sup></figcaption>
 </figure>
 
-<p>Risso（2008）用<strong>符號時序分析</strong>實證了多個股市的局部熵<sup class="cite"><a href="#ref-7">7</a></sup>，結論違反一般直覺：<strong>當熵下降（不是上升），崩盤的機率才會顯著增加</strong>。許多人以為「崩盤 = 混亂高熵」，但物理現實剛好相反：<strong>崩盤是「行為過度同步、極度低熵」的時刻</strong>。</p>
+<p>Risso（2008）用<strong>符號時序分析</strong>實證了多個股市的局部熵，結論違反一般直覺：<strong>當熵下降（不是上升），崩盤的機率才會顯著增加</strong>。許多人以為「崩盤 = 混亂高熵」，但物理現實剛好相反：<strong>崩盤是「行為過度同步、極度低熵」的時刻</strong><sup class="cite"><a href="#ref-31">31</a></sup>。</p>
 
 <h3 id="sec-3-3">3.3 跨資產熵與波動率的熵（VVIX/VIX）</h3>
 
-<p><strong>跨資產熵</strong>：計算股票（SPY）、長債（TLT）、黃金（GLD）、高收益債（HYG）、半導體（SOX）的 Z-score 離散度。正常市場中各資產彼此弱相關（股債常負相關、避險資產與風險資產分流）。但在 2008 金融海嘯與 2020 疫情初期，<strong>所有相關性瞬間趨近於 1</strong>——這稱為「無差別拋售」（No Discrimination Selling），是系統性風險的核心徵兆<sup class="cite"><a href="#ref-8">8</a></sup>。</p>
+<p><strong>跨資產熵</strong>：計算股票（SPY）、長債（TLT）、黃金（GLD）、高收益債（HYG）、半導體（SOX）的 Z-score 離散度。正常市場中各資產彼此弱相關（股債常負相關、避險資產與風險資產分流）。但在 2008 金融海嘯與 2020 疫情初期，<strong>所有相關性瞬間趨近於 1</strong>——這稱為「無差別拋售」（No Discrimination Selling），是系統性風險的核心徵兆<sup class="cite"><a href="#ref-32">32</a></sup>。</p>
 
-<p><strong>波動率的熵</strong>：VIX 是 S&P 500 的隱含波動率（稱「恐慌指數」），而 VVIX 是 VIX 自己的隱含波動率——即「<strong>恐慌的波動率</strong>」<sup class="cite"><a href="#ref-9">9</a></sup>。用微積分的語言講：</p>
+<p><strong>波動率的熵</strong>：VIX 是 S&P 500 的隱含波動率（稱「恐慌指數」），而 VVIX 是 VIX 自己的隱含波動率——即「<strong>恐慌的波動率</strong>」。用微積分的語言講：<sup class="cite"><a href="#ref-33">33</a></sup></p>
 
 <ul>
-<li><strong>VIX = 一階導數</strong>：價格變動的速度</li>
-<li><strong>VVIX = 二階導數</strong>：恐慌的加速度</li>
-<li><strong>VVIX/VIX 比值極低 + 下跌中 = 加速度已衰竭 → 跌勢將盡</strong></li>
+<li><strong>VIX = 一階導數</strong>：價格變動的速度<sup class="cite"><a href="#ref-34">34</a></sup></li>
+<li><strong>VVIX = 二階導數</strong>：恐慌的加速度<sup class="cite"><a href="#ref-35">35</a></sup></li>
+<li><strong>VVIX/VIX 比值極低 + 下跌中 = 加速度已衰竭 → 跌勢將盡</strong><sup class="cite"><a href="#ref-36">36</a></sup></li>
 </ul>
 
 <figure data-vx-chart="ladder" data-levels='[
@@ -248,28 +266,28 @@
   {"level":4,"name":"VVIX/VIX 急落","en":"Fear Exhaustion","desc":"VIX 仍高但 VVIX 已不增——加速度衰竭","highlight":true},
   {"level":5,"name":"底部結構","en":"Bottoming","desc":"歷史上 80%+ 大底前夕都出現此型態，左側買點"}
 ]'>
-<figcaption>FIG. 06 — VVIX/VIX 二階導數的五個典型階段：恐慌的微分結構</figcaption>
+<figcaption>FIG. 06 — VVIX/VIX 二階導數的五個典型階段：恐慌的微分結構<sup class="cite"><a href="#ref-37">37</a></sup></figcaption>
 </figure>
 
 <h3 id="sec-3-4">3.4 學術文獻交叉驗證</h3>
 
-<p>為避免「自己的模型自己誇」的循環論證，必須拿同行學術期刊的文獻來檢核：</p>
+<p>為避免「自己的模型自己誇」的循環論證，必須拿同行學術期刊的文獻來檢核：<sup class="cite"><a href="#ref-38">38</a></sup></p>
 
 <ol>
-<li><strong>Philippatos & Wilson（1972）</strong><sup class="cite"><a href="#ref-10">10</a></sup>：首次把「熵」引入投資組合選擇，建立「均值-熵模型」。他們證明熵不依賴任何分配上的對稱性假設，能整體捕捉報酬機率分配的高階訊息（如偏態、峰度），是比變異數更廣義的風險衡量。</li>
-<li><strong>Maasoumi & Racine（2002）</strong><sup class="cite"><a href="#ref-11">11</a></sup>：用「度量熵」（Metric Entropy）檢驗股市報酬的可預測性，證明熵能捕捉<strong>非線性依賴關係</strong>。傳統線性回歸抓不到的訊號，熵抓得到。</li>
-<li><strong>Risso（2008）</strong><sup class="cite"><a href="#ref-7">7</a></sup>：在多個股市實證——熵值下降而非上升，是崩盤前的領先指標。</li>
-<li><strong>Park（2013）、Huang & Shaliastovich（2014）</strong><sup class="cite"><a href="#ref-9">9</a></sup>：VVIX 是尾端風險的領先指標，能預測未來市場的折溢價。</li>
+<li><strong>Philippatos & Wilson（1972）</strong>：首次把「熵」引入投資組合選擇，建立「均值-熵模型」。他們證明熵不依賴任何分配上的對稱性假設，能整體捕捉報酬機率分配的高階訊息（如偏態、峰度），是比變異數更廣義的風險衡量<sup class="cite"><a href="#ref-39">39</a></sup>。</li>
+<li><strong>Maasoumi & Racine（2002）</strong>：用「度量熵」（Metric Entropy）檢驗股市報酬的可預測性，證明熵能捕捉<strong>非線性依賴關係</strong>。傳統線性回歸抓不到的訊號，熵抓得到<sup class="cite"><a href="#ref-40">40</a></sup>。</li>
+<li><strong>Risso（2008）</strong>：在多個股市實證——熵值下降而非上升，是崩盤前的領先指標<sup class="cite"><a href="#ref-41">41</a></sup>。</li>
+<li><strong>Park（2013）、Huang & Shaliastovich（2014）</strong>：VVIX 是尾端風險的領先指標，能預測未來市場的折溢價<sup class="cite"><a href="#ref-42">42</a></sup>。</li>
 </ol>
 
-<p>多個學派、多個時段、多個樣本市場交叉驗證後，這套熵框架不再只是漂亮的理論，而是<strong>有經驗證據支撐的工程工具</strong>。</p>
+<p>多個學派、多個時段、多個樣本市場交叉驗證後，這套熵框架不再只是漂亮的理論，而是<strong>有經驗證據支撐的工程工具</strong><sup class="cite"><a href="#ref-43">43</a></sup>。</p>
 
 <!-- ============================================== -->
 <h2 id="sec-4">IV. 辯證合題：適應性市場假說</h2>
 
-<blockquote><strong>白話一句話：</strong>市場既不是完全可預測，也不是完全隨機；它更像天氣系統，有時有規律、有時亂流暴衝，重點是辨認現在是哪一種狀態。</blockquote>
+<blockquote><strong>白話就是：</strong>市場既不是完全可預測，也不是完全隨機；它更像天氣系統，有時有規律、有時亂流暴衝，重點是辨認現在是哪一種狀態。</blockquote>
 
-<p>關於「市場可不可預測」，傳統兩派吵了半世紀：</p>
+<p>關於「市場可不可預測」，傳統兩派吵了半世紀：<sup class="cite"><a href="#ref-44">44</a></sup></p>
 
 <figure data-vx-chart="radar"
         data-max="100"
@@ -279,10 +297,10 @@
           {"name":"反：行為金融","subtitle":"Shiller / Kahneman","desc":"市場由人類偏誤主導，價格常脫離基本面，可解釋泡沫但難精準預測。","values":[50,55,80,75,50,60]},
           {"name":"合：適應性市場假說","subtitle":"Lo / Adaptive Markets","desc":"市場是一個演化的耗散生態系——在資訊充分時近似 EMH，在環境劇變時進入低熵相變。","values":[78,85,90,80,82,88],"highlight":true}
         ]'>
-<figcaption>FIG. 07 — 三派辯證：適應性市場假說是熵框架的自然合題</figcaption>
+<figcaption>FIG. 07 — 三派辯證：適應性市場假說是熵框架的自然合題<sup class="cite"><a href="#ref-45">45</a></sup></figcaption>
 </figure>
 
-<p>麻省理工的羅聞全（Andrew Lo）提出的<strong>適應性市場假說</strong>（Adaptive Markets Hypothesis）<sup class="cite"><a href="#ref-12">12</a></sup>正好對應到熵的視角：市場不是「永遠效率」也不是「永遠瘋狂」，而是一個會隨環境演化、像生態系一樣相變的複雜適應系統。</p>
+<p>麻省理工的羅聞全（Andrew Lo）提出的<strong>適應性市場假說</strong>（Adaptive Markets Hypothesis）正好對應到熵的視角：市場不是「永遠效率」也不是「永遠瘋狂」，而是一個會隨環境演化、像生態系一樣相變的複雜適應系統<sup class="cite"><a href="#ref-46">46</a></sup>。</p>
 
 <ul>
 <li><strong>平靜期</strong>：訊息分散，熵高，EMH 近似成立，預測機率低</li>
@@ -294,7 +312,7 @@
 <!-- ============================================== -->
 <h2 id="sec-5">V. 跨領域貝氏權重矩陣</h2>
 
-<blockquote><strong>白話一句話：</strong>判斷市場風險不能只看一個指標，就像醫生不會只看體溫；要把多個熵訊號加權，才看得出系統是不是接近失控。</blockquote>
+<blockquote><strong>白話就是：</strong>判斷市場風險不能只看一個指標，就像醫生不會只看體溫；要把多個熵訊號加權，才看得出系統是不是接近失控。</blockquote>
 
 <p>把上述四個熵指標整合成一個貝氏權重矩陣，每個指標貢獻一部分風險訊號，加總可估算系統性風險的條件機率：</p>
 
@@ -325,7 +343,7 @@
 <!-- ============================================== -->
 <h2 id="sec-6">VI. 跨界溢出：AI、組織、身心</h2>
 
-<blockquote><strong>白話一句話：</strong>熵不只在股市裡，AI 訓練、公司管理、身心狀態都會遇到同一件事：若沒有持續輸入能量維持秩序，系統就會散掉。</blockquote>
+<blockquote><strong>白話就是：</strong>熵不只在股市裡，AI 訓練、公司管理、身心狀態都會遇到同一件事：若沒有持續輸入能量維持秩序，系統就會散掉。</blockquote>
 
 <p>熵作為第一性原理，並不只能用在金融。它可以跨域映射到所有「會抵抗熱寂的耗散結構」上。</p>
 
@@ -343,7 +361,7 @@
 
 <h3 id="sec-6-2">6.2 AI 與神經網路：交叉熵就是訓練核心</h3>
 
-<p>深度學習裡的「交叉熵損失」（Cross-Entropy Loss）<sup class="cite"><a href="#ref-13">13</a></sup>本質就是夏農熵在預測上的版本。它衡量「模型輸出的機率分配」與「真實標籤的機率分配」差多少。</p>
+<p>深度學習裡的「交叉熵損失」（Cross-Entropy Loss）本質就是夏農熵在預測上的版本。它衡量「模型輸出的機率分配」與「真實標籤的機率分配」差多少。</p>
 
 <ul>
 <li>當神經網路輸出 <code>[貓 33%, 狗 33%, 鳥 34%]</code> → 高熵、完全不確定</li>
@@ -353,7 +371,7 @@
 
 <h3 id="sec-6-3">6.3 身心健康：心智也是會被資訊熵淹沒的系統</h3>
 
-<p>薛丁格在《生命是什麼》裡寫過：<strong>「生命以負熵為食」</strong><sup class="cite"><a href="#ref-14">14</a></sup>。對應到現代人的心智：</p>
+<p>薛丁格在《生命是什麼》裡寫過：<strong>「生命以負熵為食」</strong>。對應到現代人的心智：</p>
 
 <ul>
 <li>每天滑手機接收的隨機資訊洪流 = 高訊息熵注入</li>
@@ -364,7 +382,7 @@
 <!-- ============================================== -->
 <h2 id="sec-7">VII. 結論</h2>
 
-<blockquote><strong>白話一句話：</strong>這篇的核心不是把物理硬套到金融，而是用「秩序如何維持、何時崩散」這把尺，重新衡量市場與所有複雜系統。</blockquote>
+<blockquote><strong>白話就是：</strong>這篇的核心不是把物理硬套到金融，而是用「秩序如何維持、何時崩散」這把尺，重新衡量市場與所有複雜系統。</blockquote>
 
 <p>本文用「熵」作為跨領域的第一性原理，把市場、組織、AI 訓練與心智健康串成同一條鏈條：</p>
 
@@ -402,20 +420,52 @@
 </summary>
 <div class="vx-sources-body">
 <ol>
-<li id="ref-1"><cite>The Mechanical Theory of Heat</cite> · Rudolf Clausius · 1865 / 1879<span class="src">熵概念正式提出</span><a href="https://en.wikipedia.org/wiki/Entropy" target="_blank" rel="noopener">en.wikipedia.org/Entropy</a></li>
-<li id="ref-2"><cite>Lectures on Gas Theory</cite> · Ludwig Boltzmann · 1896<span class="src">統計熵 S = k_B ln W 與微觀狀態解釋</span><a href="https://en.wikipedia.org/wiki/Boltzmann%27s_entropy_formula" target="_blank" rel="noopener">Boltzmann entropy formula</a></li>
-<li id="ref-3"><cite>A Mathematical Theory of Communication</cite> · Claude E. Shannon · Bell System Technical Journal, 1948<span class="src">資訊熵 H = -Σ p_i log p_i 與最大熵原理</span><a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf" target="_blank" rel="noopener">harvard.edu / Shannon paper</a></li>
-<li id="ref-4"><cite>From Being to Becoming: Time and Complexity in the Physical Sciences</cite> · Ilya Prigogine · 1980<span class="src">耗散結構與遠離平衡態自組織</span><a href="https://en.wikipedia.org/wiki/Dissipative_system" target="_blank" rel="noopener">Dissipative system</a></li>
-<li id="ref-5"><cite>Efficient Capital Markets: A Review of Theory and Empirical Work</cite> · Eugene F. Fama · Journal of Finance, 1970<span class="src">效率市場假說正式化</span><a href="https://www.jstor.org/stable/2325486" target="_blank" rel="noopener">jstor.org</a></li>
-<li id="ref-6"><cite>The Variation of Certain Speculative Prices</cite> · Benoit Mandelbrot · Journal of Business, 1963<span class="src">金融價格的肥尾與分形特性</span><a href="https://users.math.yale.edu/mandelbrot/web_pdfs/Journal_of_Business.pdf" target="_blank" rel="noopener">yale.edu</a></li>
-<li id="ref-7"><cite>The Informational Efficiency and the Financial Crashes</cite> · Wiston Adrián Risso · Research in International Business and Finance, 2008<span class="src">符號時序分析證明熵下降預示崩盤</span><a href="https://doi.org/10.1016/j.ribaf.2007.09.001" target="_blank" rel="noopener">doi.org / Risso 2008</a></li>
-<li id="ref-8"><cite>Asset Price Dynamics and Diversification During Financial Crises</cite> · Federal Reserve Working Paper · 2009<span class="src">2008 海嘯期間相關性趨同實證</span><a href="https://www.federalreserve.gov/pubs/feds/2009/" target="_blank" rel="noopener">federalreserve.gov</a></li>
-<li id="ref-9"><cite>The Volatility of Volatility and Tail Risk Premium</cite> · Bo-Young Park · 2013；<cite>The Term Structures of Equity and Interest Rates</cite> · Huang & Shaliastovich · 2014<span class="src">VVIX 作為尾端風險的領先指標</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2204202" target="_blank" rel="noopener">ssrn.com</a></li>
-<li id="ref-10"><cite>Entropy, Market Risk, and the Selection of Efficient Portfolios</cite> · George C. Philippatos & Charles J. Wilson · Applied Economics, 1972<span class="src">熵首次引入投資組合選擇</span><a href="https://doi.org/10.1080/00036847200000017" target="_blank" rel="noopener">doi.org / 1972</a></li>
-<li id="ref-11"><cite>Entropy and Predictability of Stock Market Returns</cite> · Esfandiar Maasoumi & Jeffrey Racine · Journal of Econometrics, 2002<span class="src">度量熵捕捉非線性依賴</span><a href="https://doi.org/10.1016/S0304-4076(01)00125-7" target="_blank" rel="noopener">doi.org / 2002</a></li>
-<li id="ref-12"><cite>The Adaptive Markets Hypothesis: Market Efficiency from an Evolutionary Perspective</cite> · Andrew W. Lo · Journal of Portfolio Management, 2004<span class="src">市場為演化耗散生態系</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=602222" target="_blank" rel="noopener">ssrn.com / Lo</a></li>
-<li id="ref-13"><cite>Deep Learning</cite> · Ian Goodfellow, Yoshua Bengio, Aaron Courville · MIT Press, 2016<span class="src">交叉熵損失與資訊論基礎</span><a href="https://www.deeplearningbook.org/" target="_blank" rel="noopener">deeplearningbook.org</a></li>
-<li id="ref-14"><cite>What Is Life? The Physical Aspect of the Living Cell</cite> · Erwin Schrödinger · Cambridge University Press, 1944<span class="src">「生命以負熵為食」</span><a href="https://en.wikipedia.org/wiki/What_Is_Life%3F" target="_blank" rel="noopener">en.wikipedia.org</a></li>
+<li id="ref-1"><cite>Entropy - Wikipedia</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://en.wikipedia.org/wiki/Entropy" target="_blank" rel="noopener">en.wikipedia.org/wiki/Entropy</a></li>
+<li id="ref-2"><cite>ENTROPY AND ITS APPLICATION IN STOCK MARKET | by Quant Club, IIT Kharagpur | Medium</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://medium.com/@quantclubiitkgp/entropy-and-its-application-in-stock-market-accd880ef241" target="_blank" rel="noopener">medium.com/@quantclubiitkgp/entropy-and-its-application-in-stock-market-accd880ef241</a></li>
+<li id="ref-3"><cite>Entropy in thermodynamics and information theory - Wikipedia</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://en.wikipedia.org/wiki/Entropy_in_thermodynamics_and_information_theory" target="_blank" rel="noopener">en.wikipedia.org/wiki/Entropy_in_thermodynamics_and_information_theory</a></li>
+<li id="ref-4"><cite>用熵增定律避開股災</cite><span class="src">使用者提供來源清單</span></li>
+<li id="ref-5"><cite>An Entropy Based Analysis of the Relationship between the DOW JONES Index and the TRNA Sentiment Series</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://papers.tinbergen.nl/16026.pdf" target="_blank" rel="noopener">papers.tinbergen.nl/16026.pdf</a></li>
+<li id="ref-6"><cite>Information vs Thermodynamic Entropy - arXiv</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://arxiv.org/html/2407.08962v1" target="_blank" rel="noopener">arxiv.org/html/2407.08962v1</a></li>
+<li id="ref-7"><cite>Whats the relation of entropy in physics and entropy in information theory? - Reddit</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.reddit.com/r/askscience/comments/dz2fkw/whats_the_relation_of_entropy_in_physics_and/" target="_blank" rel="noopener">www.reddit.com/r/askscience</a></li>
+<li id="ref-8"><cite>Entropy: From Thermodynamics to Information Processing - PMC - NIH</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8534765/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC8534765</a></li>
+<li id="ref-9"><cite>檢索日期：5月 9, 2026</cite><span class="src">使用者提供來源清單</span><a href="https://www.reddit.com/r/AskPhysics/comments/mjbwtc/does_the_second_law_of_thermodynamics_apply_to/#:~:text=Open%20systems%20have%20energy%20incoming,if%20the%20surroundings&#39;%20entropy%20increase.&amp;text=The%20second%20law%20as%20mathematically,system%2C%20making%20it%20closed%20closed." target="_blank" rel="noopener">www.reddit.com/r/AskPhysics</a></li>
+<li id="ref-10"><cite>Second law of thermodynamics - Wikipedia</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://en.wikipedia.org/wiki/Second_law_of_thermodynamics" target="_blank" rel="noopener">en.wikipedia.org/wiki/Second_law_of_thermodynamics</a></li>
+<li id="ref-11"><cite>The laws of thermodynamics (article) | Khan Academy</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.khanacademy.org/science/ap-biology/cellular-energetics/cellular-energy/a/the-laws-of-thermodynamics" target="_blank" rel="noopener">www.khanacademy.org/science/ap-biology</a></li>
+<li id="ref-12"><cite>Thermodynamic system - Wikipedia</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://en.wikipedia.org/wiki/Thermodynamic_system" target="_blank" rel="noopener">en.wikipedia.org/wiki/Thermodynamic_system</a></li>
+<li id="ref-13"><cite>The Role of Entropy in the Development of Economics - PMC</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7516932/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC7516932</a></li>
+<li id="ref-14"><cite>THERMODYNAMIC LAWS APPLIED TO ECONOMIC SYSTEMS - ERIC</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://files.eric.ed.gov/fulltext/EJ1052891.pdf" target="_blank" rel="noopener">files.eric.ed.gov/fulltext/EJ1052891.pdf</a></li>
+<li id="ref-15"><cite>Dissipative structures in nature and human systems - WIT Press</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.witpress.com/Secure/elibrary/papers/DN08/DN08030FU1.pdf" target="_blank" rel="noopener">www.witpress.com/Secure/elibrary</a></li>
+<li id="ref-16"><cite>Applying the Prigogine view of dissipative systems to the major transitions in evolution | Paleobiology - Cambridge University Press &amp; Assessment</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.cambridge.org/core/journals/paleobiology/article/applying-the-prigogine-view-of-dissipative-systems-to-the-major-transitions-in-evolution/950CC803571570A46EEF7EE5970C50A1" target="_blank" rel="noopener">www.cambridge.org/core/journals</a></li>
+<li id="ref-17"><cite>How does entropy relate to life and human systems? : r/Physics - Reddit</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.reddit.com/r/Physics/comments/1odmo16/how_does_entropy_relate_to_life_and_human_systems/" target="_blank" rel="noopener">www.reddit.com/r/Physics</a></li>
+<li id="ref-18"><cite>Economics as if the Laws of Thermodynamics Mattered - Center for the Advancement of the Steady State Economy</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://steadystate.org/economics-as-if-the-laws-of-thermodynamics-mattered/" target="_blank" rel="noopener">steadystate.org/economics-as-if-the-laws-of-thermodynamics-mattered</a></li>
+<li id="ref-19"><cite>1 ENTROPY AND ECONOPHYSICS J. Barkley Rosser, Jr. James Madison University rosserjb@jmu.edu May, 2016 Abstract</cite><span class="src">檢索日期：5月 10, 2026</span><a href="http://cob.jmu.edu/rosserjb/ENTROPY%20AND%20ECONOPHYSICS.pdf" target="_blank" rel="noopener">cob.jmu.edu/rosserjb/ENTROPY%20AND%20ECONOPHYSICS.pdf</a></li>
+<li id="ref-20"><cite>Entropy as a Tool for the Analysis of Stock Market Efficiency During Periods of Crisis - PMC</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11675851/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC11675851</a></li>
+<li id="ref-21"><cite>檢索日期：5月 10, 2026</cite><span class="src">使用者提供來源清單</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8534577/#:~:text=In%20open%20systems%2C%20entropy%20can,where%20entropy%20can%20only%20rise." target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC8534577</a></li>
+<li id="ref-22"><cite>Applications of Entropy in Finance: A Review - MDPI</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.mdpi.com/1099-4300/15/11/4909" target="_blank" rel="noopener">www.mdpi.com/1099-4300/15</a></li>
+<li id="ref-23"><cite>SOSYAL VE BEŞERİ BİLİMLER ARAŞTIRMALARI DERGİSİ Journal of Social Sciences and Humanities Researches Financial Entropy: T - DergiPark</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://dergipark.org.tr/en/download/article-file/3709259" target="_blank" rel="noopener">dergipark.org.tr/en/download</a></li>
+<li id="ref-24"><cite>Entropy and Wealth - PMC - NIH</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8534528/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC8534528</a></li>
+<li id="ref-25"><cite>(PDF) Applications of Entropy in Finance: A Review - ResearchGate</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.researchgate.net/publication/272648341_Applications_of_Entropy_in_Finance_A_Review" target="_blank" rel="noopener">www.researchgate.net/publication/272648341_Applications_of_Entropy_in_Finance_A_Review</a></li>
+<li id="ref-26"><cite>Regularity in Stock Market Indices within Turbulence Periods: The Sample Entropy Approach - MDPI</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.mdpi.com/1099-4300/24/7/921" target="_blank" rel="noopener">www.mdpi.com/1099-4300/24</a></li>
+<li id="ref-27"><cite>Define Economic Market and Individual Stock Temperatures Analogous to Thermodynamics and Predict Stock Prices with the Rate Process Theory and Free Volume Concept - ResearchGate</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.researchgate.net/publication/397551870_Define_Economic_Market_and_Individual_Stock_Temperatures_Analogous_to_Thermodynamics_and_Predict_Stock_Prices_with_the_Rate_Process_Theory_and_Free_Volume_Concept" target="_blank" rel="noopener">www.researchgate.net/publication/397551870_Define_Economic_Market_and_Individual_Stock_Temperatures_Analogous_to_Thermodynamics_and_Predict_Stock_Prices_with_the_Rate_Process_Theory_and_Free_Volume_Concept</a></li>
+<li id="ref-28"><cite>The Second Law and Entropy Misconceptions Demystified - PMC - NIH</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7517180/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC7517180</a></li>
+<li id="ref-29"><cite>Second Law of Thermodynamics</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.grc.nasa.gov/www/k-12/VirtualAero/BottleRocket/airplane/thermo2.html" target="_blank" rel="noopener">www.grc.nasa.gov/www/k-12</a></li>
+<li id="ref-30"><cite>An Empirical Analysis on Financial Markets: Insights from the Application of Econophysics</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.researchgate.net/publication/399499519_An_Empirical_Analysis_on_Financial_Markets_Insights_from_the_Application_of_Econophysics" target="_blank" rel="noopener">www.researchgate.net/publication/399499519_An_Empirical_Analysis_on_Financial_Markets_Insights_from_the_Application_of_Econophysics</a></li>
+<li id="ref-31"><cite>Econophysics and the Entropic Foundations of Economics - PMC</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8534577/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC8534577</a></li>
+<li id="ref-32"><cite>Shannon Entropy: An Econophysical Approach to Cryptocurrency Portfolios - MDPI</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://www.mdpi.com/1099-4300/24/11/1583" target="_blank" rel="noopener">www.mdpi.com/1099-4300/24</a></li>
+<li id="ref-33"><cite>Beyond the Traditional VIX: A Novel Approach to Identifying Uncertainty Shocks in Financial Markets - MDPI</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.mdpi.com/1911-8074/18/1/11" target="_blank" rel="noopener">www.mdpi.com/1911-8074/18</a></li>
+<li id="ref-34"><cite>Fractional order entropy-based decision-making models under risk - arXiv</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://arxiv.org/html/2507.02683v1" target="_blank" rel="noopener">arxiv.org/html/2507.02683v1</a></li>
+<li id="ref-35"><cite>What Is VVIX and Why Does It Matter? - Charles Schwab</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.schwab.com/learn/story/whats-vvix-and-why-does-it-matter" target="_blank" rel="noopener">www.schwab.com/learn/story</a></li>
+<li id="ref-36"><cite>The Relationship Between VVIX and VIX Guide - MenthorQ</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://menthorq.com/guide/the-relationship-between-vvix-and-vix/" target="_blank" rel="noopener">menthorq.com/guide/the-relationship-between-vvix-and-vix</a></li>
+<li id="ref-37"><cite>Evolutionary Thermodynamics and Theory of Social Quality as Links between Physics, Biology, and the Human Sciences in - Berghahn Journals</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.berghahnjournals.com/view/journals/ijsq/10/1/ijsq100104.xml" target="_blank" rel="noopener">www.berghahnjournals.com/view/journals</a></li>
+<li id="ref-38"><cite>Volatility of aggregate volatility and hedge funds returns - EconStor</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.econstor.eu/bitstream/10419/114471/1/833357646.pdf" target="_blank" rel="noopener">www.econstor.eu/bitstream/10419</a></li>
+<li id="ref-39"><cite>differentiated risk models in portfolio optimization: a comparative analysis of the degree of diversification - SciELO</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://www.scielo.br/j/pope/a/Q57rRd84y3YG7d4H3y9kVMN/?format=pdf&amp;lang=en" target="_blank" rel="noopener">www.scielo.br/j/pope</a></li>
+<li id="ref-40"><cite>Entropy-Based Financial Asset Pricing - PMC - NIH</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4278763/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC4278763</a></li>
+<li id="ref-41"><cite>A Dependence Metric for Possibly Nonlinear Processes - IDEAS/RePEc</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://ideas.repec.org/a/bla/jtsera/v25y2004i5p649-669.html" target="_blank" rel="noopener">ideas.repec.org/a/bla</a></li>
+<li id="ref-42"><cite>The informational efficiency and the financial crashes - IDEAS/RePEc</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://ideas.repec.org/a/eee/riibaf/v22y2008i3p396-408.html" target="_blank" rel="noopener">ideas.repec.org/a/eee</a></li>
+<li id="ref-43"><cite>Regularity in Stock Market Indices within Turbulence Periods: The Sample Entropy Approach - PMC</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9318915/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC9318915</a></li>
+<li id="ref-44"><cite>Entropy in AI: The Hidden Force Shaping Model Decisions | by Elyon - AGI's Architect - L2s &amp; LLMs Mirror Me | Medium</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://medium.com/@cbwellsbiz/entropy-in-ai-the-hidden-force-shaping-model-decisions-56658a51799d" target="_blank" rel="noopener">medium.com/@cbwellsbiz/entropy-in-ai-the-hidden-force-shaping-model-decisions-56658a51799d</a></li>
+<li id="ref-45"><cite>Relative Entropy in Data Science and Machine Learning - EntropiQ</cite><span class="src">檢索日期：5月 9, 2026</span><a href="https://entropiq.com/relative-entropy/" target="_blank" rel="noopener">entropiq.com/relative-entropy</a></li>
+<li id="ref-46"><cite>Robust signalling entropy estimation for biological process characterisation - PMC</cite><span class="src">檢索日期：5月 10, 2026</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12204201/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC12204201</a></li>
 </ol>
 </div>
 </details>
